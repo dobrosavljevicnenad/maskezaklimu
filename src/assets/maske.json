@@ -1,0 +1,92 @@
+[
+  {
+    "id": 1,
+    "naziv": "Zaštitna maska za spoljnu jedinicu - Model 1",
+    "slug": "zastitna-maska-model-1",
+    "opis": "Stilizovana zaštita za klima uređaj izrađena od laserski rezanog čelika. Savršena za zaštitu i estetiku vašeg doma.",
+    "cena": 10980,
+    "popust": 0,
+    "boja": "Crna",
+    "slika": [
+      {
+        "url": "assets/maska4_4.jpg",
+        "alt": "Zaštitna maska za klimu model 1 - crna, laserski rezana"
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "naziv": "Zaštitna maska za spoljnu jedinicu - Model 2",
+    "slug": "zastitna-maska-model-2",
+    "opis": "Elegantna maska za klima uređaj sa modernim perforacijama. Pruža zaštitu i unapređuje izgled fasade.",
+    "cena": 10980,
+    "popust": 0,
+    "boja": "Crna",
+    "slika": [
+      {
+        "url": "assets/maska2_1.jpg",
+        "alt": "Maska za klimu model 2 - crna, moderna i elegantna"
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "naziv": "Zaštitna maska za spoljnu jedinicu - Model 3",
+    "slug": "zastitna-maska-model-3",
+    "opis": "Funkcionalna i dekorativna maska za vašu klimu, izrađena od kvalitetnog metala otporna na vremenske uslove.",
+    "cena": 10980,
+    "popust": 0,
+    "boja": "Crna",
+    "slika": [
+      {
+        "url": "assets/maska1_3.jpg",
+        "alt": "Dekorativna maska za spoljnu jedinicu klima uređaja - model 3"
+      }
+    ]
+  },
+  {
+    "id": 4,
+    "naziv": "Zaštitna maska za spoljnu jedinicu - Model 4",
+    "slug": "zastitna-maska-model-4",
+    "opis": "Unikatni dizajn maske za klimu, idealna za modernu arhitekturu i zaštitu spoljne jedinice.",
+    "cena": 10980,
+    "popust": 0,
+    "boja": "Crna",
+    "slika": [
+      {
+        "url": "assets/maska20.jpg",
+        "alt": "Zaštitna maska za klimu - model 4, crna, savremeni dizajn"
+      }
+    ]
+  },
+  {
+    "id": 5,
+    "naziv": "Zaštitna maska za spoljnu jedinicu - Model 5",
+    "slug": "zastitna-maska-model-5",
+    "opis": "Maska za klimu sa naprednim sistemom ventilacije. Kombinacija estetike i funkcionalnosti.",
+    "cena": 10980,
+    "popust": 0,
+    "boja": "Crna",
+    "slika": [
+      {
+        "url": "assets/klima_br3.png",
+        "alt": "Maska za spoljnu klimu - model 5, ventilacioni dizajn"
+      }
+    ]
+  },
+  {
+    "id": 6,
+    "naziv": "Zaštitna maska za spoljnu jedinicu - Model 6",
+    "slug": "zastitna-maska-model-6",
+    "opis": "Visokokvalitetna maska za klima uređaj sa elegantnim rezovima i minimalističkim izgledom.",
+    "cena": 10980,
+    "popust": 0,
+    "boja": "Crna",
+    "slika": [
+      {
+        "url": "assets/maska_br5.png",
+        "alt": "Crna maska za klima jedinicu - model 6, minimalistički dizajn"
+      }
+    ]
+  }
+]
