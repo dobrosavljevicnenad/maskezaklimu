@@ -2,15 +2,17 @@ import { Component, EventEmitter, Output, computed, signal, Signal } from '@angu
 import { MaskaService } from '../../services/maska.service';
 import { CommonModule } from '@angular/common';
 import { MatIconModule } from '@angular/material/icon';
+import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.scss'],
   standalone: true,
-  imports: [CommonModule, MatIconModule]
+  imports: [CommonModule, MatIconModule, RouterModule]
 })
 export class HeaderComponent {
+
   isModalOpen = signal(false);
   searchQuery = signal('');
   cartProducts: Signal<any[]>;
