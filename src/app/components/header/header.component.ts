@@ -3,6 +3,8 @@ import { MaskaService } from '../../services/maska.service';
 import { CommonModule } from '@angular/common';
 import { MatIconModule } from '@angular/material/icon';
 import { RouterModule } from '@angular/router';
+import { MatIconRegistry } from '@angular/material/icon';
+import { DomSanitizer } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-header',
@@ -21,8 +23,16 @@ export class HeaderComponent {
 
   cartCount = computed(() => this.maskaService.cartCount());
 
-  constructor(private maskaService: MaskaService) {
+  constructor(private maskaService: MaskaService, private iconRegistry: MatIconRegistry, private sanitizer: DomSanitizer) {
     this.cartProducts = computed(() => this.maskaService.getCartProducts());
+    iconRegistry.addSvgIcon(
+      'facebook',
+      sanitizer.bypassSecurityTrustResourceUrl('assets/icons/facebook.svg')
+    );
+    iconRegistry.addSvgIcon(
+      'instagram',
+      sanitizer.bypassSecurityTrustResourceUrl('assets/icons/instagram.svg')
+    );
   }
 
   openModal() {

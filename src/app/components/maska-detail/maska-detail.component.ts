@@ -100,5 +100,6 @@ export class MaskaDetailComponent implements OnInit {
     }
 
     this.maskaService.addToCart(this.maska.id, boja, this.kolicina);
+    alert('Dodali ste proizvod u korpu.');
   }
 }

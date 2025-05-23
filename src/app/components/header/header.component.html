@@ -31,11 +31,26 @@
         <mat-icon class="absolute left-2 top-2.5 text-gray-600">search</mat-icon>
       </div>
 
+      <div class="flex gap-3 ml-6">
       <div class="relative cursor-pointer" routerLink="/cart">
         <mat-icon class="text-gray-600 hover:scale-125 transition-transform">shopping_cart</mat-icon>
         <span *ngIf="cartProducts().length !== 0"
               class="absolute top-1 right-0 w-2 h-2 bg-red-500 rounded-full"></span>
       </div>
+
+      <!-- Facebook i Instagram -->
+      <div class="flex items-center">
+        <a href="https://www.facebook.com/maskezaklimu" target="_blank" rel="noopener">
+          <mat-icon svgIcon="facebook" class="text-gray-600 hover:scale-125 transition-transform cursor-pointer"></mat-icon>
+        </a>
+      </div>
+
+      <div>
+        <a href="https://www.instagram.com/maske_za_klimu" target="_blank" rel="noopener">
+          <mat-icon svgIcon="instagram" class="text-gray-600 hover:scale-125 transition-transform cursor-pointer"></mat-icon>
+        </a>
+      </div>
+
 
 <!-- Debug lista proizvoda u korpi
 <div *ngIf="cartProducts().length > 0" class="mt-4">
@@ -49,8 +64,9 @@
 
 
       <!-- Info dugme -->
-      <div class="relative cursor-pointer" (click)="openModal()">
-        <mat-icon class="text-gray-600 hover:scale-125 transition-transform">info</mat-icon>
+        <div class="relative cursor-pointer" (click)="openModal()">
+          <mat-icon class="text-gray-600 hover:scale-125 transition-transform">info</mat-icon>
+        </div>
       </div>
     </div>
   </div>
