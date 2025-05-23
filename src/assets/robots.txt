@@ -1,0 +1,12 @@
+User-agent: *
+Allow: /
+
+# Blokiraj nepotrebne Angular fajlove (ako se builduju kao rute)
+Disallow: /main.*
+Disallow: /polyfills.*
+Disallow: /runtime.*
+Disallow: /styles.*
+Disallow: /vendor.*
+
+# Lokacija sitemap-a
+Sitemap: https://www.klimamaske.online/sitemap.xml
