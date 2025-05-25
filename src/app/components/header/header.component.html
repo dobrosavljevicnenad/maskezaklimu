@@ -33,7 +33,7 @@
 
       <div class="flex gap-3 ml-6">
       <div class="relative cursor-pointer" routerLink="/cart">
-        <mat-icon class="text-gray-600 hover:scale-125 transition-transform">shopping_cart</mat-icon>
+        <mat-icon aria-label="Korpa" class="text-gray-600 hover:scale-125 transition-transform">shopping_cart</mat-icon>
         <span *ngIf="cartProducts().length !== 0"
               class="absolute top-1 right-0 w-2 h-2 bg-red-500 rounded-full"></span>
       </div>
