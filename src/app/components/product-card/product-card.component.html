@@ -43,6 +43,20 @@
         <meta itemprop="price" [content]="getDiscountPrice()" />
         <meta itemprop="priceCurrency" content="RSD" />
         <link itemprop="availability" href="https://schema.org/InStock" />
+        <!-- Shipping Details -->
+        <div itemprop="shippingDetails" itemscope itemtype="https://schema.org/OfferShippingDetails">
+          <meta itemprop="shippingDestination" content="RS" />
+          <meta itemprop="deliveryTime" content="https://schema.org/InStock" />
+        </div>
+
+        <!-- Return Policy -->
+        <div itemprop="hasMerchantReturnPolicy" itemscope itemtype="https://schema.org/MerchantReturnPolicy">
+          <meta itemprop="returnPolicyCategory" content="https://schema.org/ReturnWithReceipt" />
+          <meta itemprop="merchantReturnDays" content="7" />
+          <meta itemprop="returnMethod" content="https://schema.org/ReturnByMail" />
+          <meta itemprop="returnFees" content="https://schema.org/FreeReturn" />
+        </div>
+
       </div>
 
       <!-- Dodaj u korpu -->
