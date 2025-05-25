@@ -65,32 +65,11 @@
 
       <!-- Info dugme -->
         <div class="relative cursor-pointer" (click)="openModal()">
-          <mat-icon class="text-gray-600 hover:scale-125 transition-transform">info</mat-icon>
+          <a href="/info" class="text-gray-600 hover:scale-125 transition-transform inline-block">
+            <mat-icon>info</mat-icon>
+          </a>
         </div>
       </div>
     </div>
   </div>
 </header>
-
-<!-- MODAL (Info o maskama) -->
-<div *ngIf="!isModalOpen" class="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center z-50">
-  <div class="bg-white rounded-2xl p-6 w-[90%] max-w-2xl shadow-lg">
-    <h2 class="text-2xl font-semibold font-serif italic mb-4 text-center">Informacije</h2>
-
-    <div class="text-lg font-serif italic space-y-4 text-gray-700">
-      <p><strong>Standardne dimenzije:</strong> 90x65x44cm.</p>
-      <p><strong>Raznovrsni dizajn:</strong> Pošaljite bilo koju šaru sa interneta i izradićemo je brzo.</p>
-      <p><strong>Kvalitetna izrada:</strong> CNC sečeni lim (1.5 mm), otporan na vremenske uslove.</p>
-      <p><strong>Raznovrsne boje:</strong> Beli, crni, antracit ili po porudžbini.</p>
-      <p><strong>Jednostavna montaža:</strong> Rupice u uglovima za brzo fiksiranje.</p>
-      <p><strong>Dizajn + funkcija:</strong> Zaštita + estetika za eksterijer i enterijer.</p>
-      <p class="text-center"><strong>Kontaktirajte nas i kreirajmo zajedno masku po vašoj meri!</strong></p>
-    </div>
-
-    <div class="mt-6 text-center">
-      <button (click)="closeModal()" class="bg-red-500 text-white py-2 px-6 rounded-full hover:bg-red-600 transition-all">
-        Zatvori
-      </button>
-    </div>
-  </div>
-</div>
