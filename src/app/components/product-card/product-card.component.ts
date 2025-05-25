@@ -28,15 +28,32 @@ export class ProductCardComponent implements OnInit {
     private title: Title,
   ) {}
 
-  ngOnInit(): void {
-    const { id, boja } = this.product;
-    this.isCarted = this.maskaService.isInCart(id, boja);
+ngOnInit(): void {
+  const { id, boja, naziv, opis, slug } = this.product;
+  this.isCarted = this.maskaService.isInCart(id, boja);
 
-    this.meta.addTag({
-    name: 'canonical',
-    content: `https://klimamaske.online/${this.router.url}`
+  // Title tag
+  this.title.setTitle(`Maska za klimu - ${naziv}`);
+
+  // Meta description
+  this.meta.updateTag({
+    name: 'description',
+    content: opis?.slice(0, 150) || `Pogledajte masku za klimu: ${naziv}.`
   });
-  }
+
+  // Canonical URL
+  const canonicalUrl = `https://klimamaske.online/proizvod/${slug}`;
+  this.meta.updateTag({
+    name: 'canonical',
+    content: canonicalUrl
+  });
+
+  // Open Graph (za deljenje na društvenim mrežama)
+  this.meta.updateTag({ property: 'og:title', content: `Maska za klimu - ${naziv}` });
+  this.meta.updateTag({ property: 'og:description', content: opis?.slice(0, 150) || `Pogledajte masku za klimu: ${naziv}.` });
+  this.meta.updateTag({ property: 'og:url', content: canonicalUrl });
+}
+
 
   toggleCart(): void {
     const { id, boja } = this.product;

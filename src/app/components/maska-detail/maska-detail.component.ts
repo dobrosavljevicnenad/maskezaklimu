@@ -3,6 +3,7 @@ import { ActivatedRoute, RouterModule } from '@angular/router';
 import { MaskaService } from '../../services/maska.service';
 import { CommonModule, isPlatformBrowser } from '@angular/common';
 import { FormsModule } from '@angular/forms';
+import { Meta, Title } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-maska-detail',
@@ -22,6 +23,8 @@ export class MaskaDetailComponent implements OnInit {
   constructor(
     private route: ActivatedRoute,
     private maskaService: MaskaService,
+    private meta: Meta,
+    private title: Title,
     @Inject(PLATFORM_ID) private platformId: Object
 
   ) {}
@@ -38,6 +41,28 @@ export class MaskaDetailComponent implements OnInit {
         this.izabranaSlika = this.maska.slika[0].url;
       }
     }
+    if (this.maska) {
+        const naziv = this.maska.naziv || 'Maska za klimu';
+        const opis = this.maska.opis?.slice(0, 160) || `Pogledajte dekorativnu masku za klimu: ${naziv}.`;
+        const url = `https://klimamaske.online/proizvod/${this.maska.slug}`;
+        const slika = this.maska.slika?.[0]?.url || 'https://klimamaske.online/assets/maska_za_profil.webp';
+
+        this.title.setTitle(`${naziv} - Dekorativna maska za klimu`);
+        this.meta.updateTag({ name: 'description', content: opis });
+        this.meta.updateTag({ name: 'canonical', content: url });
+
+        // Open Graph
+        this.meta.updateTag({ property: 'og:title', content: naziv });
+        this.meta.updateTag({ property: 'og:description', content: opis });
+        this.meta.updateTag({ property: 'og:url', content: url });
+        this.meta.updateTag({ property: 'og:image', content: slika });
+
+        // Twitter card
+        this.meta.updateTag({ name: 'twitter:title', content: naziv });
+        this.meta.updateTag({ name: 'twitter:description', content: opis });
+        this.meta.updateTag({ name: 'twitter:image', content: slika });
+      }
+
   }
 
   promeniSliku(slika: string) {
