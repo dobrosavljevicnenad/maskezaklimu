@@ -3,6 +3,7 @@ import { HomeComponent } from './components/home/home.component';
 import { CartComponent } from './components/cart/cart.component';
 import { OrderComponent } from './components/order/order.component';
 import { MaskaDetailComponent } from './components/maska-detail/maska-detail.component';
+import { ContactComponent } from './components/contact/contact.component';
 
 export const routes: Routes = [
   {
@@ -18,7 +19,11 @@ export const routes: Routes = [
     component: OrderComponent
   },
   {
-  path: 'proizvod/:slug',
-  component: MaskaDetailComponent
+    path: 'proizvod/:slug',
+    component: MaskaDetailComponent
+  },
+  {
+    path: 'kontakt',
+    component: ContactComponent
   }
 ];
