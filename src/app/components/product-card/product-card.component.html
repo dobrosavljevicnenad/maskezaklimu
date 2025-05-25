@@ -37,9 +37,10 @@
         <p *ngIf="product.popust > 0" class="text-sm text-gray-400 line-through">
           {{ product.cena | number:'1.0-0' }} RSD
         </p>
-        <p class="text-lg sm:text-xl font-semibold text-gray-700" itemprop="price">
+        <p class="text-lg sm:text-xl font-semibold text-gray-700">
           {{ getDiscountPrice() }} RSD
         </p>
+        <meta itemprop="price" [content]="getDiscountPrice()" />
         <meta itemprop="priceCurrency" content="RSD" />
         <link itemprop="availability" href="https://schema.org/InStock" />
       </div>
