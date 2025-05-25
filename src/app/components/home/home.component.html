@@ -35,9 +35,22 @@
 
     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 lg:gap-10 max-w-6xl mx-auto px-2 sm:px-0">
       <div *ngFor="let product of maske" class="flex justify-center">
-        <article itemscope itemtype="https://schema.org/Product" class="w-full max-w-sm">
+        <article itemscope itemtype="https://schema.org/Product" class="w-full max-w-sm relative">
+          <meta itemprop="name" [content]="product.naziv">
+          <meta itemprop="description" [content]="product.opis">
+          <meta itemprop="image" [content]="product.slika[0]?.url">
+
+          <!-- Offers info -->
+          <div itemprop="offers" itemscope itemtype="https://schema.org/Offer">
+            <meta itemprop="price" [content]="product.cena">
+            <meta itemprop="priceCurrency" content="RSD">
+            <link itemprop="availability" href="https://schema.org/InStock">
+          </div>
+
+          <!-- Komponenta ostaje -->
           <app-product-card [product]="product"></app-product-card>
         </article>
+
       </div>
     </div>
   </section>
