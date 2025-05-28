@@ -22,7 +22,7 @@ export class OrderComponent implements OnInit {
     address: ''
   };
 
-  baseUrl: string = '';
+  baseUrl: string = 'https://maskezaklimu.rs/';
 
   constructor(private maskaService: MaskaService, private router: Router) {}
 
