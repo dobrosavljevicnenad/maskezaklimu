@@ -9,7 +9,7 @@
     "boja": "Crna",
     "slika": [
       {
-        "url": "assets/maska4_4.jpg",
+        "url": "assets/maska4_4.webp",
         "alt": "Zaštitna maska za klimu model 1 - crna, laserski rezana"
       }
     ]
@@ -24,7 +24,7 @@
     "boja": "Crna",
     "slika": [
       {
-        "url": "assets/maska2_1.jpg",
+        "url": "assets/maska2_1.webp",
         "alt": "Maska za klimu model 2 - crna, moderna i elegantna"
       }
     ]
@@ -39,7 +39,7 @@
     "boja": "Crna",
     "slika": [
       {
-        "url": "assets/maska1_3.jpg",
+        "url": "assets/maska1_3.webp",
         "alt": "Dekorativna maska za spoljnu jedinicu klima uređaja - model 3"
       }
     ]
@@ -54,7 +54,7 @@
     "boja": "Crna",
     "slika": [
       {
-        "url": "assets/maska20.jpg",
+        "url": "assets/maska20.webp",
         "alt": "Zaštitna maska za klimu - model 4, crna, savremeni dizajn"
       }
     ]
@@ -69,7 +69,7 @@
     "boja": "Crna",
     "slika": [
       {
-        "url": "assets/klima_br3.png",
+        "url": "assets/klima_br3.webp",
         "alt": "Maska za spoljnu klimu - model 5, ventilacioni dizajn"
       }
     ]
@@ -84,7 +84,7 @@
     "boja": "Crna",
     "slika": [
       {
-        "url": "assets/maska_br5.png",
+        "url": "assets/maska_br5.webp",
         "alt": "Crna maska za klima jedinicu - model 6, minimalistički dizajn"
       }
     ]

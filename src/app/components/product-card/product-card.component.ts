@@ -42,7 +42,7 @@ ngOnInit(): void {
   });
 
   // Canonical URL
-  const canonicalUrl = `https://klimamaske.online/proizvod/${slug}`;
+  const canonicalUrl = `https://maskezaklimu.rs/proizvod/${slug}`;
   this.meta.updateTag({
     name: 'canonical',
     content: canonicalUrl

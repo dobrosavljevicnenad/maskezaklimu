@@ -9,4 +9,4 @@ Disallow: /styles.*
 Disallow: /vendor.*
 
 # Lokacija sitemap-a
-Sitemap: https://www.klimamaske.online/sitemap.xml
+Sitemap: https://www.maskezaklimu.rs/sitemap.xml
