@@ -1,60 +1,145 @@
-<main class="bg-gray-50 px-4 sm:px-8 md:px-12 py-6 space-y-20">
+<main class="bg-gradient-to-br from-gray-100 to-white px-6 sm:px-12 md:px-20 py-5" role="main">
+<section class="max-w-6xl mx-auto text-center py-24 px-6 sm:px-8">
+  <h1 class="!text-5xl !sm:text-7xl !md:text-[6.5rem] !font-serif !italic !font-extrabold !text-gray-900 !tracking-wide !uppercase mb-6" style="font-family: 'Playfair Display', serif;">
+  MASKE ZA KLIMU
+  </h1>
 
-  <!-- Hero Sekcija -->
-<header class="relative h-[75dvh] sm:h-[86vh] rounded-2xl sm:rounded-3xl overflow-hidden shadow-xl" role="banner">
-  <img src="assets/maska_za_profil.webp"
-       width="1024"
-       height="1024"
-       alt="Dekorativna maska za unutrašnju klimu u enterijeru"
-       class="absolute inset-0 w-full h-full object-cover" />
-  <div class="absolute inset-0 bg-black/50 backdrop-blur-sm flex flex-col items-center justify-center text-white text-center px-4 sm:px-6">
 
-    <!-- Naslov -->
-    <h1 class="!text-4xl !sm:text-6xl !md:text-7xl !font-serif !italic !font-extrabold !tracking-tight !drop-shadow-[0_2px_3px_rgba(0,0,0,0.6)] !mb-4 !sm:mb-6 !animate-fade-in-up">
-      Dekorativne maske za klimu
-    </h1>
+  <div class="w-96 h-[2px] bg-gray-300 mx-auto mb-8"></div>
 
-    <!-- Opis -->
-    <p class="!text-lg !sm:text-xl !md:text-2xl !font-light !italic !max-w-md !sm:max-w-2xl !mb-6 !sm:mb-8 !text-white/90 !tracking-normal !animate-fade-in-up !delay-150">
-      Zaštitite i ulepšajte izgled svoje klime unikatnim maskama koje unose stil i funkcionalnost u svaki dom.
-    </p>
-
-    <!-- Dugme -->
-    <a href="#proizvodi"
-       class="bg-white text-gray-900 font-semibold py-3 px-6 sm:px-8 rounded-full hover:bg-gray-200 transition-all shadow-md text-sm sm:text-base animate-fade-in-up delay-300"
-       aria-label="Pogledajte našu ponudu dekorativnih maski za klimu">
-      Pogledaj ponudu
-    </a>
+  <div class="text-2xl sm:text-3xl font-light text-gray-700 max-w-4xl mx-auto leading-relaxed mb-5" style="font-family: 'Inter', sans-serif;">
+    Želiš da ti klima bude ukras, a ne mana fasade?
   </div>
-</header>
+
+  <div class="text-lg sm:text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed mb-4" style="font-family: 'Inter', sans-serif;">
+    Naše maske za klimu ne samo da štite od vremenskih uslova, već klimu pretvaraju u atraktivan i moderan deo fasade ili enterijera.
+  </div>
+
+  <div class="mt-12">
+  <a
+    href="#proizvodi"
+    class="inline-block bg-gray-900 text-white font-semibold text-base sm:text-lg py-3 px-8 rounded-full shadow-md hover:bg-gray-800 transition-all duration-300 transform hover:-translate-y-0.5"
+    style="font-family: 'Inter', sans-serif;"
+    aria-label="Pogledajte našu ponudu dekorativnih maski za klimu"
+  >
+    Pogledaj ponudu
+  </a>
+</div>
+
+</section>
+
+
 
 
   <!-- Proizvodi -->
-  <section id="proizvodi" aria-labelledby="naslov-preporuke">
-    <h2 id="naslov-preporuke" class="!text-3xl !sm:text-4xl !font-serif !italic !text-center !text-gray-800 !mb-10 !sm:mb-14">
+  <section id="proizvodi" aria-labelledby="naslov-preporuke" class="scroll-mt-20">
+    <h2
+      id="naslov-preporuke"
+      class="!text-3xl !sm:text-4xl !font-serif !italic !text-center !text-gray-800 mb-14"
+    >
       Naša preporuka
     </h2>
 
-    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 lg:gap-10 max-w-6xl mx-auto px-2 sm:px-0">
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 max-w-6xl mx-auto">
       <div *ngFor="let product of maske" class="flex justify-center">
-        <article itemscope itemtype="https://schema.org/Product" class="w-full max-w-sm relative">
-          <meta itemprop="name" [content]="product.naziv">
-          <meta itemprop="description" [content]="product.opis">
-          <meta itemprop="image" [content]="product.slika[0]?.url">
-
-          <!-- Offers info -->
+        <article
+          itemscope
+          itemtype="https://schema.org/Product"
+          class="w-full max-w-sm relative bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl transition-shadow"
+        >
+          <meta itemprop="name" [content]="product.naziv" />
+          <meta itemprop="description" [content]="product.opis" />
+          <meta itemprop="image" [content]="product.slika[0]?.url" />
           <div itemprop="offers" itemscope itemtype="https://schema.org/Offer">
-            <meta itemprop="price" [content]="product.cena">
-            <meta itemprop="priceCurrency" content="RSD">
-            <link itemprop="availability" href="https://schema.org/InStock">
+            <meta itemprop="price" [content]="product.cena" />
+            <meta itemprop="priceCurrency" content="RSD" />
+            <link itemprop="availability" href="https://schema.org/InStock" />
           </div>
 
-          <!-- Komponenta ostaje -->
           <app-product-card [product]="product"></app-product-card>
         </article>
-
       </div>
     </div>
   </section>
+
+  <section class="max-w-6xl mx-auto mt-24 px-4 sm:px-6">
+  <div class="bg-white rounded-3xl shadow-lg p-12 space-y-16">
+
+    <!-- Hero karta -->
+    <div class="text-center space-y-6">
+  <h2 class="text-4xl sm:text-5xl font-extrabold text-gray-900">
+    Maske za klimu – dekorativne i zaštitne maske za klimu
+  </h2>
+  <div class="text-xl text-gray-700 max-w-2xl mx-auto leading-relaxed text-center">
+    Spoj modernog dizajna i pouzdane zaštite – <strong>maske za klimu</strong> kreirane da dekorišu i štite, u svakom enterijeru i eksterijeru.
+  </div>
+</div>
+
+
+
+    <!-- Kartice sa benefitima -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+      <div class="bg-gray-50 rounded-2xl shadow-sm p-8 hover:shadow-md transform hover:-translate-y-1 transition">
+        <h3 class="text-2xl font-bold text-gray-900 mb-3"><b>Estetika & dizajn</b></h3>
+        <p class="text-gray-700">Dodajte karakter svom prostoru uz <strong>dekorativne maske za klimu</strong> koje prate najnovije trendove.</p>
+      </div>
+      <div class="bg-gray-50 rounded-2xl shadow-sm p-8 hover:shadow-md transform hover:-translate-y-1 transition">
+        <h3 class="text-2xl font-bold text-gray-900 mb-3"><b>Izdržljivi materijali</b></h3>
+        <p class="text-gray-700">Naše <strong>maske za klimu</strong> su otporne na vlagu, UV, prašinu i mehanička oštećenja.</p>
+      </div>
+      <div class="bg-gray-50 rounded-2xl shadow-sm p-8 hover:shadow-md transform hover:-translate-y-1 transition">
+        <h3 class="text-2xl font-bold text-gray-900 mb-3"><b>Po meri & personalizacija</b></h3>
+        <p class="text-gray-700">Izrađujemo <strong>maske za klimu po meri</strong> prema vašim dimenzijama i stilu.</p>
+      </div>
+      <div class="bg-gray-50 rounded-2xl shadow-sm p-8 hover:shadow-md transform hover:-translate-y-1 transition">
+        <h3 class="text-2xl font-bold text-gray-900 mb-3"><b>Brza montaža</b></h3>
+        <p class="text-gray-700">Maske za klimu se montiraju tako što se tipluju na zid na mestu gde su unapred pripremljene rupe na bočnim stranicama.</p>
+      </div>
+      <div class="bg-gray-50 rounded-2xl shadow-sm p-8 hover:shadow-md transform hover:-translate-y-1 transition">
+        <h3 class="text-2xl font-bold text-gray-900 mb-3"><b>Širok spektar boja</b></h3>
+        <p class="text-gray-700">Izaberite između više boja, dezena i tekstura, uvek u skladu sa eksterijerom.</p>
+      </div>
+      <div class="bg-gray-50 rounded-2xl shadow-sm p-8 hover:shadow-md transform hover:-translate-y-1 transition">
+        <h3 class="text-2xl font-bold text-gray-900 mb-3"><b>Pokrivenost u Srbiji</b></h3>
+        <p class="text-gray-700">Dostava i montaža dostupna su širom zemlje, uključujući <strong>Beograd</strong>, <strong>Novi Sad</strong>, <strong>Niš</strong> i <strong>Kragujevac</strong>.</p>
+      </div>
+    </div>
+
+    <!-- FAQ -->
+    <div class="space-y-6">
+      <h2 class="text-3xl font-extrabold text-gray-900 text-center mb-8"><b>Često postavljana pitanja</b></h2>
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+        <details class="group bg-gray-50 rounded-xl shadow-sm p-6 hover:bg-gray-100 transition">
+          <summary class="font-bold text-lg text-gray-900 cursor-pointer">Da li maska utiče na rad klime?</summary>
+          <p class="mt-2 text-gray-700">Ne – dizajnirana je za optimalan protok vazduha, bez smanjenja efikasnosti.</p>
+        </details>
+        <details class="group bg-gray-50 rounded-xl shadow-sm p-6 hover:bg-gray-100 transition">
+          <summary class="font-bold text-lg text-gray-900 cursor-pointer">Da li radite po meri?</summary>
+          <p class="mt-2 text-gray-700">Da – prilagođava se tačno vašim dimenzijama i željenom stilu.</p>
+        </details>
+        <details class="group bg-gray-50 rounded-xl shadow-sm p-6 hover:bg-gray-100 transition">
+          <summary class="font-bold text-lg text-gray-900 cursor-pointer">Da li je laka montaža?</summary>
+          <p class="mt-2 text-gray-700">Izuzetno brza i laka montaža</p>
+        </details>
+        <details class="group bg-gray-50 rounded-xl shadow-sm p-6 hover:bg-gray-100 transition">
+          <summary class="font-bold text-lg text-gray-900 cursor-pointer">Koliko traje izrada?</summary>
+          <p class="mt-2 text-gray-700">Izrada maske za klimu traje 5-7 radnih dana.</p>
+        </details>
+      </div>
+    </div>
+
+    <!-- Kontakt -->
+    <div class="text-center">
+      <p class="text-lg text-gray-800">
+        Dostavljamo i montiramo <strong>maske za klimu</strong> širom Srbije. Za porudžbine i upite, kontaktirajte nas.
+      </p>
+      <a href="/kontakt" class="mt-6 inline-block bg-gray-900 text-white font-semibold py-3 px-8 rounded-full shadow hover:bg-gray-800 transition">
+        Kontaktiraj nas
+      </a>
+    </div>
+
+  </div>
+</section>
+
 
 </main>
