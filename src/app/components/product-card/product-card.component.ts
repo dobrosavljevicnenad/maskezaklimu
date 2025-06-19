@@ -33,7 +33,7 @@ ngOnInit(): void {
   this.isCarted = this.maskaService.isInCart(id, boja);
 
   // Title tag
-  this.title.setTitle(`Maska za klimu - ${naziv}`);
+  this.title.setTitle(`${naziv}`);
 
   // Meta description
   this.meta.updateTag({
@@ -49,7 +49,7 @@ ngOnInit(): void {
   });
 
   // Open Graph (za deljenje na društvenim mrežama)
-  this.meta.updateTag({ property: 'og:title', content: `Maska za klimu - ${naziv}` });
+  this.meta.updateTag({ property: 'og:title', content: `${naziv}` });
   this.meta.updateTag({ property: 'og:description', content: opis?.slice(0, 150) || `Pogledajte masku za klimu: ${naziv}.` });
   this.meta.updateTag({ property: 'og:url', content: canonicalUrl });
 }

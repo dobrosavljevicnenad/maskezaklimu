@@ -47,7 +47,7 @@ export class MaskaDetailComponent implements OnInit {
         const url = `https://maskezaklimu.rs/proizvod/${this.maska.slug}`;
         const slika = this.maska.slika?.[0]?.url || 'https://maskezaklimu.rs/assets/maska_za_profil.webp';
 
-        this.title.setTitle(`${naziv} - Maska za klimu`);
+        this.title.setTitle(`${naziv}`);
         this.meta.updateTag({ name: 'description', content: opis });
         this.meta.updateTag({ name: 'canonical', content: url });
 
