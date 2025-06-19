@@ -1,7 +1,7 @@
 [
   {
     "id": 1,
-    "naziv": "Dekorativna maska za klimu - Model 1",
+    "naziv": "Maska za klimu - Model 1",
     "slug": "maska-za-klimu-model-1",
     "opis": "Stilizovana zaštita za klima uređaj izrađena od laserski rezanog čelika. Savršena za zaštitu i estetiku vašeg doma.",
     "cena": 10980,
@@ -16,7 +16,7 @@
   },
   {
     "id": 2,
-    "naziv": "Dekorativna maska za klimu - Model 2",
+    "naziv": "Maska za klimu - Model 2",
     "slug": "maska-za-klimu-model-2",
     "opis": "Elegantna maska za klima uređaj sa modernim perforacijama. Pruža zaštitu i unapređuje izgled fasade.",
     "cena": 10980,
@@ -31,7 +31,7 @@
   },
   {
     "id": 3,
-    "naziv": "Dekorativna maska za klimu - Model 3",
+    "naziv": "Maska za klimu - Model 3",
     "slug": "maska-za-klimu-model-3",
     "opis": "Funkcionalna i dekorativna maska za vašu klimu, izrađena od kvalitetnog metala otporna na vremenske uslove.",
     "cena": 10980,
@@ -46,7 +46,7 @@
   },
   {
     "id": 4,
-    "naziv": "Dekorativna maska za klimu - Model 4",
+    "naziv": "Maska za klimu - Model 4",
     "slug": "maska-za-klimu-model-4",
     "opis": "Unikatni dizajn maske za klimu, idealna za modernu arhitekturu i zaštitu spoljne jedinice.",
     "cena": 10980,
@@ -61,7 +61,7 @@
   },
   {
     "id": 5,
-    "naziv": "Dekorativna maska za klimu - Model 5",
+    "naziv": "Maska za klimu - Model 5",
     "slug": "maska-za-klimu-model-5",
     "opis": "Maska za klimu sa dizajnom u obliku kvadratica. Kombinacija estetike i funkcionalnosti.",
     "cena": 10980,
@@ -76,7 +76,7 @@
   },
   {
     "id": 6,
-    "naziv": "Dekorativna maska za klimu - Model 6",
+    "naziv": "Maska za klimu - Model 6",
     "slug": "maska-za-klimu-model-6",
     "opis": "Visokokvalitetna maska za klima uređaj sa elegantnim rezovima i minimalističkim izgledom.",
     "cena": 10980,
