@@ -3,12 +3,15 @@
 
   <!-- Slika sa badge-evima -->
   <a [routerLink]="['/proizvod', product.slug]" class="block overflow-hidden relative rounded-t-2xl">
-    <img
-      [src]="product.slika[0].url"
-      alt="{{ product.naziv }}"
-      class="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-105"
-      itemprop="image"
-    />
+<img
+  [src]="product.slika[0].url"
+  alt="{{ product.naziv }}"
+  class="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-105"
+  [ngStyle]="product.id === 1 ? {'object-position': 'center 20%'} : {}"
+  itemprop="image"
+/>
+
+
 
     <!-- Badge-evi -->
     <div class="absolute top-3 left-3 space-y-2">
