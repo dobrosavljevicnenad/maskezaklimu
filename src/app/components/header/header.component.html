@@ -2,10 +2,10 @@
   <div class="container mx-auto flex flex-wrap justify-between items-center gap-4">
 
     <!-- Logo -->
-    <div routerLink="/" class="flex items-center max-h-[60px] cursor-pointer">
+    <div routerLink="/" class="flex items-center max-h-[60px] cursor-pointer" title="Dekorativne maske za klimu - početna stranica">
       <img src="assets/logo.webp"
-           alt="Logo"
-           class="max-h-[80px] w-auto transform scale-110 object-contain" />
+          alt="Dekorativne maske za klimu - brend DEKORATIVNE MASKE"
+          class="max-h-[80px] w-auto transform scale-110 object-contain" />
       <div class="ml-3 text-center leading-tight">
         <span class="!text-base !sm:text-lg !font-serif !italic !text-gray-700">DEKORATIVNE MASKE</span>
         <span class="!block !text-base !sm:text-lg !font-serif !italic !text-gray-700">ZA KLIMU</span>
@@ -35,7 +35,8 @@
 
       <div class="flex items-center gap-1 text-sm text-gray-700">
         <a href="tel:+381659775995"
-          class="flex items-center gap-1 hover:text-green-700 hover:scale-105 transition-all font-medium">
+          class="flex items-center gap-1 hover:text-green-700 hover:scale-105 transition-all font-medium"
+          title="Pozovite nas za porudžbine maski za klimu">
           <mat-icon>call</mat-icon>
           <span class="hidden sm:inline">Pozovi</span>
         </a>
@@ -48,14 +49,14 @@
 
       <!-- Facebook i Instagram -->
       <div class="flex items-center">
-        <a href="https://www.facebook.com/maskezaklimu" target="_blank" rel="noopener">
+        <a href="https://www.facebook.com/maskezaklimu" target="_blank" rel="noopener" title="Facebook stranica Dekorativne maske za klimu">
           <mat-icon svgIcon="facebook" class="text-gray-600 hover:scale-125 transition-transform cursor-pointer"></mat-icon>
         </a>
       </div>
 
       <div>
         <a href="https://www.instagram.com/maske_za_klimu" target="_blank" rel="noopener">
-          <mat-icon svgIcon="instagram" class="text-gray-600 hover:scale-125 transition-transform cursor-pointer"></mat-icon>
+          <mat-icon svgIcon="instagram" class="text-gray-600 hover:scale-125 transition-transform cursor-pointer" title="Instagram stranica Dekorativne maske za klimu"></mat-icon>
         </a>
       </div>
 
@@ -82,3 +83,20 @@
     </div>
   </div>
 </header>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Store",
+  "name": "Dekorativne maske za klimu",
+  "image": "https://maskezaklimu.rs/assets/logo.webp",
+  "telephone": "+381659775995",
+  "url": "https://maskezaklimu.rs",
+  "sameAs": [
+    "https://www.facebook.com/maskezaklimu",
+    "https://www.instagram.com/maske_za_klimu"
+  ],
+  "description": "Ručno izrađene dekorativne maske za spoljne jedinice klima uređaja. Kvalitetna zaštita i moderan dizajn za vaš dom."
+}
+</script>
+
