@@ -15,15 +15,17 @@ export class GalerijaComponent {
     'cg_nocna.webp',
     'master.webp',
     'zemun.webp',
-    'rados.webp'
+    'rados.webp',
+    'lekino_brdo.webp'
   ];
 
   positions = [
     'object-[center_top]',   // 1
     'object-[center_20%]',   // 2
     'object-[center_25%]',   // 3
-    'object-[center_60%]',         // 4
+    'object-[center_60%]',   // 4
     'object-[center_40%]',   // 5
     'object-[center_75%]',   // 6
+    'object-[center_45%]',   // 7
   ];
 }
