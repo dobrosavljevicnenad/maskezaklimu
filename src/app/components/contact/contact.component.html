@@ -1,78 +1,131 @@
-<section class="!max-w-3xl !mx-auto !p-6 !bg-white !rounded-lg !shadow-md !my-10">
-  <h1 class="!text-3xl !font-bold !mb-4">
-    Kontaktirajte nas za dekorativne maske za klime
-  </h1>
+<section class="!max-w-4xl !mx-auto !px-4 md:!px-6 !py-12 !bg-white !rounded-2xl !shadow-lg !my-12">
 
-  <p class="!mb-6 !text-gray-700">
-    Imate pitanje u vezi sa <strong>dekorativnim maskama za klima uređaje</strong>? Pošaljite nam poruku putem forme ispod — odgovaramo brzo i rado pomažemo oko izbora prave <strong>maske za vašu klimu</strong>, dimenzija, boje i materijala.
-  </p>
-
-  <form (ngSubmit)="sendMessage()" class="!space-y-4">
-    <div>
-      <label class="!block !mb-1 !font-medium" for="name">Ime i prezime *</label>
-      <input
-        id="name"
-        type="text"
-        [(ngModel)]="contact.name"
-        name="name"
-        required
-        class="!w-full !border !px-4 !py-2 !rounded"
-      />
-    </div>
-
-    <div>
-      <label class="!block !mb-1 !font-medium" for="email">Email *</label>
-      <input
-        id="email"
-        type="email"
-        [(ngModel)]="contact.email"
-        name="email"
-        required
-        class="!w-full !border !px-4 !py-2 !rounded"
-      />
-    </div>
-
-    <div>
-      <label class="!block !mb-1 !font-medium" for="phone">Telefon</label>
-      <input
-        id="phone"
-        type="text"
-        [(ngModel)]="contact.phone"
-        name="phone"
-        class="!w-full !border !px-4 !py-2 !rounded"
-      />
-    </div>
-
-    <div>
-      <label class="!block !mb-1 !font-medium" for="message">Poruka *</label>
-      <textarea
-        id="message"
-        [(ngModel)]="contact.message"
-        name="message"
-        required
-        rows="5"
-        class="!w-full !border !px-4 !py-2 !rounded"
-      ></textarea>
-    </div>
-
-    <button
-      type="submit"
-      class="!w-full !bg-blue-600 !text-white !py-2 !rounded !hover:!bg-blue-700 !transition"
-    >
-      Pošalji poruku
-    </button>
-  </form>
-
-  <!-- SEO tekst -->
-  <div class="!mt-8 !text-sm !text-gray-600 !space-y-2">
-    <p>
-      Naše <strong>maske za klimu</strong> su modernog dizajna, dostupne u više boja i izrađene od kvalitetnih materijala. Idealne su za stambene i poslovne objekte, funkcionalne i estetski privlačne.
+  <!-- HERO UVOD -->
+  <header class="!mb-10">
+    <h1 class="!text-3xl md:!text-4xl !font-extrabold !mb-4">
+      Kontakt – dekorativne maske za klime po meri
+    </h1>
+    <p class="!text-gray-700 !max-w-2xl">
+      Tražite kvalitetne i estetske <strong>maske za klima uređaje</strong>?
+      Javite nam se i dobićete brzu preporuku idealne <strong>maske za vašu klimu</strong>,
+      prilagođene prostoru, dimenzijama i dizajnu enterijera.
     </p>
+  </header>
+
+  <!-- SADRŽAJ + FORMA -->
+  <div class="!grid md:!grid-cols-2 !gap-10">
+
+    <!-- LEVA STRANA – BENEFITI -->
+    <div class="!space-y-5">
+      <h2 class="!text-xl !font-semibold">
+        Zašto odabrati naše maske za klimu?
+      </h2>
+
+      <ul class="!space-y-3 !text-gray-700">
+        <li>✔️ Diskretan i moderan dizajn za svaki prostor</li>
+        <li>✔️ Izrada po meri – savršeno uklapanje uz klimu</li>
+        <li>✔️ Kvalitetni materijali otporni na spoljašnje uslove</li>
+        <li>✔️ Bez ometanja protoka vazduha</li>
+      </ul>
+
+      <p class="!text-sm !text-gray-600">
+        Naše <strong>dekorativne maske za klime</strong> namenjene su kako za
+        stambene objekte, tako i za poslovne prostore, lokale i apartmane.
+        Svaki model je pažljivo dizajniran da kombinuje funkcionalnost i estetiku.
+      </p>
+    </div>
+
+    <!-- DESNA STRANA – FORMA -->
+    <form (ngSubmit)="sendMessage()" class="!space-y-4 !bg-gray-50 !p-6 !rounded-xl !border">
+
+      <div>
+        <label class="!block !mb-1 !font-medium" for="name">
+          Ime i prezime <span class="!text-red-500">*</span>
+        </label>
+        <input
+          id="name"
+          type="text"
+          [(ngModel)]="contact.name"
+          name="name"
+          required
+          class="!w-full !border !px-4 !py-2 !rounded !focus:!outline-none !focus:!ring-2 !focus:!ring-blue-500"
+        />
+      </div>
+
+      <div>
+        <label class="!block !mb-1 !font-medium" for="email">
+          Email adresa <span class="!text-red-500">*</span>
+        </label>
+        <input
+          id="email"
+          type="email"
+          [(ngModel)]="contact.email"
+          name="email"
+          required
+          class="!w-full !border !px-4 !py-2 !rounded !focus:!outline-none !focus:!ring-2 !focus:!ring-blue-500"
+        />
+      </div>
+
+      <div>
+        <label class="!block !mb-1 !font-medium" for="phone">
+          Telefon
+        </label>
+        <input
+          id="phone"
+          type="text"
+          [(ngModel)]="contact.phone"
+          name="phone"
+          class="!w-full !border !px-4 !py-2 !rounded"
+        />
+      </div>
+
+      <div>
+        <label class="!block !mb-1 !font-medium" for="message">
+          Vaša poruka <span class="!text-red-500">*</span>
+        </label>
+        <textarea
+          id="message"
+          [(ngModel)]="contact.message"
+          name="message"
+          required
+          rows="5"
+          class="!w-full !border !px-4 !py-2 !rounded !resize-none"
+        ></textarea>
+      </div>
+
+      <button
+        type="submit"
+        class="!w-full !bg-blue-600 !text-white !py-3 !rounded-lg !font-medium !hover:!bg-blue-700 !transition"
+      >
+        Pošalji upit
+      </button>
+    </form>
+  </div>
+
+  <!-- SEO BLOK -->
+  <div class="!mt-12 !border-t !pt-8 !space-y-4 !text-sm !text-gray-600">
     <p>
-      Ako želite da vaša klima bude diskretna i elegantna, pogledajte <a routerLink="" class="!underline !underline-offset-4 !hover:!no-underline !font-medium">kompletnu ponudu maski za klimu</a> i izaberite odgovarajući model.
+      Ukoliko vam je potrebna <strong>maska za klimu po meri</strong>,
+      stojimo vam na raspolaganju za savet i izradu optimalnog rešenja.
+      Pravilno izrađena maska doprinosi urednom izgledu fasade ili enterijera,
+      bez uticaja na rad klima uređaja.
     </p>
+
     <p>
-      Kontaktirajte nas odmah i saznajte više o <strong>maskama po meri</strong>, dostupnim dimenzijama i bojama, kao i pravilnoj montaži za optimalan protok vazduha.
+      Pogledajte našu
+      <a
+        routerLink=""
+        class="!underline !underline-offset-4 !font-medium !hover:!no-underline"
+      >
+        kompletnu ponudu dekorativnih maski za klimu
+      </a>
+      i izaberite model koji se savršeno uklapa u vaš prostor.
+    </p>
+
+    <p>
+      Kontakt forma služi za brze upite u vezi dimenzija, boja, montaže i dostupnosti.
+      Odgovaramo u najkraćem mogućem roku.
     </p>
   </div>
+
 </section>
