@@ -4,11 +4,12 @@ import { RouterModule } from '@angular/router';
 import { Meta, Title } from '@angular/platform-browser';
 import { MaskaService } from '../../services/maska.service';
 import { ProductCardComponent } from '../product-card/product-card.component';
+import { MatIconModule } from '@angular/material/icon';
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [CommonModule, ProductCardComponent, RouterModule],
+  imports: [CommonModule, ProductCardComponent, RouterModule, MatIconModule],
   templateUrl: './home.component.html',
   styleUrl: './home.component.css'
 })
