@@ -29,7 +29,7 @@ export class HomeComponent {
     const title = 'Maske za klimu – Zaštita i dizajn na jednom mestu';
     const desc  = 'Dekorativne maske za spoljne jedinice klima uređaja – CNC sečen lim, otporne na rđu, izrađujemo po vašoj želji. Brza isporuka širom Srbije.';
     const url   = 'https://maskezaklimu.rs/';
-    const image = 'https://maskezaklimu.rs/assets/klima_br1.webp';
+    const image = 'https://maskezaklimu.rs/assets/maska-za-klimu-sitni-listovi.webp';
 
     // Title & Meta Description
     this.title.setTitle(title);
