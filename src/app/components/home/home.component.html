@@ -1,45 +1,88 @@
 <main class="bg-gradient-to-br from-gray-100 to-white px-6 sm:px-12 md:px-20 py-5" role="main">
 
-<!-- Hero sekcija -->
-<section class=" !mx-auto !text-center !py-24 !px-6 sm:!px-8">
-  <h1
-    class="!text-center !text-5xl sm:!text-7xl md:!text-[6.5rem] !font-serif !italic !font-extrabold !text-gray-900 !tracking-wide !uppercase !mb-6"
-    style="font-family: 'Playfair Display', serif;">
-    Maske za klimu
-  </h1>
+  <!-- Hero sekcija -->
+  <section class=" !mx-auto !text-center !py-24 !px-6 sm:!px-8" aria-labelledby="hero-title">
+    <h1
+      id="hero-title"
+      class="!text-center !text-5xl sm:!text-7xl md:!text-[6.5rem] !font-serif !italic !font-extrabold !text-gray-900 !tracking-wide !uppercase !mb-6"
+      style="font-family: 'Playfair Display', serif;">
+      Maske za klimu
+    </h1>
 
-  <div class="!h-[2px] !bg-gray-300 !mx-auto !mb-8 !w-64 sm:!w-64 md:!w-96"></div>
+    <div class="!h-[2px] !bg-gray-300 !mx-auto !mb-8 !w-64 sm:!w-64 md:!w-96"></div>
 
-  <p class="!text-2xl sm:!text-3xl !font-light !text-gray-700 !max-w-4xl !mx-auto !leading-relaxed !mb-5"
-     style="font-family: 'Inter', sans-serif;">
-    Želite da vaša klima bude ukras, a ne mana fasade?
-  </p>
+    <p class="!text-2xl sm:!text-3xl !font-light !text-gray-700 !max-w-4xl !mx-auto !leading-relaxed !mb-5"
+       style="font-family: 'Inter', sans-serif;">
+      Želite da vaša klima bude ukras, a ne mana fasade?
+    </p>
 
-<p
-  class="hidden lg:block !text-lg sm:!text-xl !text-gray-600 !max-w-4xl !mx-auto !leading-relaxed !mb-4"
-  style="font-family: 'Inter', sans-serif;"
->
-  Naše <strong>dekorativne maske za klimu</strong> štite uređaj od vremenskih uslova i pretvaraju ga u moderan element vašeg doma ili poslovnog prostora.
-</p>
+    <p
+      class="!hidden !lg:block !text-lg sm:!text-xl !text-gray-600 !max-w-5xl !mx-auto !leading-relaxed !mb-6"
+      style="font-family: 'Inter', sans-serif;"
+    >
+      Izrađujemo <strong>ukrasne maske za klimu</strong> (poznate i kao <strong>zaštita za klimu</strong>,
+      <strong>kutija za klimu</strong> ili <strong>maska za klima uređaj</strong>) koje elegantno prekrivaju
+      <strong>spoljnu jedinicu klime</strong>, štite je od vremenskih uslova i uklapaju se u moderan enterijer/eksterijer.
+    </p>
 
+    <div class="!mt-10 !max-w-5xl !mx-auto grid grid-cols-1 sm:grid-cols-3 gap-4 text-left"
+         style="font-family: 'Inter', sans-serif;">
+      <div class="bg-white/70 border border-gray-200 rounded-2xl p-5 shadow-sm">
+        <p class="!text-gray-900 !font-semibold !mb-1">Izrada po meri</p>
+        <p class="!text-gray-700 !text-sm !leading-relaxed">
+          Dimenzije, boja i dizajn prilagođeni vašoj klimi i prostoru.
+        </p>
+      </div>
+      <div class="bg-white/70 border border-gray-200 rounded-2xl p-5 shadow-sm">
+        <p class="!text-gray-900 !font-semibold !mb-1">Za spolja i unutra</p>
+        <p class="!text-gray-700 !text-sm !leading-relaxed">
+          Rešenja za <strong>spoljnu jedinicu</strong> i potrebe enterijera (estetika + funkcionalnost).
+        </p>
+      </div>
+      <div class="bg-white/70 border border-gray-200 rounded-2xl p-5 shadow-sm">
+        <p class="!text-gray-900 !font-semibold !mb-1">Brza izrada</p>
+        <p class="!text-gray-700 !text-sm !leading-relaxed">
+          Tipično <strong>5–7 radnih dana</strong>, dostava širom Srbije.
+        </p>
+      </div>
+    </div>
 
-  <div class="!mt-12">
-    <a routerLink="/galerija"
-       class="!inline-block !bg-gray-900 !text-white !font-semibold !text-base sm:!text-lg !py-3 !px-8 !rounded-full !shadow-md hover:!bg-gray-800 !transition-all !duration-300 !transform hover:!-translate-y-0.5"
-       style="font-family: 'Inter', sans-serif;"
-       aria-label="Pogledajte ponudu maski za klimu">
-      Pogledajte naše radove
-    </a>
-  </div>
-</section>
+    <div class="!mt-12 flex flex-col sm:flex-row gap-4 justify-center items-center">
+      <a routerLink="/galerija"
+         class="!inline-block !bg-gray-900 !text-white !font-semibold !text-base sm:!text-lg !py-3 !px-8 !rounded-full !shadow-md hover:!bg-gray-800 !transition-all !duration-300 !transform hover:!-translate-y-0.5"
+         style="font-family: 'Inter', sans-serif;"
+         aria-label="Pogledajte ponudu maski za klimu">
+        Pogledajte naše radove
+      </a>
 
+      <a routerLink="/kontakt"
+         class="!inline-block !bg-white !text-gray-900 !font-semibold !text-base sm:!text-lg !py-3 !px-8 !rounded-full !shadow-md border border-gray-300 hover:!bg-gray-50 !transition-all !duration-300 !transform hover:!-translate-y-0.5"
+         style="font-family: 'Inter', sans-serif;"
+         aria-label="Kontaktirajte nas za izradu maske za klimu po meri">
+        Pošaljite upit za izradu po meri
+      </a>
+    </div>
+
+    <p class="!mt-6 !text-sm !text-gray-600 !max-w-5xl !mx-auto !leading-relaxed"
+       style="font-family: 'Inter', sans-serif;">
+      Dostava: <strong>Beograd</strong>, <strong>Novi Sad</strong>, <strong>Niš</strong>, <strong>Kragujevac</strong> i cela Srbija.
+      Ako vas zanima <strong>maska za klimu cena</strong> – dobijate ponudu pre izrade, prema dimenzijama i odabiru završne obrade.
+    </p>
+  </section>
 
   <!-- Proizvodi -->
-  <section id="proizvodi" aria-labelledby="naslov-preporuke" class="scroll-mt-20">
+  <section id="proizvodi" aria-labelledby="naslov-preporuke" class="!scroll-mt-20">
     <h2 id="naslov-preporuke"
-        class="!text-3xl !sm:text-4xl !font-serif !italic !text-center !text-gray-800 mb-14">
+        class="!text-3xl !sm:text-4xl !font-serif !italic !text-center !text-gray-800 mb-6">
       Naša preporuka – maske za klimu
     </h2>
+
+    <p class="!text-center !text-gray-700 !max-w-5xl !mx-auto !mb-14 !leading-relaxed"
+       style="font-family: 'Inter', sans-serif;">
+      Najčešće se traže: <strong>maska za klimu</strong>, <strong>maske za klime</strong>,
+      <strong>maske za klima uređaje</strong>, kao i <strong>ukrasna kutija za klimu</strong>.
+      U nastavku su primeri gotovih rešenja (galerija sadrži još više modela i ideja).
+    </p>
 
     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 max-w-6xl mx-auto">
       <div *ngFor="let product of maske" class="flex justify-center">
@@ -55,231 +98,293 @@
           </div>
 
           <app-product-card [product]="product"></app-product-card>
+
+          <!-- Hidden image for crawlers / preloading -->
           <img [src]="product.slika[0]?.url" [alt]="'Maska za klimu - ' + product.naziv"
                class="hidden" loading="lazy" />
         </article>
       </div>
     </div>
+
+    <div class="max-w-6xl mx-auto mt-10 text-center">
+      <a routerLink="/galerija"
+         class="inline-block bg-gray-900 text-white font-semibold text-base sm:text-lg py-3 px-8 rounded-full shadow-md hover:bg-gray-800 transition-all duration-300"
+         style="font-family: 'Inter', sans-serif;">
+        Pogledajte celu galeriju maski
+      </a>
+    </div>
+  </section>
+
+  <!-- Semantic/intent sekcija -->
+  <section class="max-w-6xl mx-auto mt-24 mb-10 px-4 sm:px-6" aria-labelledby="resenja-title">
+    <div class="bg-white rounded-3xl shadow-xl p-10 sm:p-14">
+      <h2 id="resenja-title" class="text-center text-3xl sm:text-4xl font-serif italic font-extrabold text-gray-900 relative mb-10">
+        Rešenja za sve varijacije pretrage: maska, zaštita ili kutija za klimu
+        <span class="block mt-2 h-[3px] w-32 sm:w-48 md:w-64 bg-gradient-to-r from-gray-300 to-gray-400 mx-auto rounded-full"></span>
+      </h2>
+
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-8" style="font-family: 'Inter', sans-serif;">
+        <div class="bg-gradient-to-br from-white to-gray-50 border rounded-2xl p-8 shadow hover:shadow-lg transition">
+          <h3 class="text-xl font-semibold text-gray-900 mb-3">Maska za spoljnu jedinicu klime</h3>
+          <p class="text-gray-700 leading-relaxed">
+            Najtraženije rešenje za fasade, terase i balkone. Naša <strong>zaštita za spoljnu jedinicu klime</strong>
+            je dizajnirana da štiti, a da pritom ne remeti protok vazduha.
+          </p>
+        </div>
+
+        <div class="bg-gradient-to-br from-white to-gray-50 border rounded-2xl p-8 shadow hover:shadow-lg transition">
+          <h3 class="text-xl font-semibold text-gray-900 mb-3">Ukrasna maska za klimu (estetika + funkcija)</h3>
+          <p class="text-gray-700 leading-relaxed">
+            Ako pretražujete <strong>dekorativna maska za klimu</strong>, <strong>obloga</strong>, <strong>oklop</strong> ili <strong>skrivač za klimu</strong> –
+            cilj je isti: uredan, moderan izgled prostora uz pouzdanu zaštitu.
+          </p>
+        </div>
+
+        <div class="bg-gradient-to-br from-white to-gray-50 border rounded-2xl p-8 shadow hover:shadow-lg transition">
+          <h3 class="text-xl font-semibold text-gray-900 mb-3">Kutija za klimu / ukrasna kutija</h3>
+          <p class="text-gray-700 leading-relaxed">
+            Kada ljudi ukucaju <strong>kutija za klimu ukrasna</strong> ili <strong>ukrasne kutije za klimu</strong>,
+            obično traže čvrsto, “gotovo” rešenje koje vizuelno zatvara jedinicu – baš to i pravimo.
+          </p>
+        </div>
+      </div>
+
+      <p class="!text-center !text-gray-700 !max-w-5xl !mx-auto !mt-10 !leading-relaxed">
+        Pogledajte primere izrade u <a routerLink="/galerija" class="underline font-semibold text-gray-900">galeriji</a>,
+        ili pročitajte detalje o isporuci na strani <a routerLink="/dostava-i-povracaj" class="underline font-semibold text-gray-900">dostava i povraćaj</a>.
+      </p>
+    </div>
   </section>
 
   <!-- Maske za klimu – prednosti i karakteristike -->
-<section class="max-w-6xl mx-auto mt-24 mb-20 px-4 sm:px-6">
-  <div class="bg-white rounded-3xl shadow-xl p-12 sm:p-16 space-y-20">
+  <section class="max-w-6xl mx-auto mt-14 mb-20 px-4 sm:px-6" aria-labelledby="prednosti-title">
+    <div class="bg-white rounded-3xl shadow-xl p-12 sm:p-16 space-y-20">
 
-    <h2 class="text-center text-3xl sm:text-4xl font-serif italic font-extrabold text-gray-900 relative mb-10">
-      Maske za klimu – kvalitet, dizajn i izrada po meri
-      <span class="block mt-2 h-[3px] w-32 sm:w-48 md:w-64 bg-gradient-to-r from-gray-300 to-gray-400 mx-auto rounded-full"></span>
+      <h2 id="prednosti-title" class="text-center text-3xl sm:text-4xl font-serif italic font-extrabold text-gray-900 relative mb-10">
+        Maske za klimu – kvalitet, dizajn i izrada po meri
+        <span class="block mt-2 h-[3px] w-32 sm:w-48 md:w-64 bg-gradient-to-r from-gray-300 to-gray-400 mx-auto rounded-full"></span>
+      </h2>
+
+      <p class="!text-center !max-w-4xl !mx-auto !text-gray-700 !text-lg" style="font-family: 'Inter', sans-serif;">
+        Naše <strong>maske za klimu</strong> su rešenje za sakrivanje i zaštitu klima uređaja,
+        posebno kada je u pitanju <strong>spoljna jedinica</strong>. Kombinujemo vrhunski dizajn,
+        čvrste materijale i izradu po meri – uz fokus na sigurnost i protok vazduha.
+      </p>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8" style="font-family: 'Inter', sans-serif;">
+
+        <div class="bg-gradient-to-br from-white to-gray-50 border rounded-2xl p-8 shadow hover:shadow-lg transition">
+          <h3 class="text-2xl font-semibold text-gray-900 mb-3">Debljina lima (1.5mm)</h3>
+          <p class="!text-gray-700">
+            Koristimo <strong>maske za klimu od lima debljine 1.5mm</strong>, što obezbeđuje čvrstinu,
+            stabilnost i dug vek trajanja.
+          </p>
+        </div>
+
+        <div class="bg-gradient-to-br from-white to-gray-50 border rounded-2xl p-8 shadow hover:shadow-lg transition">
+          <h3 class="text-2xl font-semibold text-gray-900 mb-3">Maske za klimu po meri</h3>
+          <p class="!text-gray-700">
+            Izrađujemo <strong>maske za klimu po meri</strong> – prilagođene dimenzijama i prostoru,
+            uz mogućnost personalizacije dizajna i boje.
+          </p>
+        </div>
+
+        <div class="bg-gradient-to-br from-white to-gray-50 border rounded-2xl p-8 shadow hover:shadow-lg transition">
+          <h3 class="text-2xl font-semibold text-gray-900 mb-3">Ukrasne maske modernog dizajna</h3>
+          <p class="!text-gray-700">
+            Naše <strong>ukrasne maske za klimu</strong> uklapaju se u moderne fasade,
+            terase i balkone, podižući vizuelni kvalitet prostora.
+          </p>
+        </div>
+
+        <div class="bg-gradient-to-br from-white to-gray-50 border rounded-2xl p-8 shadow hover:shadow-lg transition">
+          <h3 class="text-2xl font-semibold text-gray-900 mb-3">Ne utiče na rad i protok vazduha</h3>
+          <p class="!text-gray-700">
+            Konstrukcija maski omogućava <strong>nesmetanu cirkulaciju vazduha</strong>,
+            bez pregrevanja ili smanjenja efikasnosti klima uređaja.
+          </p>
+        </div>
+
+        <div class="bg-gradient-to-br from-white to-gray-50 border rounded-2xl p-8 shadow hover:shadow-lg transition">
+          <h3 class="text-2xl font-semibold text-gray-900 mb-3">Izdržljive maske za spoljašnju upotrebu</h3>
+          <p class="!text-gray-700">
+            <strong>Metalne maske za klimu</strong> otporne su na vlagu, UV zračenje,
+            kišu, sneg i mehanička oštećenja – idealne za dugotrajnu montažu.
+          </p>
+        </div>
+
+        <div class="bg-gradient-to-br from-white to-gray-50 border rounded-2xl p-8 shadow hover:shadow-lg transition">
+          <h3 class="text-2xl font-semibold text-gray-900 mb-3">Jednostavna montaža bez majstora</h3>
+          <p class="!text-gray-700">
+            Svaka <strong>maska za klimu</strong> ima pripremljene rupe za tiplovanje,
+            što omogućava <strong>brzu i jednostavnu DIY montažu</strong>.
+          </p>
+        </div>
+
+        <div class="bg-gradient-to-br from-white to-gray-50 border rounded-2xl p-8 shadow hover:shadow-lg transition">
+          <h3 class="text-2xl font-semibold text-gray-900 mb-3">Brza izrada i isporuka</h3>
+          <p class="!text-gray-700">
+            Rok izrade i isporuke je u proseku <strong>5–7 radnih dana</strong>.
+            Isporučujemo širom Srbije: <strong>Beograd, Novi Sad, Niš, Kragujevac</strong> i ostali gradovi.
+          </p>
+        </div>
+
+        <div class="bg-gradient-to-br from-white to-gray-50 border rounded-2xl p-8 shadow hover:shadow-lg transition">
+          <h3 class="text-2xl font-semibold text-gray-900 mb-3">Širok izbor boja i završne obrade</h3>
+          <p class="!text-gray-700">
+            Nudimo više boja i završnih obrada kako bi se
+            <strong>maska za klimu savršeno uklopila</strong> u vaš prostor.
+          </p>
+        </div>
+
+        <div class="bg-gradient-to-br from-white to-gray-50 border rounded-2xl p-8 shadow hover:shadow-lg transition">
+          <h3 class="text-2xl font-semibold text-gray-900 mb-3">Specijalizovani proizvođač u Srbiji</h3>
+          <p class="!text-gray-700">
+            Kao <strong>specijalizovani proizvođač maski za klimu</strong>,
+            fokusirani smo na kvalitet izrade, pouzdanost i zadovoljstvo kupaca.
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ (sa schema.org microdata) -->
+  <section class="!max-w-6xl !mx-auto !px-4 sm:!px-6 !mt-24 !mb-20"
+           aria-labelledby="faq-title"
+           itemscope
+           itemtype="https://schema.org/FAQPage">
+    <h2
+      id="faq-title"
+      class="!text-center !text-3xl sm:!text-2xl !font-serif !font-extrabold !text-gray-900 !mb-14">
+      Često postavljana pitanja za maske za klimu
+      <span
+        class="!block !mt-3 !h-[3px] !w-32 sm:!w-48 md:!w-64 !bg-gradient-to-r from-gray-300 to-gray-400 !mx-auto !rounded-full"></span>
     </h2>
 
-    <p class="text-center max-w-4xl mx-auto text-gray-700 text-lg">
-      Naše <strong>maske za klimu</strong> predstavljaju idealno rešenje za sakrivanje spoljne jedinice klime,
-      bez narušavanja cirkulacije vazduha. Kombinujemo vrhunski dizajn, čvrste materijale i izradu po meri.
-    </p>
+    <div
+      class="!grid !grid-cols-1 md:!grid-cols-2 !gap-8 !text-gray-700 !leading-relaxed"
+      style="font-family: 'Inter', sans-serif;"
+    >
 
-    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-
-      <div class="bg-gradient-to-br from-white to-gray-50 border rounded-2xl p-8 shadow hover:shadow-lg transition">
-        <h3 class="text-2xl font-semibold text-gray-900 mb-3">
-          Debljina lima (1.5mm)
+      <!-- Q1 -->
+      <div class="!bg-gradient-to-br from-white to-gray-50 !border !border-gray-200 !rounded-2xl !p-8 !shadow"
+           itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+        <h3 class="!text-md !font-semibold !text-gray-900 !mb-3" itemprop="name">
+          Kolika je cena maske za klimu?
         </h3>
-        <p class="text-gray-700">
-          Koristimo <strong>maske za klimu od lima debljine 1.5mm</strong>, što obezbeđuje čvrstinu,
-          stabilnost i dug vek trajanja, za razliku od tankih i nestabilnih rešenja na tržištu.
-        </p>
+        <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+          <div itemprop="text">
+            <p>
+              <strong>Cena standardne maske za klimu iznosi 12480 dinara.</strong><br />
+              Svaku masku izrađujemo po meri i pre izrade dobijate jasnu ponudu (dimenzije, boja i završna obrada).
+            </p>
+          </div>
+        </div>
       </div>
 
-      <div class="bg-gradient-to-br from-white to-gray-50 border rounded-2xl p-8 shadow hover:shadow-lg transition">
-        <h3 class="text-2xl font-semibold text-gray-900 mb-3">
-          Maske za klimu po meri
+      <!-- Q2 -->
+      <div class="!bg-gradient-to-br from-white to-gray-50 !border !border-gray-200 !rounded-2xl !p-8 !shadow"
+           itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+        <h3 class="!text-md !font-semibold !text-gray-900 !mb-3" itemprop="name">
+          Da li radite maske za klimu u Beogradu?
         </h3>
-        <p class="text-gray-700">
-          Izrađujemo <strong>maske za klimu po meri</strong> – prilagođene vašim dimenzijama,
-          modelu klime i prostoru, uz mogućnost personalizacije dizajna i boje.
-        </p>
+        <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+          <div itemprop="text">
+            <p>
+              Da. Izrađujemo i isporučujemo <strong>maske za klimu u Beogradu</strong>, kao i u svim većim gradovima širom Srbije.
+            </p>
+          </div>
+        </div>
       </div>
 
-      <div class="bg-gradient-to-br from-white to-gray-50 border rounded-2xl p-8 shadow hover:shadow-lg transition">
-        <h3 class="text-2xl font-semibold text-gray-900 mb-3">
-          Ukrasne maske za klimu modernog dizajna
+      <!-- Q3 -->
+      <div class="!bg-gradient-to-br from-white to-gray-50 !border !border-gray-200 !rounded-2xl !p-8 !shadow !transition !hover:!shadow-lg"
+           itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+        <h3 class="!text-md !font-semibold !text-gray-900 !mb-3" itemprop="name">
+          Da li maske za klimu utiču na rad klima uređaja?
         </h3>
-        <p class="text-gray-700">
-          Naše <strong>ukrasne maske za klimu</strong> estetski se uklapaju u moderne fasade,
-          terase i balkone, podižući vizuelni kvalitet prostora.
-        </p>
+        <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+          <div itemprop="text">
+            <p>
+              Ne. Naše <strong>maske za klimu</strong> imaju pažljivo projektovane otvore koji omogućavaju nesmetan protok vazduha
+              i ne utiču na efikasnost uređaja.
+            </p>
+          </div>
+        </div>
       </div>
 
-      <div class="bg-gradient-to-br from-white to-gray-50 border rounded-2xl p-8 shadow hover:shadow-lg transition">
-        <h3 class="text-2xl font-semibold text-gray-900 mb-3">
-          Ne utiče na rad i protok vazduha
+      <!-- Q4 -->
+      <div class="!bg-gradient-to-br from-white to-gray-50 !border !border-gray-200 !rounded-2xl !p-8 !shadow !transition !hover:!shadow-lg"
+           itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+        <h3 class="!text-md !font-semibold !text-gray-900 !mb-3" itemprop="name">
+          Da li izrađujete maske za klimu po meri?
         </h3>
-        <p class="text-gray-700">
-          Konstrukcija maski za klimu omogućava <strong>nesmetanu cirkulaciju vazduha</strong>,
-          bez pregrevanja ili smanjenja efikasnosti klima uređaja.
-        </p>
+        <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+          <div itemprop="text">
+            <p>
+              Da. Izrađujemo <strong>maske za klimu po meri</strong>, u potpunosti prilagođene dimenzijama vaše spoljne jedinice,
+              uz izbor boje i dizajna.
+            </p>
+          </div>
+        </div>
       </div>
 
-      <div class="bg-gradient-to-br from-white to-gray-50 border rounded-2xl p-8 shadow hover:shadow-lg transition">
-        <h3 class="text-2xl font-semibold text-gray-900 mb-3">
-          Izdržljive maske za klimu za spoljašnju upotrebu
+      <!-- Q5 -->
+      <div class="!bg-gradient-to-br from-white to-gray-50 !border !border-gray-200 !rounded-2xl !p-8 !shadow !transition !hover:!shadow-lg"
+           itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+        <h3 class="!text-md !font-semibold !text-gray-900 !mb-3" itemprop="name">
+          Od kog materijala su izrađene maske za klimu?
         </h3>
-        <p class="text-gray-700">
-          <strong>Metalne maske za klimu</strong> otporne su na vlagu, UV zračenje,
-          kišu, sneg i mehanička oštećenja – idealne za dugotrajnu spoljašnju montažu.
-        </p>
+        <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+          <div itemprop="text">
+            <p>
+              Maske su izrađene od <strong>kvalitetnog plastificiranog lima debljine 1.5mm</strong>,
+              otpornog na vlagu, UV zračenje i spoljašnje vremenske uslove.
+            </p>
+          </div>
+        </div>
       </div>
 
-      <div class="bg-gradient-to-br from-white to-gray-50 border rounded-2xl p-8 shadow hover:shadow-lg transition">
-        <h3 class="text-2xl font-semibold text-gray-900 mb-3">
-          Jednostavna montaža bez majstora
+      <!-- Q6 -->
+      <div class="!bg-gradient-to-br from-white to-gray-50 !border !border-gray-200 !rounded-2xl !p-8 !shadow !transition !hover:!shadow-lg"
+           itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+        <h3 class="!text-md !font-semibold !text-gray-900 !mb-3" itemprop="name">
+          Koliko traje izrada i isporuka maski za klimu?
         </h3>
-        <p class="text-gray-700">
-          Svaka <strong>maska za klimu</strong> ima pripremljene rupe za tiplovanje,
-          što omogućava <strong>brzu i jednostavnu DIY montažu</strong>.
-        </p>
-      </div>
-
-      <div class="bg-gradient-to-br from-white to-gray-50 border rounded-2xl p-8 shadow hover:shadow-lg transition">
-        <h3 class="text-2xl font-semibold text-gray-900 mb-3">
-          Brza izrada i isporuka maski za klimu
-        </h3>
-        <p class="text-gray-700">
-          Rok izrade i isporuke je u proseku <strong>oko 7 radnih dana</strong>,
-          što nas svrstava među najbrže proizvođače maski za klimu za <strong>Beograd, Novi Sad, Nis, Kragujevac i celu Srbiju</strong>.
-        </p>
-      </div>
-
-      <div class="bg-gradient-to-br from-white to-gray-50 border rounded-2xl p-8 shadow hover:shadow-lg transition">
-        <h3 class="text-2xl font-semibold text-gray-900 mb-3">
-          Širok izbor boja i završne obrade
-        </h3>
-        <p class="text-gray-700">
-          Nudimo veliki izbor boja i završnih obrada kako bi se
-          <strong>maska za klimu savršeno uklopila</strong> u vaš enterijer ili eksterijer.
-        </p>
-      </div>
-
-      <div class="bg-gradient-to-br from-white to-gray-50 border rounded-2xl p-8 shadow hover:shadow-lg transition">
-        <h3 class="text-2xl font-semibold text-gray-900 mb-3">
-          Jedan od vodećih proizvođača maski za klimu u Srbiji
-        </h3>
-        <p class="text-gray-700">
-          Kao <strong>specijalizovani proizvođač maski za klimu</strong>,
-          prepoznati smo po kvalitetu izrade, pouzdanosti i velikom broju zadovoljnih kupaca.
-        </p>
+        <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+          <div itemprop="text">
+            <p>
+              Standardni rok izrade je <strong>5–7 radnih dana</strong>.
+              Dostavu vršimo širom Srbije – Beograd, Novi Sad, Niš i ostali gradovi.
+            </p>
+          </div>
+        </div>
       </div>
 
     </div>
-  </div>
-</section>
+  </section>
 
-
-  <section class="!max-w-6xl !mx-auto !px-4 sm:!px-6 !mt-24 !mb-20">
-  <!-- Naslov -->
-  <h2
-    class="!text-center !text-3xl sm:!text-2xl !font-serif !font-extrabold !text-gray-900 !mb-14">
-    Često postavljana pitanja za maske za klimu
-    <span
-      class="!block !mt-3 !h-[3px] !w-32 sm:!w-48 md:!w-64 !bg-gradient-to-r from-gray-300 to-gray-400 !mx-auto !rounded-full"></span>
-  </h2>
-
-  <div
-    class="!grid !grid-cols-1 md:!grid-cols-2 !gap-8 !text-gray-700 !leading-relaxed"
-    style="font-family: 'Inter', sans-serif;"
+  <!-- Floating Call Button -->
+  <a
+    href="tel:+381659775995"
+    aria-label="Pozovite nas"
+    class="
+      fixed bottom-6 right-6 z-50
+      flex items-center gap-3
+      bg-gray-900 text-white
+      px-5 py-3
+      rounded-full shadow-lg
+      transition-all duration-300
+      hover:bg-gray-800 hover:-translate-y-1
+      focus:outline-none focus:ring-2 focus:ring-gray-400
+    "
   >
-    <div class="!bg-gradient-to-br from-white to-gray-50 !border !border-gray-200 !rounded-2xl !p-8 !shadow">
-      <h3 class="!text-md !font-semibold !text-gray-900 !mb-3">
-        Kolika je cena maske za klimu?
-      </h3>
-      <p>
-        <strong>Cena standardne maske za klimu iznosi 12480 dinara.</strong> <br>
-        Svaku masku izrađujemo po meri i pre izrade dobijate jasnu ponudu.
-      </p>
-    </div>
+    <mat-icon class="text-white">call</mat-icon>
 
-    <!-- 🔹 NOVO FAQ – BEOGRAD -->
-    <div class="!bg-gradient-to-br from-white to-gray-50 !border !border-gray-200 !rounded-2xl !p-8 !shadow">
-      <h3 class="!text-md !font-semibold !text-gray-900 !mb-3">
-        Da li radite maske za klimu u Beogradu?
-      </h3>
-      <p>
-        Da. Izrađujemo i isporučujemo maske za klimu u Beogradu,
-        kao i u svim većim gradovima širom Srbije.
-      </p>
-    </div>
-
-    <!-- FAQ item -->
-    <div
-      class="!bg-gradient-to-br from-white to-gray-50 !border !border-gray-200 !rounded-2xl !p-8 !shadow !transition !hover:!shadow-lg"
-    >
-      <h3 class="!text-md !font-semibold !text-gray-900 !mb-3">
-        Da li maske za klimu utiču na rad klima uređaja?
-      </h3>
-      <p>
-        Ne. Naše <strong>maske za klimu</strong> imaju pažljivo projektovane otvore
-        koji omogućavaju nesmetan protok vazduha i ne utiču na efikasnost uređaja.
-      </p>
-    </div>
-
-    <div
-      class="!bg-gradient-to-br from-white to-gray-50 !border !border-gray-200 !rounded-2xl !p-8 !shadow !transition !hover:!shadow-lg"
-    >
-      <h3 class="!text-md !font-semibold !text-gray-900 !mb-3">
-        Da li izrađujete maske za klimu po meri?
-      </h3>
-      <p>
-        Da. Izrađujemo <strong>maske za klimu po meri</strong>, u potpunosti prilagođene
-        dimenzijama vaše spoljne jedinice, uz izbor boje i dizajna.
-      </p>
-    </div>
-
-    <div
-      class="!bg-gradient-to-br from-white to-gray-50 !border !border-gray-200 !rounded-2xl !p-8 !shadow !transition !hover:!shadow-lg"
-    >
-      <h3 class="!text-md !font-semibold !text-gray-900 !mb-3">
-        Od kog materijala su izrađene maske za klimu?
-      </h3>
-      <p>
-        Maske su izrađene od <strong>kvalitetnog plastificiranog lima debljine 1.5mm </strong>,
-        otpornog na vlagu, UV zračenje i spoljašnje vremenske uslove.
-      </p>
-    </div>
-
-    <div
-      class="!bg-gradient-to-br from-white to-gray-50 !border !border-gray-200 !rounded-2xl !p-8 !shadow !transition !hover:!shadow-lg"
-    >
-      <h3 class="!text-md !font-semibold !text-gray-900 !mb-3">
-        Koliko traje izrada i isporuka maski za klimu?
-      </h3>
-      <p>
-        Standardni rok izrade je <strong>5–7 radnih dana</strong>.
-        Dostavu vršimo širom Srbije – Beograd, Novi Sad, Niš i ostali gradovi.
-      </p>
-    </div>
-
-  </div>
-</section>
-
-<!-- Floating Call Button -->
-<a
-  href="tel:+381659775995"
-  aria-label="Pozovite nas"
-  class="
-    fixed bottom-6 right-6 z-50
-    flex items-center gap-3
-    bg-gray-900 text-white
-    px-5 py-3
-    rounded-full shadow-lg
-    transition-all duration-300
-    hover:bg-gray-800 hover:-translate-y-1
-    focus:outline-none focus:ring-2 focus:ring-gray-400
-  "
->
-  <mat-icon class="text-white">call</mat-icon>
-
-  <span class="hidden sm:inline font-medium tracking-wide">
-    065&nbsp;977&nbsp;5995
-  </span>
-</a>
-
+    <span class="hidden sm:inline font-medium tracking-wide">
+      065&nbsp;977&nbsp;5995
+    </span>
+  </a>
 
 </main>
