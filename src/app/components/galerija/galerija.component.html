@@ -1,24 +1,91 @@
-<section class="!max-w-7xl !mx-auto !px-4 !py-16 !bg-white">
-  <h1 class="!text-5xl !font-extrabold !text-center !text-gray-900 !mb-10 !tracking-tight">
+<section class="!max-w-7xl !mx-auto !px-4 !py-16 !bg-white" aria-labelledby="galerija-title">
+  <h1 id="galerija-title" class="!text-5xl !font-extrabold !text-center !text-gray-900 !mb-6 !tracking-tight">
     Galerija dekorativnih maski za klime
   </h1>
 
-  <p class="!text-lg !text-gray-700 !mb-16 !text-center !max-w-3xl !mx-auto !leading-relaxed">
+  <p class="!text-lg !text-gray-700 !mb-10 !text-center !max-w-4xl !mx-auto !leading-relaxed">
     Pogledajte kako <strong>dekorativne maske za klime</strong> unapređuju izgled različitih prostora.
-    Svaka fotografija prikazuje stvarne instalacije naših proizvoda — estetski, praktični i trajni dodaci vašem objektu.
+    U galeriji su stvarne instalacije: <strong>maska za klimu</strong>, <strong>zaštita za klimu</strong>,
+    <strong>kutija za klimu</strong> i rešenja za <strong>spoljnu jedinicu klime</strong>.
   </p>
 
+  <!-- Search / Filter (SEO + UX) -->
+  <div class="!max-w-3xl !mx-auto !mb-12" style="font-family: 'Inter', sans-serif;">
+    <label for="gallerySearch" class="block text-sm font-semibold text-gray-700 mb-2">
+      Pretraži galeriju (npr: spoljna jedinica, kutija, zaštita, ukrasna, drvena, metalna)
+    </label>
+
+    <div class="flex flex-col sm:flex-row gap-3">
+      <input
+        id="gallerySearch"
+        type="search"
+        class="w-full rounded-2xl border border-gray-300 px-4 py-3 shadow-sm focus:outline-none focus:ring-2 focus:ring-gray-300"
+        placeholder="Unesite pojam…"
+        [(ngModel)]="searchTerm"
+        (ngModelChange)="onSearchChange($event)"
+        aria-label="Pretraga galerije maski za klimu"
+      />
+
+      <a
+        routerLink="/kontakt"
+        class="inline-flex items-center justify-center rounded-2xl bg-gray-900 text-white px-6 py-3 font-semibold shadow hover:bg-gray-800 transition"
+        aria-label="Kontakt za izradu maske za klimu po meri"
+      >
+        Izrada po meri
+      </a>
+    </div>
+
+    <!-- Quick filters -->
+    <div class="flex flex-wrap gap-2 mt-4">
+      <button type="button"
+              class="px-4 py-2 rounded-full border border-gray-300 text-sm text-gray-800 hover:bg-gray-50 transition"
+              (click)="applyQuickFilter('spoljna')">
+        Spoljna jedinica
+      </button>
+      <button type="button"
+              class="px-4 py-2 rounded-full border border-gray-300 text-sm text-gray-800 hover:bg-gray-50 transition"
+              (click)="applyQuickFilter('unutra')">
+        Unutrašnja
+      </button>
+      <button type="button"
+              class="px-4 py-2 rounded-full border border-gray-300 text-sm text-gray-800 hover:bg-gray-50 transition"
+              (click)="applyQuickFilter('kutija')">
+        Kutija
+      </button>
+      <button type="button"
+              class="px-4 py-2 rounded-full border border-gray-300 text-sm text-gray-800 hover:bg-gray-50 transition"
+              (click)="applyQuickFilter('zastita')">
+        Zaštita
+      </button>
+      <button type="button"
+              class="px-4 py-2 rounded-full border border-gray-300 text-sm text-gray-800 hover:bg-gray-50 transition"
+              (click)="applyQuickFilter('ukrasna')">
+        Ukrasna
+      </button>
+      <button type="button"
+              class="px-4 py-2 rounded-full border border-gray-300 text-sm text-gray-800 hover:bg-gray-50 transition"
+              (click)="clearSearch()">
+        Reset
+      </button>
+    </div>
+
+    <p class="!text-sm !text-gray-600 !mt-3">
+      Prikazano: <strong>{{ filteredImages.length }}</strong> / {{ images.length }}
+    </p>
+  </div>
+
+  <!-- Grid -->
   <div class="!grid !grid-cols-1 sm:!grid-cols-2 lg:!grid-cols-3 !gap-8">
     <figure
-      *ngFor="let image of images; let i = index"
+      *ngFor="let image of filteredImages; let i = index"
       class="!group !relative !overflow-hidden !rounded-2xl !shadow-lg !bg-gray-100 hover:!shadow-2xl !transition-all !duration-500 !flex !items-center !justify-center !h-[340px]"
     >
       <img
         [src]="'assets/' + image"
-        [alt]="image"
+        [alt]="'Dekorativna maska za klimu – ' + normalizeImageName(image)"
         [class]="
           '!w-full !h-full !object-cover !transition-transform !duration-700 !ease-in-out group-hover:!scale-[1.05] ' +
-          positions[i]
+          (positionsMap[image] || '')
         "
         loading="lazy"
         decoding="async"
@@ -27,20 +94,22 @@
       <figcaption
         class="!absolute !bottom-0 !left-0 !right-0 !bg-gradient-to-t !from-black/60 !to-transparent !text-white !p-3 !text-sm !text-center !opacity-0 group-hover:!opacity-100 !transition-opacity !duration-300"
       >
-        Dekorativna maska – {{ image.replace('.webp', '').replace('_', ' ') }}
+        {{ captionFor(image) }}
       </figcaption>
     </figure>
   </div>
 
+  <!-- SEO footer text -->
   <div class="!text-center !mt-16">
-    <p class="!text-gray-600 !text-base !leading-relaxed !max-w-2xl !mx-auto">
-      Sve slike su originalne fotografije naših instalacija.
-      Želite da vaša bude deo galerije?
+    <p class="!text-gray-600 !text-base !leading-relaxed !max-w-3xl !mx-auto">
+      Sve fotografije su originalne instalacije naših proizvoda.
+      Ako tražite <strong>maska za klimu</strong>, <strong>maske za klime</strong>,
+      <strong>zaštita za klimu</strong> ili <strong>kutija za klimu</strong> – ovde možete videti primere završne obrade i dizajna.
+      Želite da vaša instalacija bude deo galerije?
       <a
-        href="/kontakt"
+        routerLink="/kontakt"
         class="!text-blue-600 !underline hover:!text-blue-800 !transition-colors !duration-300"
-        >Kontaktirajte nas</a
-      >.
+      >Kontaktirajte nas</a>.
     </p>
   </div>
 </section>
