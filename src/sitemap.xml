@@ -3,161 +3,121 @@
   xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
 
-  <!-- Osnovne stranice -->
+  <!-- HOME – glavni autoritet -->
   <url>
     <loc>https://maskezaklimu.rs/</loc>
-    <lastmod>2025-05-23</lastmod>
+    <lastmod>2026-02-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
     <image:image>
       <image:loc>https://maskezaklimu.rs/assets/maska-za-klimu-sitni-listovi.webp</image:loc>
-      <image:caption>MASKE ZA KLIMU - Zaštita i dizajn u jednom!</image:caption>
+      <image:caption>Dekorativna maska za klimu – metalna zaštita za spoljnu jedinicu klima uređaja</image:caption>
+      <image:title>Maske za klimu – dekorativne i zaštitne</image:title>
     </image:image>
   </url>
 
-  <!-- Proizvodi -->
+  <!-- PROIZVODI -->
+
   <url>
-    <loc>https://maskezaklimu.rs/proizvod/maska-za-klimu-model-1</loc>
-    <lastmod>2025-05-23</lastmod>
+    <loc>https://maskezaklimu.rs/proizvod/dekorativna-maska-za-klimu-metalna-zastita-spoljna-jedinica-sitni-listovi</loc>
+    <lastmod>2026-02-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
     <image:image>
-      <image:loc>https://maskezaklimu.rs/assets/maska4_4.webp</image:loc>
-      <image:title>MASKA ZA KLIMU 1 - prednja strana</image:title>
-      <image:caption>MASKE ZA KLIMU – Maska model 1</image:caption>
+      <image:loc>https://maskezaklimu.rs/assets/maska-za-klimu-sitni-listovi.webp</image:loc>
+      <image:caption>Dekorativna metalna maska za klimu sa sitnim listovima – zaštita za spoljnu jedinicu</image:caption>
+      <image:title>Dekorativna maska za klimu – sitni listovi</image:title>
     </image:image>
   </url>
+
   <url>
-    <loc>https://maskezaklimu.rs/proizvod/maska-za-klimu-model-2</loc>
-    <lastmod>2025-05-23</lastmod>
+    <loc>https://maskezaklimu.rs/proizvod/ukrasna-maska-za-klimu-kutija-za-klimu-geometrijski-dizajn-pravougaonici</loc>
+    <lastmod>2026-02-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
     <image:image>
-      <image:loc>https://maskezaklimu.rs/assets/maska2_1.webp</image:loc>
-      <image:title>MASKA ZA KLIMU 2 - prednja strana</image:title>
-      <image:caption>MASKE ZA KLIMU – Maska model 2</image:caption>
+      <image:loc>https://maskezaklimu.rs/assets/dekorativna-maska-za-klimu-pravougaonici.webp</image:loc>
+      <image:caption>Ukrasna maska za klimu – dekorativna kutija za spoljnu jedinicu sa geometrijskim dizajnom</image:caption>
+      <image:title>Ukrasna kutija za klimu – pravougaonici</image:title>
     </image:image>
   </url>
+
   <url>
-    <loc>https://maskezaklimu.rs/proizvod/maska-za-klimu-model-3</loc>
-    <lastmod>2025-05-23</lastmod>
+    <loc>https://maskezaklimu.rs/proizvod/metalna-zastita-za-klimu-dekorativna-maska-za-spoljnu-jedinicu-krupni-listovi</loc>
+    <lastmod>2026-02-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
     <image:image>
-      <image:loc>https://maskezaklimu.rs/assets/maska1_3.webp</image:loc>
-      <image:title>MASKA ZA KLIMU 3 - prednja strana</image:title>
-      <image:caption>MASKE ZA KLIMU – Maska model 3</image:caption>
+      <image:loc>https://maskezaklimu.rs/assets/maska-za-klimu-krupni-listovi.webp</image:loc>
+      <image:caption>Metalna dekorativna maska za klimu sa krupnim listovima – zaštita spoljne jedinice</image:caption>
+      <image:title>Metalna zaštita za klimu – krupni listovi</image:title>
     </image:image>
   </url>
+
   <url>
-    <loc>https://maskezaklimu.rs/proizvod/maska-za-klimu-model-4</loc>
-    <lastmod>2025-05-23</lastmod>
+    <loc>https://maskezaklimu.rs/proizvod/dekorativna-maska-za-klimu-spoljna-jedinica-savremeni-dizajn-haoticna-sara</loc>
+    <lastmod>2026-02-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
     <image:image>
-      <image:loc>https://maskezaklimu.rs/assets/maska20.webp</image:loc>
-      <image:title>MASKA ZA KLIMU 4 - prednja strana</image:title>
-      <image:caption>MASKE ZA KLIMU – Maska model 4</image:caption>
+      <image:loc>https://maskezaklimu.rs/assets/maska-za-klimu-haoticna-sara.webp</image:loc>
+      <image:caption>Dekorativna maska za klimu savremenog dizajna – zaštita za spoljnu jedinicu</image:caption>
+      <image:title>Dekorativna maska za klimu – moderna šara</image:title>
     </image:image>
   </url>
+
   <url>
-    <loc>https://maskezaklimu.rs/proizvod/maska-za-klimu-model-5</loc>
-    <lastmod>2025-05-23</lastmod>
+    <loc>https://maskezaklimu.rs/proizvod/maska-za-spoljnu-jedinicu-klime-kutija-zastita-dizajn-kvadratici</loc>
+    <lastmod>2026-02-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
     <image:image>
-      <image:loc>https://maskezaklimu.rs/assets/klima_br3.webp</image:loc>
-      <image:title>MASKA ZA KLIMU 5 - prednja strana</image:title>
-      <image:caption>MASKE ZA KLIMU – Maska model 5</image:caption>
+      <image:loc>https://maskezaklimu.rs/assets/maska-za-klimu-kvadratici.webp</image:loc>
+      <image:caption>Maska za spoljnu jedinicu klime sa kvadratićima – metalna zaštita i kutija za klimu</image:caption>
+      <image:title>Maska za klimu – kvadratići dizajn</image:title>
     </image:image>
   </url>
+
   <url>
-    <loc>https://maskezaklimu.rs/proizvod/maska-za-klimu-model-6</loc>
-    <lastmod>2025-05-23</lastmod>
+    <loc>https://maskezaklimu.rs/proizvod/minimalisticka-maska-za-klimu-metalna-zastita-spoljna-jedinica-ostri-rezovi</loc>
+    <lastmod>2026-02-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
     <image:image>
-      <image:loc>https://maskezaklimu.rs/assets/maska_br5.webp</image:loc>
-      <image:title>MASKA ZA KLIMU 6 - prednja strana</image:title>
-      <image:caption>MASKE ZA KLIMU – Maska model 6</image:caption>
+      <image:loc>https://maskezaklimu.rs/assets/maska-za-klimu-ostre-sare.webp</image:loc>
+      <image:caption>Minimalistička metalna maska za klimu – zaštita za spoljnu jedinicu sa oštrim rezovima</image:caption>
+      <image:title>Minimalistička maska za klimu – metalni dizajn</image:title>
     </image:image>
   </url>
+
+  <!-- BITNE SEKCIJE -->
 
   <url>
     <loc>https://maskezaklimu.rs/galerija</loc>
-    <lastmod>2025-05-23</lastmod>
+    <lastmod>2026-02-01</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.3</priority>
-    <image:image>
-      <image:loc>https://maskezaklimu.rs/assets/maska-za-klimu-sitni-listovi.webp</image:loc>
-      <image:caption>Dekorativne i zastitne maske za klimu – Galerija</image:caption>
-    </image:image>
+    <priority>0.6</priority>
   </url>
 
   <url>
-    <loc>https://maskezaklimu.rs/order</loc>
-    <lastmod>2025-05-23</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.1</priority>
-    <image:image>
-      <image:loc>https://maskezaklimu.rs/assets/maska-za-klimu-sitni-listovi.webp</image:loc>
-      <image:caption>Dekorativne i zastitne maske za klimu – Narudzbina</image:caption>
-    </image:image>
+    <loc>https://maskezaklimu.rs/o-nama</loc>
+    <lastmod>2026-02-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
   </url>
 
   <url>
-    <loc>https://maskezaklimu.rs/cart</loc>
-    <lastmod>2025-05-23</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.1</priority>
-    <image:image>
-      <image:loc>https://maskezaklimu.rs/assets/maska-za-klimu-sitni-listovi.webp</image:loc>
-      <image:caption>Dekorativne i zastitne maske za klimu – Korpa</image:caption>
-    </image:image>
+    <loc>https://maskezaklimu.rs/dostava-i-povracaj</loc>
+    <lastmod>2026-02-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
   </url>
 
   <url>
     <loc>https://maskezaklimu.rs/kontakt</loc>
-    <lastmod>2025-05-23</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.1</priority>
-    <image:image>
-      <image:loc>https://maskezaklimu.rs/assets/maska-za-klimu-sitni-listovi.webp</image:loc>
-      <image:caption>Dekorativne i zastitne maske za klimu – Kontakt</image:caption>
-    </image:image>
-  </url>
-
-    <url>
-    <loc>https://maskezaklimu.rs/o-nama</loc>
-    <lastmod>2025-05-23</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.1</priority>
-    <image:image>
-      <image:loc>https://maskezaklimu.rs/assets/maska-za-klimu-sitni-listovi.webp</image:loc>
-      <image:caption>Dekorativne i zastitne maske za klimu – O nama</image:caption>
-    </image:image>
-  </url>
-
-    <url>
-    <loc>https://maskezaklimu.rs/dostava-i-povracaj</loc>
-    <lastmod>2025-05-23</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.1</priority>
-    <image:image>
-      <image:loc>https://maskezaklimu.rs/assets/maska-za-klimu-sitni-listovi.webp</image:loc>
-      <image:caption>Dekorativne i zastitne maske za klimu – Dostava i povracaj</image:caption>
-    </image:image>
-  </url>
-
-  <url>
-    <loc>https://maskezaklimu.rs/info</loc>
-    <lastmod>2025-05-23</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.1</priority>
-    <image:image>
-      <image:loc>https://maskezaklimu.rs/assets/maska-za-klimu-sitni-listovi.webp</image:loc>
-      <image:caption>Dekorativne i zastitne maske za klimu – Informacije</image:caption>
-    </image:image>
+    <lastmod>2026-02-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
   </url>
 
 </urlset>

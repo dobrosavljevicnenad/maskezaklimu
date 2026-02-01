@@ -12,13 +12,13 @@ import { ActivatedRoute, Router } from '@angular/router';
 })
 export class GalerijaComponent {
     images = [
-    'cg_2.webp',
-    'cg_3.webp',
-    'cg_nocna.webp',
-    'master.webp',
-    'zemun.webp',
-    'rados.webp',
-    'lekino_brdo.webp'
+    'maska_za_klimu_pravougaonici_crna_gora_drvo.webp',
+    'maska_za_klimu_pravougaonici_crna_gora_bocna.webp',
+    'maska_za_klimu_pravougaonici_crna_gora_nocna.webp',
+    'maska_za_klimu_smederevo_instalacija.webp',
+    'maska_za_klimu_instalacija_zemun.webp',
+    'maska_za_klimu_lestane_instalacija.webp',
+    'maska-za-klimu-lekino-brdo-instalacija.webp'
   ];
 
   positions = [
