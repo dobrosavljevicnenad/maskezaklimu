@@ -11,10 +11,16 @@
 
     <div class="!h-[2px] !bg-gray-300 !mx-auto !mb-8 !w-64 sm:!w-64 md:!w-96"></div>
 
-    <p class="!text-2xl sm:!text-3xl !font-light !text-gray-700 !max-w-4xl !mx-auto !leading-relaxed !mb-5"
+
+    <p class="!text-base sm:!text-lg !text-gray-700 !max-w-4xl !mx-auto !mb-4"
+      style="font-family: 'Inter', sans-serif;">
+      Tražite <strong>masku za klimu</strong> po meri? Izrađujemo dekorativna i zaštitna rešenja za spoljne jedinice širom Srbije.
+    </p>
+
+    <!-- <p class="!text-2xl sm:!text-3xl !font-light !text-gray-700 !max-w-4xl !mx-auto !leading-relaxed !mb-5"
        style="font-family: 'Inter', sans-serif;">
       Želite da vaša klima bude ukras, a ne mana fasade?
-    </p>
+    </p> -->
 
     <p
       class="!hidden !lg:block !text-lg sm:!text-xl !text-gray-600 !max-w-5xl !mx-auto !leading-relaxed !mb-6"
@@ -62,6 +68,14 @@
         Pošaljite upit za izradu po meri
       </a>
     </div>
+
+    <p class="!mt-6 !text-sm !text-gray-600 !max-w-5xl !mx-auto !leading-relaxed"
+      style="font-family: 'Inter', sans-serif;">
+      Najtraženije:
+      <a routerLink="/kontakt" class="underline font-semibold text-gray-900">maska za klimu cena</a> ·
+      <a routerLink="/galerija" class="underline font-semibold text-gray-900">maska za klimu spolja</a> ·
+      <a routerLink="/dostava-i-povracaj" class="underline font-semibold text-gray-900">rok izrade i dostava</a>
+    </p>
 
     <p class="!mt-6 !text-sm !text-gray-600 !max-w-5xl !mx-auto !leading-relaxed"
        style="font-family: 'Inter', sans-serif;">
@@ -166,7 +180,7 @@
       </h2>
 
       <p class="!text-center !max-w-4xl !mx-auto !text-gray-700 !text-lg" style="font-family: 'Inter', sans-serif;">
-        Naše <strong>maske za klimu</strong> su rešenje za sakrivanje i zaštitu klima uređaja,
+        Naše <strong>dekorativne maske</strong> su rešenje za sakrivanje i zaštitu klima uređaja,
         posebno kada je u pitanju <strong>spoljna jedinica</strong>. Kombinujemo vrhunski dizajn,
         čvrste materijale i izradu po meri – uz fokus na sigurnost i protok vazduha.
       </p>
@@ -188,7 +202,7 @@
         <div class="bg-gradient-to-br from-white to-gray-50 border rounded-2xl p-8 shadow hover:shadow-lg transition">
           <h3 class="text-2xl font-semibold text-gray-900 mb-3">Debljina lima (1.5mm)</h3>
           <p class="!text-gray-700">
-            Koristimo <strong>maske za klimu od lima debljine 1.5mm</strong>, što obezbeđuje čvrstinu,
+            Koristimo <strong>zastitne maske od lima debljine 1.5mm</strong>, što obezbeđuje čvrstinu,
             stabilnost i dug vek trajanja.
           </p>
         </div>
@@ -291,6 +305,11 @@
               <strong>Cena standardne maske za klimu iznosi 12480 dinara.</strong><br />
               Svaku masku izrađujemo po meri i pre izrade dobijate jasnu ponudu (dimenzije, boja i završna obrada).
             </p>
+            <a [routerLink]="['/kontakt']"
+              class="hidden sm:inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gray-900 text-white text-sm font-semibold shadow hover:bg-gray-800 transition"
+              aria-label="Pošaljite upit za cenu">
+              Pošalji upit
+          </a>
           </div>
         </div>
       </div>

@@ -1,9 +1,10 @@
-import { Component, Inject, OnInit, PLATFORM_ID } from '@angular/core';
+import { Component, Inject, OnDestroy, OnInit, PLATFORM_ID } from '@angular/core';
 import { ActivatedRoute, RouterModule } from '@angular/router';
 import { MaskaService } from '../../services/maska.service';
 import { CommonModule, isPlatformBrowser } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { Meta, Title } from '@angular/platform-browser';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-maska-detail',
@@ -12,7 +13,7 @@ import { Meta, Title } from '@angular/platform-browser';
   templateUrl: './maska-detail.component.html',
   styleUrls: ['./maska-detail.component.scss']
 })
-export class MaskaDetailComponent implements OnInit {
+export class MaskaDetailComponent implements OnInit, OnDestroy {
   maska: any;
   izabranaSlika = '';
   uvelicano = false;
@@ -20,13 +21,17 @@ export class MaskaDetailComponent implements OnInit {
   izabranaBoja = '';
   drugaBoja = '';
 
+  private sub?: Subscription;
+
+  // Promeni ako koristiš www ili drugu bazu
+  private readonly SITE = 'https://maskezaklimu.rs';
+
   constructor(
     private route: ActivatedRoute,
     private maskaService: MaskaService,
     private meta: Meta,
     private title: Title,
     @Inject(PLATFORM_ID) private platformId: Object
-
   ) {}
 
   ngOnInit(): void {
@@ -34,39 +39,112 @@ export class MaskaDetailComponent implements OnInit {
       window.scrollTo(0, 0);
     }
 
-    const slug = this.route.snapshot.paramMap.get('slug');
-    if (slug) {
-      this.maska = this.maskaService.getMaskaBySlug(slug);
-      if (this.maska && this.maska.slika?.length > 0) {
+    // ✅ Reaguje i kad se menja slug bez reload-a
+    this.sub = this.route.paramMap.subscribe(params => {
+      const slug = params.get('slug');
+      if (!slug) return;
+
+      const found = this.maskaService.getMaskaBySlug(slug);
+      this.maska = found || null;
+
+      // reset state
+      this.kolicina = 1;
+      this.izabranaBoja = '';
+      this.drugaBoja = '';
+      this.uvelicano = false;
+
+      if (this.maska?.slika?.length > 0) {
         this.izabranaSlika = this.maska.slika[0].url;
-      }
-    }
-    if (this.maska) {
-        const naziv = this.maska.naziv || 'Maska za klimu';
-        const opis = this.maska.opis?.slice(0, 160) || `Pogledajte masku za klimu: ${naziv}.`;
-        const url = `https://maskezaklimu.rs/proizvod/${this.maska.slug}`;
-        const slika = this.maska.slika?.[0]?.url || 'https://maskezaklimu.rs/assets/maska_za_profil.webp';
-
-        this.title.setTitle(`${naziv}`);
-        this.meta.updateTag({ name: 'description', content: opis });
-        this.meta.updateTag({ name: 'canonical', content: url });
-
-        // Open Graph
-        this.meta.updateTag({ property: 'og:title', content: naziv });
-        this.meta.updateTag({ property: 'og:description', content: opis });
-        this.meta.updateTag({ property: 'og:url', content: url });
-        this.meta.updateTag({ property: 'og:image', content: slika });
-
-        // Twitter card
-        this.meta.updateTag({ name: 'twitter:title', content: naziv });
-        this.meta.updateTag({ name: 'twitter:description', content: opis });
-        this.meta.updateTag({ name: 'twitter:image', content: slika });
+      } else {
+        this.izabranaSlika = '';
       }
 
+      // ✅ SEO tags
+      this.applySeo();
+    });
+  }
+
+  ngOnDestroy(): void {
+    this.sub?.unsubscribe();
+  }
+
+  private applySeo(): void {
+    if (!this.maska) return;
+
+    const nazivRaw = (this.maska.naziv || 'Maska za klimu').trim();
+
+    // ✅ Title šablon (pomaže CTR + query pokrivenost)
+    const title = `${nazivRaw} | Maska za klimu – cena, izrada po meri (5–7 dana)`;
+
+    // ✅ Description (155–165 karaktera idealno)
+    const opisRaw = (this.maska.opis || '').replace(/\s+/g, ' ').trim();
+    const description =
+      opisRaw.length >= 120
+        ? opisRaw.slice(0, 160)
+        : `Dekorativna i zaštitna maska za klimu (spoljna jedinica). Izrada po meri, plastificirani lim 1.5mm, brza isporuka 5–7 dana.`;
+
+    const url = `${this.SITE}/proizvod/${this.maska.slug}`;
+
+    // ✅ OG slika mora biti apsolutna
+    const imgRel = this.maska.slika?.[0]?.url || '/assets/maska-za-klimu-sitni-listovi.webp';
+    const image = this.toAbsoluteUrl(imgRel);
+
+    // ✅ Canonical kao LINK, ne meta
+    this.setCanonical(url);
+
+    // Title
+    this.title.setTitle(title);
+
+    // Basic
+    this.meta.updateTag({ name: 'description', content: description });
+    this.meta.updateTag({ name: 'robots', content: 'index, follow, max-image-preview:large' });
+
+    // Open Graph
+    this.meta.updateTag({ property: 'og:type', content: 'product' });
+    this.meta.updateTag({ property: 'og:locale', content: 'sr_RS' });
+    this.meta.updateTag({ property: 'og:site_name', content: 'Maske za klimu' });
+    this.meta.updateTag({ property: 'og:title', content: title });
+    this.meta.updateTag({ property: 'og:description', content: description });
+    this.meta.updateTag({ property: 'og:url', content: url });
+    this.meta.updateTag({ property: 'og:image', content: image });
+    this.meta.updateTag({ property: 'og:image:secure_url', content: image });
+    this.meta.updateTag({ property: 'og:image:alt', content: `${nazivRaw} – dekorativna maska za klimu` });
+    this.meta.updateTag({ property: 'og:image:width', content: '1200' });
+    this.meta.updateTag({ property: 'og:image:height', content: '630' });
+
+    // Twitter
+    this.meta.updateTag({ name: 'twitter:card', content: 'summary_large_image' });
+    this.meta.updateTag({ name: 'twitter:title', content: title });
+    this.meta.updateTag({ name: 'twitter:description', content: description });
+    this.meta.updateTag({ name: 'twitter:image', content: image });
+  }
+
+  private toAbsoluteUrl(url: string): string {
+    if (!url) return `${this.SITE}/assets/maska-za-klimu-sitni-listovi.webp`;
+    if (url.startsWith('http://') || url.startsWith('https://')) return url;
+    if (url.startsWith('/')) return `${this.SITE}${url}`;
+    return `${this.SITE}/${url}`;
+  }
+
+  private setCanonical(url: string): void {
+    if (!isPlatformBrowser(this.platformId)) return;
+
+    const head = document.head;
+
+    // ukloni sve stare canonical linkove (da nema duplikata)
+    const existing = head.querySelectorAll<HTMLLinkElement>('link[rel="canonical"]');
+    existing.forEach(el => el.remove());
+
+    const link = document.createElement('link');
+    link.setAttribute('rel', 'canonical');
+    link.setAttribute('href', url);
+    head.appendChild(link);
   }
 
   promeniSliku(slika: string) {
     this.izabranaSlika = slika;
+    // opcionalno: update OG image kad promeni sliku (nema veliki SEO uticaj, više share)
+    // this.applySeo();
   }
 
   otvoriUvelicanuSliku() {
@@ -79,7 +157,7 @@ export class MaskaDetailComponent implements OnInit {
 
   sledecaSlika(event: Event) {
     event.stopPropagation();
-    const slike = this.maska.slika.map((s: { url: string }) => s.url);
+    const slike = (this.maska?.slika || []).map((s: { url: string }) => s.url);
     const index = slike.indexOf(this.izabranaSlika);
     if (index < slike.length - 1) {
       this.izabranaSlika = slike[index + 1];
@@ -88,7 +166,7 @@ export class MaskaDetailComponent implements OnInit {
 
   prethodnaSlika(event: Event) {
     event.stopPropagation();
-    const slike = this.maska.slika.map((s: { url: string }) => s.url);
+    const slike = (this.maska?.slika || []).map((s: { url: string }) => s.url);
     const index = slike.indexOf(this.izabranaSlika);
     if (index > 0) {
       this.izabranaSlika = slike[index - 1];
@@ -96,12 +174,12 @@ export class MaskaDetailComponent implements OnInit {
   }
 
   imaSledecu(): boolean {
-    const slike = this.maska.slika.map((s: { url: string }) => s.url);
+    const slike = (this.maska?.slika || []).map((s: { url: string }) => s.url);
     return slike.indexOf(this.izabranaSlika) < slike.length - 1;
   }
 
   imaPrethodnu(): boolean {
-    const slike = this.maska.slika.map((s: { url: string }) => s.url);
+    const slike = (this.maska?.slika || []).map((s: { url: string }) => s.url);
     return slike.indexOf(this.izabranaSlika) > 0;
   }
 

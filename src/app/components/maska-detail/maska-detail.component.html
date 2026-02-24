@@ -1,140 +1,494 @@
-<div *ngIf="maska" class="p-4">
-  <!-- Gornja navigacija -->
-  <div class="flex justify-between items-center p-4 bg-gray-100 mb-5">
-    <a [routerLink]="['/']" class="text-3xl text-gray-800 hover:text-gray-600 transition">←</a>
+<!-- PRODUCT PAGE -->
+<section *ngIf="maska"
+         class="bg-gradient-to-br from-gray-50 to-white min-h-screen"
+         itemscope
+         itemtype="https://schema.org/Product">
+
+  <!-- ✅ JSON-LD Product -->
+  <script type="application/ld+json">
+  {{
+    JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "Product",
+      "name": maska?.naziv,
+      "description": maska?.opis,
+      "image": (
+        (maska?.slika && maska?.slika.length) ? maska.slika.map((s:any)=>s.url) :
+        ((maska?.slike && maska?.slike.length) ? maska.slike :
+        (izabranaSlika ? [izabranaSlika] : []))
+      ),
+      "brand": { "@type": "Brand", "name": "Maske za klimu" },
+      "category": "Maske za klimu",
+      "offers": {
+        "@type": "Offer",
+        "url": ("https://maskezaklimu.rs/proizvod/" + (maska?.slug || "")),
+        "priceCurrency": "RSD",
+        "price": (maska?.cena ?? 0),
+        "availability": "https://schema.org/InStock",
+        "itemCondition": "https://schema.org/NewCondition"
+      }
+    })
+  }}
+  </script>
+
+  <!-- ✅ JSON-LD Breadcrumbs -->
+  <script type="application/ld+json">
+  {{
+    JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Početna", "item": "https://maskezaklimu.rs/" },
+        { "@type": "ListItem", "position": 2, "name": "Proizvodi", "item": "https://maskezaklimu.rs/#proizvodi" },
+        { "@type": "ListItem", "position": 3, "name": (maska?.naziv || "Maska za klimu"), "item": ("https://maskezaklimu.rs/proizvod/" + (maska?.slug || "")) }
+      ]
+    })
+  }}
+  </script>
+
+  <!-- TOP BAR -->
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-10 pt-5">
+    <nav class="flex items-center justify-between">
+      <a [routerLink]="['/']"
+         class="inline-flex items-center gap-2 text-sm font-semibold text-gray-900 hover:text-gray-700 transition"
+         aria-label="Nazad na početnu">
+        <span class="text-2xl leading-none">←</span>
+        <span class="hidden sm:inline">Nazad</span>
+      </a>
+
+      <!-- Visible breadcrumb -->
+      <ol class="hidden md:flex items-center gap-2 text-sm text-gray-600" aria-label="Breadcrumb">
+        <li><a [routerLink]="['/']" class="hover:underline">Početna</a></li>
+        <li aria-hidden="true">›</li>
+        <li><a [routerLink]="['/']" fragment="proizvodi" class="hover:underline">Proizvodi</a></li>
+        <li aria-hidden="true">›</li>
+        <li class="text-gray-900 font-semibold truncate max-w-[320px]">{{ maska?.naziv }}</li>
+      </ol>
+
+      <a [routerLink]="['/kontakt']"
+         class="hidden sm:inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gray-900 text-white text-sm font-semibold shadow hover:bg-gray-800 transition"
+         aria-label="Pošaljite upit za cenu">
+        Pošalji upit
+      </a>
+    </nav>
   </div>
 
-  <!-- Glavni prikaz proizvoda -->
-  <div class="flex flex-col md:flex-row gap-6">
-    <!-- Leva kolona - slike -->
-    <div class="flex flex-col items-center">
-      <div class="mb-4 w-[400px] h-[300px] relative">
-        <img [src]="izabranaSlika" alt="Glavna slika" class="absolute top-0 left-0 w-full h-full object-cover rounded-lg shadow-md"
-          [ngStyle]="maska.id === 1 ? {'object-position': 'center 20%'} : {}" />
-        <button (click)="otvoriUvelicanuSliku()" class="absolute top-2 right-2 bg-white rounded-full p-1 shadow hover:scale-105 transition">🔍</button>
-      </div>
-<!--
-      <div class="flex gap-2 flex-wrap justify-center">
-        <img *ngFor="let slika of maska?.slike"
-             [src]="slika"
-             (click)="promeniSliku(slika)"
-             class="w-20 h-20 object-cover rounded cursor-pointer border-2"
-             [ngClass]="{ 'border-blue-500': izabranaSlika === slika, 'border-transparent': izabranaSlika !== slika }" />
-      </div> -->
-      <div class="flex gap-2 flex-wrap justify-center">
-        <img *ngFor="let slika of maska?.slike"
-            [src]="slika"
-            (click)="promeniSliku(slika)"
-            loading="lazy"
-            [alt]="'Slika maske ' + maska?.naziv"
-            class="w-20 h-20 object-cover rounded cursor-pointer border-2"
-            [ngClass]="{ 'border-blue-500': izabranaSlika === slika, 'border-transparent': izabranaSlika !== slika }" />
+  <!-- MAIN -->
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-10 py-8 lg:py-12">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-14 items-start">
+
+      <!-- LEFT: GALLERY (sticky) -->
+      <div class="lg:sticky lg:top-6">
+        <div class="bg-white rounded-3xl shadow-sm border border-gray-200 overflow-hidden">
+          <!-- Main image -->
+          <figure class="relative aspect-[4/3] bg-gray-100"
+                  itemprop="image"
+                  itemscope
+                  itemtype="https://schema.org/ImageObject">
+
+            <img
+              [src]="izabranaSlika"
+              [alt]="(maska?.naziv || 'Maska za klimu') + ' – dekorativna maska i zaštita za spoljnu jedinicu klime'"
+              class="w-full h-full object-cover"
+              [ngStyle]="maska?.id === 1 ? {'object-position': 'center 20%'} : {}"
+              loading="eager"
+              fetchpriority="high"
+            />
+
+            <meta itemprop="contentUrl" [content]="izabranaSlika" />
+
+            <!-- zoom -->
+            <button
+              (click)="otvoriUvelicanuSliku()"
+              class="absolute top-4 right-4 inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/95 shadow hover:scale-105 transition"
+              aria-label="Uvećaj sliku maske">
+              🔍
+            </button>
+
+            <!-- small badge -->
+            <div class="absolute bottom-4 left-4">
+              <span class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-semibold bg-white/95 shadow border border-gray-200 text-gray-900">
+                CNC • 1.5mm • plastificirano
+              </span>
+            </div>
+
+            <figcaption class="sr-only">
+              {{ maska?.naziv }} – maska za klimu (spoljna jedinica), dekorativna i zaštitna.
+            </figcaption>
+          </figure>
+
+          <!-- Thumbnails -->
+          <div class="p-4">
+            <div class="flex gap-2 flex-wrap justify-start" aria-label="Galerija slika proizvoda">
+              <ng-container *ngIf="(maska?.slika?.length || maska?.slike?.length)">
+
+                <!-- If using slika: [{url,alt}] -->
+                <ng-container *ngIf="maska?.slika?.length; else thumbStrings">
+                  <button
+                    type="button"
+                    *ngFor="let s of maska?.slika; let i = index"
+                    (click)="promeniSliku(s.url)"
+                    class="group relative w-20 h-20 rounded-xl overflow-hidden border-2 transition"
+                    [ngClass]="{ 'border-gray-900': izabranaSlika === s.url, 'border-transparent': izabranaSlika !== s.url }"
+                    [attr.aria-label]="'Izaberi sliku ' + (i + 1)">
+                    <img
+                      [src]="s.url"
+                      [alt]="s.alt || ((maska?.naziv || 'Maska za klimu') + ' – slika ' + (i + 1))"
+                      class="w-full h-full object-cover group-hover:scale-105 transition duration-300"
+                      loading="lazy"
+                      decoding="async"
+                    />
+                  </button>
+                </ng-container>
+
+                <!-- If using slike: string[] -->
+                <ng-template #thumbStrings>
+                  <button
+                    type="button"
+                    *ngFor="let slika of maska?.slike; let i = index"
+                    (click)="promeniSliku(slika)"
+                    class="group relative w-20 h-20 rounded-xl overflow-hidden border-2 transition"
+                    [ngClass]="{ 'border-gray-900': izabranaSlika === slika, 'border-transparent': izabranaSlika !== slika }"
+                    [attr.aria-label]="'Izaberi sliku ' + (i + 1)">
+                    <img
+                      [src]="slika"
+                      [alt]="(maska?.naziv || 'Maska za klimu') + ' – slika ' + (i + 1)"
+                      class="w-full h-full object-cover group-hover:scale-105 transition duration-300"
+                      loading="lazy"
+                      decoding="async"
+                    />
+                  </button>
+                </ng-template>
+
+              </ng-container>
+            </div>
+
+            <!-- Internal links under gallery -->
+            <div class="mt-4 text-sm text-gray-700">
+              Tražite <strong>cenu maske za klimu</strong> za vaše dimenzije?
+              <a [routerLink]="['/kontakt']" class="underline font-semibold text-gray-900 hover:text-gray-700">Pošaljite upit</a>.
+              Pogledajte još primera u
+              <a [routerLink]="['/galerija']" class="underline font-semibold text-gray-900 hover:text-gray-700">galeriji</a>.
+            </div>
+          </div>
+        </div>
       </div>
 
+      <!-- RIGHT: PRODUCT INFO -->
+      <div>
+        <!-- Title + short intent line -->
+        <header class="mb-6">
+          <h1 class="text-3xl sm:text-4xl font-extrabold tracking-tight text-gray-900"
+              style="font-family: 'Playfair Display', serif;"
+              itemprop="name">
+            {{ maska?.naziv }}
+          </h1>
 
+          <p class="mt-3 text-gray-700 leading-relaxed">
+            <strong>Maska za klimu</strong> kao dekorativna <strong>zaštita za spoljnu jedinicu klime</strong> –
+            od <strong>plastificiranog lima</strong>, sa otvorima za nesmetan protok vazduha.
+          </p>
+
+          <!-- quick badges -->
+          <div class="mt-4 flex flex-wrap gap-2">
+            <span class="px-3 py-1.5 rounded-full text-xs font-semibold bg-gray-100 text-gray-900 border border-gray-200">Izrada po meri</span>
+            <span class="px-3 py-1.5 rounded-full text-xs font-semibold bg-gray-100 text-gray-900 border border-gray-200">Za spolja / fasadu</span>
+            <span class="px-3 py-1.5 rounded-full text-xs font-semibold bg-gray-100 text-gray-900 border border-gray-200">DIY montaža</span>
+            <span class="px-3 py-1.5 rounded-full text-xs font-semibold bg-gray-100 text-gray-900 border border-gray-200">Dostava Srbija</span>
+          </div>
+        </header>
+
+        <!-- Price / Offer card -->
+        <section class="bg-white rounded-3xl shadow-sm border border-gray-200 p-6"
+                 itemprop="offers"
+                 itemscope
+                 itemtype="https://schema.org/Offer"
+                 aria-label="Cena i uslovi">
+          <meta itemprop="priceCurrency" content="RSD" />
+          <link itemprop="availability" href="https://schema.org/InStock" />
+          <meta itemprop="itemCondition" content="https://schema.org/NewCondition" />
+
+          <div class="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4">
+            <div>
+              <p class="text-sm text-gray-600">Cena (standardna)</p>
+              <p class="text-3xl font-extrabold text-gray-900">
+                <span itemprop="price">{{ (maska?.cena ?? 0) }}</span> <span class="text-lg font-semibold">RSD</span>
+              </p>
+
+              <p class="text-sm text-gray-600 mt-1">
+                Rok izrade: <strong>5–7 radnih dana</strong> ·
+                <a [routerLink]="['/dostava-i-povracaj']"
+                   class="underline font-semibold text-gray-900 hover:text-gray-700">
+                  Detalji dostave
+                </a>
+              </p>
+            </div>
+
+            <!-- discount + total -->
+            <div class="sm:text-right">
+              <p class="text-sm text-gray-600">
+                Popust:
+                <span *ngIf="maska?.popust > 0; else noDiscount" class="font-semibold text-gray-900">{{ maska?.popust }}%</span>
+                <ng-template #noDiscount class="font-semibold">/</ng-template>
+              </p>
+
+              <p class="mt-1 text-sm text-gray-600">Ukupno (sa popustom)</p>
+              <p class="text-2xl font-extrabold text-red-600">
+                {{
+                  ((maska?.cena ?? 0) - ((maska?.cena ?? 0) * (maska?.popust || 0)) / 100).toFixed(0)
+                }} RSD
+              </p>
+            </div>
+          </div>
+
+          <!-- Color & quantity -->
+          <div class="mt-6 grid grid-cols-1 md:grid-cols-2 gap-6">
+            <fieldset class="space-y-2" aria-label="Izbor boje maske">
+              <legend class="text-sm font-semibold text-gray-900">Boja (standard)</legend>
+
+              <div class="flex flex-wrap gap-3">
+                <label class="inline-flex items-center gap-2 px-3 py-2 rounded-xl border border-gray-200 bg-gray-50 cursor-pointer hover:bg-gray-100 transition">
+                  <input type="radio" name="boja" value="Crna" [(ngModel)]="izabranaBoja" />
+                  Crna
+                </label>
+
+                <label class="inline-flex items-center gap-2 px-3 py-2 rounded-xl border border-gray-200 bg-gray-50 cursor-pointer hover:bg-gray-100 transition">
+                  <input type="radio" name="boja" value="Bela" [(ngModel)]="izabranaBoja" />
+                  Bela
+                </label>
+
+                <label class="inline-flex items-center gap-2 px-3 py-2 rounded-xl border border-gray-200 bg-gray-50 cursor-pointer hover:bg-gray-100 transition">
+                  <input type="radio" name="boja" value="Antracit" [(ngModel)]="izabranaBoja" />
+                  Antracit
+                </label>
+              </div>
+
+              <div class="mt-3">
+                <label for="drugaBoja" class="block text-xs font-medium text-gray-600 mb-1">
+                  Ili unesite željenu boju (RAL):
+                </label>
+                <input
+                  id="drugaBoja"
+                  type="text"
+                  placeholder="npr. RAL 7016 (antracit)"
+                  [(ngModel)]="drugaBoja"
+                  class="w-full px-3 py-2 rounded-xl border border-gray-200 bg-white focus:outline-none focus:ring-2 focus:ring-gray-300"
+                />
+              </div>
+            </fieldset>
+
+            <div class="space-y-3" aria-label="Količina i dodavanje u korpu">
+              <p class="text-sm font-semibold text-gray-900">Količina</p>
+
+              <div class="flex items-center gap-3">
+                <button
+                  type="button"
+                  class="w-11 h-11 rounded-xl border border-gray-200 bg-white text-xl font-bold text-gray-700 hover:bg-gray-50 transition disabled:opacity-50"
+                  (click)="smanjiKolicinu()"
+                  [disabled]="kolicina <= 1"
+                  aria-label="Smanji količinu"
+                >−</button>
+
+                <input
+                  type="number"
+                  [(ngModel)]="kolicina"
+                  min="1"
+                  (input)="onKolicinaChange()"
+                  class="w-20 h-11 text-center rounded-xl border border-gray-200 bg-white font-semibold text-gray-900 focus:outline-none focus:ring-2 focus:ring-gray-300"
+                  aria-label="Unesite količinu"
+                />
+
+                <button
+                  type="button"
+                  class="w-11 h-11 rounded-xl border border-gray-200 bg-white text-xl font-bold text-gray-700 hover:bg-gray-50 transition"
+                  (click)="povecajKolicinu()"
+                  aria-label="Povećaj količinu"
+                >+</button>
+              </div>
+
+              <div class="flex flex-col sm:flex-row gap-3 mt-4">
+                <button
+                  type="button"
+                  class="inline-flex justify-center items-center gap-2 px-5 py-3 rounded-2xl bg-gray-900 text-white font-semibold shadow hover:bg-gray-800 transition"
+                  (click)="dodajUKorpu()"
+                  aria-label="Dodaj masku u korpu"
+                >
+                  Dodaj u korpu
+                </button>
+
+                <a [routerLink]="['/kontakt']"
+                   class="inline-flex justify-center items-center gap-2 px-5 py-3 rounded-2xl bg-white text-gray-900 font-semibold border border-gray-200 hover:bg-gray-50 transition"
+                   aria-label="Tražite cenu – pošaljite upit">
+                  Tražite cenu (po meri)
+                </a>
+              </div>
+
+              <p class="text-xs text-gray-600 leading-relaxed">
+                Ako vas zanima <strong>maska za klimu cena</strong> za vaše dimenzije,
+                pošaljite upit — odgovor dobijate pre izrade.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <!-- Description card (keeps your text) -->
+        <section class="mt-6 bg-white rounded-3xl shadow-sm border border-gray-200 p-6"
+                 aria-label="Opis proizvoda">
+          <h2 class="text-lg font-semibold text-gray-900 mb-2">Opis</h2>
+          <p class="text-gray-700 leading-relaxed" itemprop="description">
+            {{ maska?.opis }}
+          </p>
+        </section>
+
+        <!-- How to order -->
+        <section class="mt-6 bg-white rounded-3xl shadow-sm border border-gray-200 p-6"
+                 aria-labelledby="howto-title">
+          <h2 id="howto-title" class="text-lg font-semibold text-gray-900 mb-3">
+            Kako naručiti masku za klimu (po meri)
+          </h2>
+
+          <ol class="list-decimal pl-5 text-gray-700 leading-relaxed space-y-1">
+            <li>Pošaljite dimenzije spoljne jedinice i fotografiju mesta montaže.</li>
+            <li>Odaberite boju (crna/bela/antracit ili RAL po želji) i dizajn.</li>
+            <li>Dobijate ponudu, a zatim krećemo u izradu i isporuku za 5–7 radnih dana.</li>
+          </ol>
+
+          <div class="mt-4 flex flex-col sm:flex-row gap-3">
+            <a [routerLink]="['/kontakt']"
+               class="inline-flex justify-center items-center px-5 py-2.5 rounded-full bg-gray-900 text-white font-semibold hover:bg-gray-800 transition">
+              Pošaljite upit za cenu
+            </a>
+            <a [routerLink]="['/galerija']"
+               class="inline-flex justify-center items-center px-5 py-2.5 rounded-full bg-white text-gray-900 font-semibold border border-gray-200 hover:bg-gray-50 transition">
+              Pogledajte instalacije u galeriji
+            </a>
+          </div>
+        </section>
+      </div>
     </div>
 
-    <!-- Desna kolona - informacije -->
-    <div class="flex-1">
-      <h1 class="text-3xl font-bold font-serif italic mb-4">{{ maska?.naziv }}</h1>
+    <!-- LOWER CONTENT: technical + advantages (keeps your old content but modern layout) -->
+    <div class="mt-12">
+      <div class="bg-white rounded-3xl shadow-sm border border-gray-200 p-6 sm:p-8">
+        <h2 class="text-2xl font-semibold text-gray-900 mb-4">
+          O proizvodu – dekorativna maska za klimu (spoljna jedinica)
+        </h2>
 
-      <div class="text-lg">
-        <p class="mb-2">{{ maska?.opis }}</p>
-        <p class="mb-1" *ngIf="maska?.cena !== undefined">
-          <strong>Cena:</strong>
-          <span itemprop="price">{{ maska?.cena }}</span> RSD
-        </p>
-        <p>
-          <strong>Popust:</strong>
-          <span *ngIf="maska?.popust > 0; else noDiscount">{{ maska?.popust }}%</span>
-          <ng-template #noDiscount>/</ng-template>
-        </p>
-        <p *ngIf="maska?.cena !== undefined" class="mt-2 text-red-500 font-semibold">
-          Ukupna cena: {{
-            (maska.cena - (maska.cena * (maska.popust || 0)) / 100).toFixed(0)
-          }} RSD
-        </p>
-      </div>
+        <div class="prose max-w-none text-gray-700 leading-relaxed">
+          <p>
+            Ova <strong>maska za klimu</strong> je praktično rešenje kada želite da sakrijete spoljašnju jedinicu,
+            a da prostor ostane uredan i moderan. Namenjena je za <strong>fasade</strong>, <strong>terase</strong> i <strong>balkone</strong>,
+            uz očuvanje protoka vazduha i stabilnog rada uređaja.
+          </p>
 
-      <!-- Izbor boje -->
-      <div class="mt-6 flex flex-wrap items-center gap-4">
-        <span class="font-semibold font-serif italic">Izaberite boju:</span>
-        <label class="flex items-center gap-1">
-          <input type="radio" name="boja" value="Crna" [(ngModel)]="izabranaBoja" /> Crna
-        </label>
-        <label class="flex items-center gap-1">
-          <input type="radio" name="boja" value="Bela" [(ngModel)]="izabranaBoja" /> Bela
-        </label>
-        <label class="flex items-center gap-1">
-          <input type="radio" name="boja" value="Antracit" [(ngModel)]="izabranaBoja" /> Antracit
-        </label>
-      </div>
+          <p>
+            Izrada je od <strong>plastificiranog lima debljine 1.5 mm</strong> (otporno na UV, vlagu i koroziju), sa
+            CNC sečenim otvorima. Po potrebi radimo i <strong>izmenu dimenzija po meri</strong>.
+          </p>
+        </div>
 
-      <!-- Polje za unos druge boje -->
-      <div class="mt-4">
-        <label class="block text-sm font-medium font-serif italic mb-1">Ili unesite željenu boju:</label>
-        <input type="text" placeholder="Unesite drugu boju" [(ngModel)]="drugaBoja"
-               class="w-40 p-2 border font-serif italic border-gray-300 rounded" />
-      </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-8">
+          <div class="bg-gray-50 border border-gray-200 rounded-2xl p-6">
+            <h3 class="text-lg font-semibold text-gray-900 mb-3">Tehničke karakteristike</h3>
+            <ul class="space-y-2 text-gray-700">
+              <li><strong>Materijal:</strong> plastificirani lim (1.5 mm)</li>
+              <li><strong>Izrada:</strong> CNC lasersko sečenje</li>
+              <li><strong>Dimenzije:</strong> 900x650x440mm + izrada po meri</li>
+              <li><strong>Boje:</strong> crna / bela / antracit + RAL po želji</li>
+              <li><strong>Montaža:</strong> unapred pripremljene rupe za tiplovanje</li>
+            </ul>
+          </div>
 
-      <!-- Količina + dodavanje u korpu -->
-      <div class="mt-6 flex items-center gap-6">
-        <button class="text-3xl font-serif italic text-gray-600 hover:text-gray-800 transition"
-                (click)="smanjiKolicinu()" [disabled]="kolicina <= 1">-</button>
-        <input type="number" [(ngModel)]="kolicina" min="1"
-               class="text-xl font-semibold font-serif italic w-16 text-center"
-               (input)="onKolicinaChange()" />
-        <button class="text-3xl text-gray-600 hover:text-gray-800 transition" (click)="povecajKolicinu()">+</button>
+          <div class="bg-gray-50 border border-gray-200 rounded-2xl p-6">
+            <h3 class="text-lg font-semibold text-gray-900 mb-3">Prednosti</h3>
+            <ul class="space-y-2 text-gray-700">
+              <li><strong>Zaštita:</strong> kiša, sneg, sunce, mehanička oštećenja</li>
+              <li><strong>Estetika:</strong> uredan izgled fasade i terase</li>
+              <li><strong>Protok vazduha:</strong> otvori ne guše rad klima uređaja</li>
+              <li><strong>Brza izrada:</strong> tipično 5–7 radnih dana</li>
+              <li><strong>Po meri:</strong> prilagođavanje dimenzija i dizajna</li>
+            </ul>
+          </div>
+        </div>
 
-        <button class="bg-gray-700 text-white px-4 py-2 rounded-lg text-sm font-bold font-serif italic hover:scale-125 transition-all"
-                (click)="dodajUKorpu()">Dodaj u korpu</button>
+        <!-- FAQ (product) -->
+        <section class="mt-10" aria-labelledby="faqp-title" itemscope itemtype="https://schema.org/FAQPage">
+          <h2 id="faqp-title" class="text-2xl font-semibold text-gray-900 mb-4">
+            Česta pitanja – maska za klimu
+          </h2>
+
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div class="bg-white border border-gray-200 rounded-2xl p-5"
+                 itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+              <h3 class="font-semibold text-gray-900 mb-2" itemprop="name">Da li maska utiče na rad klima uređaja?</h3>
+              <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+                <div itemprop="text" class="text-gray-700">
+                  Ne. Otvori su projektovani tako da omogućavaju nesmetan protok vazduha i stabilan rad spoljne jedinice.
+                </div>
+              </div>
+            </div>
+
+            <div class="bg-white border border-gray-200 rounded-2xl p-5"
+                 itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+              <h3 class="font-semibold text-gray-900 mb-2" itemprop="name">Da li radite masku za klimu po meri?</h3>
+              <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+                <div itemprop="text" class="text-gray-700">
+                  Da. Pošaljite dimenzije i fotografiju mesta montaže, a mi šaljemo ponudu pre izrade.
+                </div>
+              </div>
+            </div>
+
+            <div class="bg-white border border-gray-200 rounded-2xl p-5"
+                 itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+              <h3 class="font-semibold text-gray-900 mb-2" itemprop="name">Koja je cena maske za klimu?</h3>
+              <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+                <div itemprop="text" class="text-gray-700">
+                  Cena zavisi od dimenzija, boje i završne obrade. Za tačnu cenu:
+                  <a [routerLink]="['/kontakt']" class="underline font-semibold text-gray-900">pošaljite upit</a>.
+                </div>
+              </div>
+            </div>
+
+            <div class="bg-white border border-gray-200 rounded-2xl p-5"
+                 itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+              <h3 class="font-semibold text-gray-900 mb-2" itemprop="name">Koliko traje izrada i isporuka?</h3>
+              <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+                <div itemprop="text" class="text-gray-700">
+                  Standardno 5–7 radnih dana. Dostava je širom Srbije (Beograd, Novi Sad, Niš i ostali gradovi).
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <div class="mt-8 text-center text-gray-700">
+          Pogledajte još rešenja u <a [routerLink]="['/galerija']" class="underline font-semibold text-gray-900">galeriji</a>,
+          ili zatražite <a [routerLink]="['/kontakt']" class="underline font-semibold text-gray-900">ponudu i cenu</a> za vaše dimenzije.
+        </div>
       </div>
     </div>
   </div>
-</div>
 
-<!-- Modal za uvećanu sliku -->
-<div *ngIf="uvelicano" class="fixed inset-0 bg-black bg-opacity-80 flex items-center justify-center z-50" (click)="zatvoriUvelicanuSliku()">
-  <button (click)="prethodnaSlika($event)" class="absolute left-4 text-white text-4xl font-bold hover:scale-110 transition" [disabled]="!imaPrethodnu()">‹</button>
-  <img [src]="izabranaSlika" alt="Uvećana slika" class="max-w-full max-h-full rounded-lg shadow-lg" (click)="$event.stopPropagation()" />
-  <button (click)="sledecaSlika($event)" class="absolute right-4 text-white text-4xl font-bold hover:scale-110 transition" [disabled]="!imaSledecu()">›</button>
-</div>
+  <!-- IMAGE MODAL -->
+  <div *ngIf="uvelicano"
+       class="fixed inset-0 bg-black/80 flex items-center justify-center z-50"
+       (click)="zatvoriUvelicanuSliku()"
+       aria-label="Uvećana slika maske">
 
-<!-- Sekcija o proizvodu -->
-<div class="product-description mt-10 p-4 mb-2">
-  <h3><i class="fas fa-info-circle"></i> O PROIZVODU</h3>
-  <br />
-  <p>
-    Naše <strong>dekorativne maske za klime</strong> predstavljaju savršen spoj <strong>funkcionalnosti i estetike</strong>.<br>
-    Osim što štite vaš klima uređaj od spoljašnjih uticaja, ove maske <strong>poboljšavaju vizuelni izgled prostora</strong> – idealne su i za
-    <strong>fasade</strong> i za <strong>enterijere</strong> domova, kancelarija i lokala.
-  </p>
-  <p>
-    Izrađene su od <strong>plastificiranog lima otporog na koroziju i vremenske uslove</strong>.<br>
-    Njihov <strong>moderan i prilagodljiv dizajn</strong> omogućava lako uklapanje u različite arhitektonske stilove, a istovremeno ne ometaju rad klima uređaja.
-  </p>
+    <button (click)="prethodnaSlika($event)"
+            class="absolute left-4 sm:left-8 text-white text-5xl font-bold hover:scale-110 transition disabled:opacity-40"
+            [disabled]="!imaPrethodnu()"
+            aria-label="Prethodna slika">‹</button>
 
-  <div class="section-divider"></div>
+    <img [src]="izabranaSlika"
+         [alt]="(maska?.naziv || 'Maska za klimu') + ' – uvećana slika'"
+         class="max-w-[92vw] max-h-[88vh] rounded-2xl shadow-2xl"
+         (click)="$event.stopPropagation()"
+         loading="lazy" />
 
-  <h3><i class="fas fa-cogs"></i> TEHNIČKE KARAKTERISTIKE</h3>
-  <br />
-  <ul class="custom-list">
-    <li><strong>Materijal:</strong> Plastificirani lim, visokokvalitetan i otporan na koroziju</li>
-    <li><strong>Izrada:</strong> Precizno CNC lasersko sečenje za savršen i dugotrajan proizvod</li>
-    <li><strong>Dimenzije:</strong> Standardne 90cm (š) x 65cm (v) x 44cm (d), sa mogućnošću prilagođavanja</li>
-    <li><strong>Boje:</strong> Bela, crna, antracit ili bilo koja druga nijansa po Vašoj želji</li>
-    <li><strong>Montaža:</strong> Jednostavna, sa unapred pripremljenim rupama za tiplovanje</li>
-  </ul>
-
-  <div class="section-divider"></div>
-
-  <h3><i class="fas fa-star"></i> PREDNOSTI</h3>
-  <ul class="custom-list">
-    <li><strong>Personalizovani dizajn:</strong> Pošaljite željeni dezen ili šaru i izradićemo masku po vašim željama</li>
-    <li><strong>Kvalitetan materijal:</strong> CNC sečeni lim debljine 1.5 mm garantuje dugotrajnost i otpornost</li>
-    <li><strong>Jednostavna montaža:</strong> Rupe za šrafove omogućava brzo i sigurno fiksiranje maske</li>
-    <li><strong>Prilagođene dimenzije:</strong> Osim standardnih dimenzija, izrađujemo i po meri za veće ili specifične uređaje</li>
-    <li><strong>Brza isporuka:</strong> Rok isporuke je samo 5 do 7 radnih dana</li>
-  </ul>
-</div>
-
+    <button (click)="sledecaSlika($event)"
+            class="absolute right-4 sm:right-8 text-white text-5xl font-bold hover:scale-110 transition disabled:opacity-40"
+            [disabled]="!imaSledecu()"
+            aria-label="Sledeća slika">›</button>
+  </div>
+</section>
