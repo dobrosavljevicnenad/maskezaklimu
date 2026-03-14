@@ -1,7 +1,7 @@
 [
   {
     "id": 1,
-    "naziv": "Dekorativna maska za klimu – metalna zaštita za spoljnu jedinicu (sitni listovi)",
+    "naziv": "Dekorativna maska za klimu – sitni listovi",
     "slug": "dekorativna-maska-za-klimu-metalna-zastita-spoljna-jedinica-sitni-listovi",
     "opis": "Dekorativna metalna maska za klimu namenjena zaštiti spoljne jedinice klima uređaja. CNC sečeni motiv sitnih listova omogućava dobar protok vazduha uz moderan izgled fasade, balkona ili terase. Idealna kao zaštita za klimu spolja – otporna na kišu, sunce i sneg, uz izradu po meri.",
     "cena": 12480,
@@ -16,7 +16,7 @@
   },
   {
     "id": 2,
-    "naziv": "Ukrasna maska za klimu – kutija za klimu sa geometrijskim dizajnom (pravougaonici)",
+    "naziv": "Ukrasna maska za klimu – pravougaonici",
     "slug": "ukrasna-maska-za-klimu-kutija-za-klimu-geometrijski-dizajn-pravougaonici",
     "opis": "Ukrasna maska za klimu sa modernim geometrijskim perforacijama koja funkcioniše kao dekorativna kutija za klimu. Namenjena za spoljnu jedinicu klime – sakriva uređaj, a pritom ne remeti protok vazduha. Metalna zaštita za klimu otporna na vremenske uslove, idealna za fasade i terase.",
     "cena": 12480,
@@ -31,7 +31,7 @@
   },
   {
     "id": 3,
-    "naziv": "Metalna zaštita za klimu – dekorativna maska za spoljnu jedinicu (krupni listovi)",
+    "naziv": "Metalna zaštita za klimu – krupni listovi",
     "slug": "metalna-zastita-za-klimu-dekorativna-maska-za-spoljnu-jedinicu-krupni-listovi",
     "opis": "Metalna zaštita za klimu sa krupnim dekorativnim listovima – maske za klime koje spajaju estetiku i funkcionalnost. Namenjena kao maska za spoljnu jedinicu klime, štiti od vremenskih uticaja i unapređuje izgled objekta. CNC sečena, čvrsta konstrukcija, pogodna za montažu na fasadi, balkonu ili terasi.",
     "cena": 12480,
@@ -46,7 +46,7 @@
   },
   {
     "id": 4,
-    "naziv": "Dekorativna maska za klimu – savremeni dizajn za spoljnu jedinicu (haotična šara)",
+    "naziv": "Dekorativna maska za klimu – haotična šara",
     "slug": "dekorativna-maska-za-klimu-spoljna-jedinica-savremeni-dizajn-haoticna-sara",
     "opis": "Dekorativna maska za klimu sa savremenom, umetničkom šarom – idealna za modernu arhitekturu. Namenjena za spoljnu jedinicu klima uređaja kao zaštita za klimu spolja: štiti uređaj i vizuelno “čisti” fasadu. CNC izrada od metala omogućava stabilnost, dug vek i nesmetan protok vazduha.",
     "cena": 12480,
@@ -61,7 +61,7 @@
   },
   {
     "id": 5,
-    "naziv": "Maska za spoljnu jedinicu klime – kutija/zaštita sa dizajnom kvadratića",
+    "naziv": "Maska za spoljnu jedinicu klime – kvadratici",
     "slug": "maska-za-spoljnu-jedinicu-klime-kutija-zastita-dizajn-kvadratici",
     "opis": "Maska za spoljnu jedinicu klime sa dizajnom kvadratića – funkcionalna zaštita za klimu koja istovremeno izgleda kao dekorativna kutija za klimu. Perforacije obezbeđuju ventilaciju i stabilan rad uređaja. Metalna konstrukcija je otporna na spoljne uslove i pogodna za fasade, terase i balkone.",
     "cena": 12480,
@@ -76,7 +76,7 @@
   },
   {
     "id": 6,
-    "naziv": "Minimalistička maska za klimu – metalna zaštita za spoljnu jedinicu (oštri rezovi)",
+    "naziv": "Minimalistička maska za klimu – oštri rezovi",
     "slug": "minimalisticka-maska-za-klimu-metalna-zastita-spoljna-jedinica-ostri-rezovi",
     "opis": "Minimalistička maska za klimu sa oštrim, čistim rezovima – za one koji žele moderan i diskretan izgled. Namenjena kao metalna zaštita za spoljnu jedinicu klime: sakriva uređaj, štiti od vremenskih uslova i omogućava nesmetan protok vazduha. Idealna za moderne fasade i poslovne objekte.",
     "cena": 12480,
@@ -85,7 +85,7 @@
     "slika": [
       {
         "url": "assets/maska_za_klimu_ostre_sare.webp",
-        "alt": "Minimalistička metalna maska za klimu – zaštita za spoljnu jedinicu sa oštrim rezovima"
+        "alt": "Minimalistička metalna maska za klimu – ostri rezovi"
       }
     ]
   }

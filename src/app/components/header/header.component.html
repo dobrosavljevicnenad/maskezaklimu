@@ -1,103 +1,147 @@
-<header class="bg-gray-100 p-3 shadow-sm">
-  <div class="container mx-auto flex flex-wrap justify-between items-center gap-4">
+<header class="sticky top-0 z-40 bg-white/95 backdrop-blur border-b border-gray-200 shadow-sm">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex flex-wrap items-center justify-between gap-4 py-3">
 
-    <!-- Logo -->
-    <div
-      routerLink="/"
-      class="flex items-center max-h-[60px] cursor-pointer"
-      title="Dekorativne maske za klimu - početna stranica"
-    >
-      <img
-        src="assets/logo.webp"
-        alt="Dekorativne maske za klimu - brend DEKORATIVNE MASKE"
-        class="max-h-[80px] w-auto transform scale-110 object-contain"
-      />
-      <div class="ml-3 text-center leading-tight">
-        <span class="!text-base !sm:text-lg !font-serif !italic !text-gray-700">DEKORATIVNE MASKE</span>
-        <span class="!block !text-base !sm:text-lg !font-serif !italic !text-gray-700">ZA KLIMU</span>
-      </div>
-    </div>
+      <!-- Logo -->
+      <a
+        routerLink="/"
+        class="flex items-center gap-3 min-w-0 group"
+        title="Maska za klimu i maske za klimu - početna stranica"
+        aria-label="Početna stranica Maske za klimu"
+      >
+        <img
+          src="assets/logo.webp"
+          alt="Maske za klimu - dekorativne i zaštitne maske za spoljne jedinice"
+          class="h-14 sm:h-16 w-auto object-contain transition-transform duration-300 group-hover:scale-[1.03]"
+        />
 
-    <!-- Ikone sa desne strane -->
-    <div class="flex gap-4 sm:gap-6 items-center">
+        <div class="leading-tight min-w-0">
+          <span class="block text-sm sm:text-base font-semibold tracking-wide text-gray-900">
+            DEKORATIVNE MASKE
+          </span>
+          <span class="block text-sm sm:text-base font-semibold tracking-wide text-gray-700">
+            ZA KLIMU
+          </span>
+        </div>
+      </a>
 
-      <!-- Poziv -->
-      <div class="flex items-center gap-1 text-sm text-gray-700">
+      <!-- Primary navigation -->
+      <nav class="hidden lg:flex items-center gap-6 text-sm font-medium text-gray-700" aria-label="Glavna navigacija">
+        <a routerLink="/" class="hover:text-gray-900 transition" title="Početna - maske za klimu">
+          Maske za klimu
+        </a>
+
+        <a routerLink="/galerija" class="hover:text-gray-900 transition" title="Galerija maski za klimu">
+          Galerija
+        </a>
+
+        <a routerLink="/kontakt" class="hover:text-gray-900 transition" title="Maska za klimu cena i ponuda">
+          Cena i ponuda
+        </a>
+
+        <a routerLink="/dostava-i-povracaj" class="hover:text-gray-900 transition" title="Dostava i rok izrade maski za klimu">
+          Dostava
+        </a>
+
+        <a routerLink="/info" class="hover:text-gray-900 transition" title="Informacije o maskama za klimu">
+          Info
+        </a>
+      </nav>
+
+      <!-- Right side -->
+      <div class="flex items-center gap-3 sm:gap-5">
+
+        <!-- Call -->
         <a
           href="tel:+381659775995"
-          class="flex items-center gap-1 hover:text-green-700 hover:scale-105 transition-all font-medium"
+          class="hidden sm:inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gray-900 text-white text-sm font-semibold shadow hover:bg-gray-800 transition"
           title="Pozovite nas za porudžbine maski za klimu"
+          aria-label="Pozovite nas"
         >
           <mat-icon>call</mat-icon>
-          <span class="hidden sm:inline">Pozovi</span>
+          <span>Pozovi</span>
         </a>
-      </div>
 
-      <!-- Korpa -->
-      <div class="relative cursor-pointer" routerLink="/cart">
-        <mat-icon aria-label="Korpa" class="text-gray-600 hover:scale-125 transition-transform">shopping_cart</mat-icon>
-        <span
-          *ngIf="cartProducts().length !== 0"
-          class="absolute top-1 right-0 w-2 h-2 bg-red-500 rounded-full"
-        ></span>
-      </div>
-
-      <!-- Facebook -->
-      <a
-        href="https://www.facebook.com/maskezaklimu"
-        target="_blank"
-        rel="noopener"
-        title="Facebook stranica Dekorativne maske za klimu"
-      >
-        <mat-icon svgIcon="facebook" class="text-gray-600 hover:scale-125 transition-transform cursor-pointer"></mat-icon>
-      </a>
-
-      <!-- Instagram -->
-      <a
-        href="https://www.instagram.com/maske_za_klimu"
-        target="_blank"
-        rel="noopener"
-        title="Instagram stranica Dekorativne maske za klimu"
-      >
-        <mat-icon svgIcon="instagram" class="text-gray-600 hover:scale-125 transition-transform cursor-pointer"></mat-icon>
-      </a>
-
-      <!-- Info i Galerija -->
-      <div class="flex items-center gap-2">
-        <!-- Info dugme -->
+        <!-- Quick gallery button -->
         <a
-          href="/info"
-          class="text-gray-600 hover:scale-125 transition-transform inline-block"
-          title="Informacije o maskama za klimu"
+          routerLink="/galerija"
+          class="hidden md:inline-flex items-center gap-2 px-4 py-2 rounded-full border border-gray-300 bg-white text-gray-900 text-sm font-semibold hover:bg-gray-50 transition"
+          title="Pogledajte naše radove"
+          aria-label="Pogledajte naše radove"
         >
-          <mat-icon>info</mat-icon>
+          <mat-icon>photo_library</mat-icon>
+          <span>Radovi</span>
         </a>
 
-        <!-- Dugme za galeriju -->
-        <!-- <button
-          routerLink="/galerija"
-          class="px-3 py-1.5 mb-2 ml-3 rounded-full bg-gray-600 text-white font-medium shadow-sm hover:bg-gray-800 hover:scale-105 transition-all text-sm sm:text-base"
-          title="Pogledajte slike montiranih dekorativnih maski"
+        <!-- Cart -->
+        <a
+          routerLink="/cart"
+          class="relative inline-flex items-center justify-center w-10 h-10 rounded-full hover:bg-gray-100 transition"
+          title="Korpa"
+          aria-label="Korpa"
         >
-          Pogledajte naše radove
-        </button> -->
+          <mat-icon class="text-gray-700">shopping_cart</mat-icon>
+          <span
+            *ngIf="cartProducts().length !== 0"
+            class="absolute top-1.5 right-1.5 w-2.5 h-2.5 bg-red-500 rounded-full"
+          ></span>
+        </a>
+
+        <!-- Social -->
+        <a
+          href="https://www.facebook.com/maskezaklimu"
+          target="_blank"
+          rel="noopener"
+          title="Facebook stranica Maske za klimu"
+          aria-label="Facebook"
+          class="hidden sm:inline-flex items-center justify-center w-10 h-10 rounded-full hover:bg-gray-100 transition"
+        >
+          <mat-icon svgIcon="facebook" class="text-gray-700"></mat-icon>
+        </a>
+
+        <a
+          href="https://www.instagram.com/maske_za_klimu"
+          target="_blank"
+          rel="noopener"
+          title="Instagram stranica Maske za klimu"
+          aria-label="Instagram"
+          class="hidden sm:inline-flex items-center justify-center w-10 h-10 rounded-full hover:bg-gray-100 transition"
+        >
+          <mat-icon svgIcon="instagram" class="text-gray-700"></mat-icon>
+        </a>
+
+        <!-- Info -->
+        <a
+          routerLink="/info"
+          class="inline-flex items-center justify-center w-10 h-10 rounded-full hover:bg-gray-100 transition"
+          title="Informacije o maskama za klimu"
+          aria-label="Informacije"
+        >
+          <mat-icon class="text-gray-700">info</mat-icon>
+        </a>
       </div>
     </div>
+
+    <!-- Secondary SEO links -->
+    <!-- <div class="hidden md:flex flex-wrap items-center gap-x-5 gap-y-2 pb-3 text-xs sm:text-sm text-gray-600">
+      <a routerLink="/" class="hover:text-gray-900 transition" title="Maska za klimu">
+        Maska za klimu
+      </a>
+      <a routerLink="/" class="hover:text-gray-900 transition" title="Maske za klimu">
+        Maske za klimu
+      </a>
+      <a routerLink="/" class="hover:text-gray-900 transition" title="Maske za klime">
+        Maske za klime
+      </a>
+      <a routerLink="/" class="hover:text-gray-900 transition" title="Maska za klimu spolja">
+        Maska za klimu spolja
+      </a>
+      <a routerLink="/kontakt" class="hover:text-gray-900 transition" title="Maska za klimu cena">
+        Maska za klimu cena
+      </a>
+      <a routerLink="/dostava-i-povracaj" class="hover:text-gray-900 transition" title="Rok izrade i dostava">
+        Rok izrade i dostava
+      </a>
+    </div> -->
   </div>
 </header>
-
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Store",
-  "name": "Dekorativne maske za klimu",
-  "image": "https://maskezaklimu.rs/assets/logo.webp",
-  "telephone": "+381659775995",
-  "url": "https://maskezaklimu.rs",
-  "sameAs": [
-    "https://www.facebook.com/maskezaklimu",
-    "https://www.instagram.com/maske_za_klimu"
-  ],
-  "description": "Ručno izrađene dekorativne maske za spoljne jedinice klima uređaja. Kvalitetna zaštita i moderan dizajn za vaš dom."
-}
-</script>
