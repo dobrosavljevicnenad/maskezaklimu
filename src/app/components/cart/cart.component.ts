@@ -4,6 +4,8 @@ import { Router, RouterModule } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { MatIconModule } from '@angular/material/icon';
 import { FormsModule } from '@angular/forms';
+import { Meta, Title } from '@angular/platform-browser';
+
 
 @Component({
   selector: 'app-cart',
@@ -25,11 +27,16 @@ export class CartComponent {
     }, 0);
   });
 
-  constructor(private maskaService: MaskaService, private router: Router) {
+  constructor(private maskaService: MaskaService, private router: Router, private meta: Meta, private title: Title) {
     effect(() => {
       // efekat da reaguje ako se promeni cartProducts
       console.log('Cart updated:', this.cartProducts());
     });
+  }
+
+  ngOnInit(): void {
+    this.title.setTitle('Korpa | Maske za klimu');
+    this.meta.updateTag({ name: 'robots', content: 'noindex, follow' });
   }
 
   addToCart(productId: number, boja: string) {

@@ -4,6 +4,7 @@ import { Router } from '@angular/router';
 import emailjs from '@emailjs/browser';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
+import { Meta, Title } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-order',
@@ -24,10 +25,12 @@ export class OrderComponent implements OnInit {
 
   baseUrl: string = 'https://maskezaklimu.rs/';
 
-  constructor(private maskaService: MaskaService, private router: Router) {}
+  constructor(private maskaService: MaskaService, private router: Router,   private meta: Meta, private title: Title) {}
 
   ngOnInit(): void {
     this.cartProducts = this.maskaService.getCartProducts();
+    this.title.setTitle('Narudžbina | Maske za klimu');
+    this.meta.updateTag({ name: 'robots', content: 'noindex, follow' });
   }
 
   getTotalPrice() {
