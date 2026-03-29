@@ -31,7 +31,7 @@ export class OrderComponent implements OnInit {
     this.cartProducts = this.maskaService.getCartProducts();
     this.title.setTitle('Narudžbina | Maske za klimu');
     this.meta.updateTag({ name: 'robots', content: 'noindex, follow' });
-  }
+}
 
   getTotalPrice() {
     return this.maskaService.getTotalPrice();

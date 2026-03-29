@@ -8,6 +8,9 @@ import { ONamaComponent } from './components/o-nama/o-nama.component';
 import { DostavaIPovracajComponent } from './components/dostava-i-povracaj/dostava-i-povracaj.component';
 import { GalerijaComponent } from './components/galerija/galerija.component';
 import { InfoComponent } from './components/info/info.component';
+import { MaskeZaKlimeCenaComponent } from './components/maske-za-klime-cena/maske-za-klime-cena.component';
+import { MaskaZaKlimuSpoljaComponent } from './components/maska-za-klimu-spolja/maska-za-klimu-spolja.component';
+import { UkrasnaKutijaZaKlimuComponent } from './components/ukrasna-kutija-za-klimu/ukrasna-kutija-za-klimu.component';
 
 export const routes: Routes = [
   {
@@ -45,7 +48,19 @@ export const routes: Routes = [
   {
     path: 'info',
     component: InfoComponent
-  }
+  },
+  {
+    path: 'maske-za-klime-cena',
+    component: MaskeZaKlimeCenaComponent
+  },
+  {
+    path: 'maska-za-klimu-spolja',
+    component: MaskaZaKlimuSpoljaComponent
+  },
+  {
+    path: 'ukrasna-kutija-za-klimu',
+    component: UkrasnaKutijaZaKlimuComponent
+  },
 
 
 ];

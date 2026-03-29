@@ -5,6 +5,7 @@ import { CommonModule } from '@angular/common';
 import { MatIconModule } from '@angular/material/icon';
 import { FormsModule } from '@angular/forms';
 import { Meta, Title } from '@angular/platform-browser';
+import { OnInit } from '@angular/core';
 
 
 @Component({
@@ -14,7 +15,7 @@ import { Meta, Title } from '@angular/platform-browser';
   templateUrl: './cart.component.html',
   styleUrls: ['./cart.component.scss'],
 })
-export class CartComponent {
+export class CartComponent implements OnInit {
   cartProducts: Signal<any[]> = this.maskaService.getCartProducts;
 
   editingColorIndex: number | null = null;
@@ -27,17 +28,21 @@ export class CartComponent {
     }, 0);
   });
 
-  constructor(private maskaService: MaskaService, private router: Router, private meta: Meta, private title: Title) {
-    effect(() => {
-      // efekat da reaguje ako se promeni cartProducts
-      console.log('Cart updated:', this.cartProducts());
-    });
-  }
+  constructor(
+  private maskaService: MaskaService,
+  private router: Router,
+  private meta: Meta,
+  private title: Title
+) {
+  effect(() => {
+    console.log('Cart updated:', this.cartProducts());
+  });
+}
 
   ngOnInit(): void {
     this.title.setTitle('Korpa | Maske za klimu');
     this.meta.updateTag({ name: 'robots', content: 'noindex, follow' });
-  }
+}
 
   addToCart(productId: number, boja: string) {
     this.maskaService.addToCart(productId, boja, 1);
