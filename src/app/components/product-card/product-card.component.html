@@ -10,7 +10,7 @@
   <!-- Slika -->
   <a [routerLink]="['/proizvod', product.slug]"
      class="block overflow-hidden relative rounded-t-2xl">
-     <img [src]="product.slika[0].url" alt="{{ product.naziv }}"
+     <img [src]="product.slika[0].url" alt="{{ product.naziv }} - maska za klimu od plastificiranog lima za spoljnu jedinicu klima uređaja"
           class="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-105"
           [ngStyle]="product.id === 1 ? {'object-position': 'center 20%'} : {}" itemprop="image"
    />
