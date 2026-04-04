@@ -74,14 +74,14 @@ export class MaskaDetailComponent implements OnInit, OnDestroy {
     const nazivRaw = (this.maska.naziv || 'Maska za klimu').trim();
 
     // ✅ Title šablon (pomaže CTR + query pokrivenost)
-    const title = `${nazivRaw} | Maska za klimu – cena, izrada po meri (5–7 dana)`;
+    const title = `${nazivRaw} | Maska za klimu za spoljnu jedinicu | Cena i izrada po meri`;
 
     // ✅ Description (155–165 karaktera idealno)
     const opisRaw = (this.maska.opis || '').replace(/\s+/g, ' ').trim();
     const description =
-      opisRaw.length >= 120
-        ? opisRaw.slice(0, 160)
-        : `Dekorativna i zaštitna maska za klimu (spoljna jedinica). Izrada po meri, plastificirani lim 1.5mm, brza isporuka 5–7 dana.`;
+    opisRaw.length >= 120
+      ? opisRaw.slice(0, 160)
+      : `${nazivRaw} – dekorativna maska za klimu za spoljnu jedinicu. Plastificirani lim 1.5 mm, izrada po meri, brza isporuka 5–7 dana širom Srbije.`;
 
     const url = `${this.SITE}/proizvod/${this.maska.slug}`;
 

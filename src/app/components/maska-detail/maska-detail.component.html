@@ -88,7 +88,7 @@
 
             <img
               [src]="izabranaSlika"
-              [alt]="(maska?.naziv || 'Maska za klimu') + ' – dekorativna maska i zaštita za spoljnu jedinicu klime'"
+              [alt]="(maska?.naziv || 'Maska za klimu') + ' – maska za klimu od plastificiranog lima za spoljnu jedinicu klima uređaja'"
               class="w-full h-full object-cover"
               [ngStyle]="maska?.id === 1 ? {'object-position': 'center 20%'} : {}"
               loading="eager"
@@ -112,8 +112,8 @@
               </span>
             </div>
 
-            <figcaption class="sr-only">
-              {{ maska?.naziv }} – maska za klimu (spoljna jedinica), dekorativna i zaštitna.
+            <figcaption class="text-sm text-gray-600 px-4 pb-4">
+              {{ maska?.naziv }} – dekorativna maska za klimu od plastificiranog lima za spoljnu jedinicu klima uređaja.
             </figcaption>
           </figure>
 
