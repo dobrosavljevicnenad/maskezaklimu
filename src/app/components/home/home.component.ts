@@ -125,6 +125,51 @@ export class HomeComponent implements OnInit {
             '@type': 'Answer',
             text: 'Da. Možemo izraditi masku za klimu po meri prema dimenzijama vaše spoljne jedinice i željenoj boji.'
           }
+        },
+        {
+          '@type': 'Question',
+          name: 'Od čega su napravljene maske za klimu?',
+          acceptedAnswer: {
+            '@type': 'Answer',
+            text: 'Sve naše maske za klimu izrađene su od plastificiranog lima debljine 1,5 mm. Ovaj materijal je otporan na koroziju, UV zrake i atmosferske uslove, što ga čini idealnim za spoljnu upotrebu.'
+          }
+        },
+        {
+          '@type': 'Question',
+          name: 'Koje dimenzije maska za klimu su dostupne?',
+          acceptedAnswer: {
+            '@type': 'Answer',
+            text: 'Standardna maska za klimu iznosi 900 × 650 × 440 mm. Pored toga, radimo i maske za klimu po meri – samo nam pošaljite dimenzije vaše spoljne jedinice i prilagodićemo ih vašim potrebama.'
+          }
+        },
+        {
+          '@type': 'Question',
+          name: 'Koliko traje dostava maske za klimu?',
+          acceptedAnswer: {
+            '@type': 'Answer',
+            text: 'Standardni modeli se isporučuju za 5–7 radnih dana. Maske za klimu po meri mogu zahtevati nešto duži rok izrade. Dostava se vrši kurirskom službom na celu teritoriju Srbije.'
+          }
+        },
+        {
+          '@type': 'Question',
+          name: 'Koje boje su dostupne za maske za klime?',
+          acceptedAnswer: {
+            '@type': 'Answer',
+            text: 'Maske za klime dostupne su u velikom broju RAL boja. Najtraženije su bela, antracit siva i crna, ali možete izabrati i boju koja odgovara vašoj fasadi. Kontaktirajte nas za detalje o dostupnim nijansama.'
+          }
+        }
+      ]
+    });
+
+    this.seo.setJsonLd('home-breadcrumb-schema', {
+      '@context': 'https://schema.org',
+      '@type': 'BreadcrumbList',
+      itemListElement: [
+        {
+          '@type': 'ListItem',
+          position: 1,
+          name: 'Maske za klimu',
+          item: 'https://maskezaklimu.rs/'
         }
       ]
     });
