@@ -15,7 +15,7 @@ export class MaskaZaKlimuSpoljaComponent implements OnInit {
   ngOnInit(): void {
     this.seo.updateSeo({
       title: 'Maska za klimu spolja – Zaštita za spoljnu jedinicu klime | maskezaklimu.rs',
-      description: 'Maska za klimu spolja od plastificiranog lima 1,5 mm – zaštita i estetika za spoljnu jedinicu klima uređaja. Izrada po meri, izbor RAL boja, dostava širom Srbije. Cena od 12.480 RSD.',
+      description: 'Maska za klimu spolja od plastificiranog lima 1,5 mm. Štiti i ulepšava spoljnu jedinicu klima uređaja – izrada po meri, RAL boje, dostava širom Srbije. Cena 12.480 RSD.',
       url: 'https://maskezaklimu.rs/maska-za-klimu-spolja',
       image: 'https://maskezaklimu.rs/assets/maska-za-klimu-sitni-listovi.webp'
     });
