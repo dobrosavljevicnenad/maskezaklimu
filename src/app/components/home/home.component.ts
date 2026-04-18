@@ -67,6 +67,13 @@ export class HomeComponent implements OnInit {
       areaServed: {
         '@type': 'Country',
         name: 'Serbia'
+      },
+      aggregateRating: {
+        '@type': 'AggregateRating',
+        ratingValue: '5',
+        reviewCount: '15',
+        bestRating: '5',
+        worstRating: '1'
       }
     });
 

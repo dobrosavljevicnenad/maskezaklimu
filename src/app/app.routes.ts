@@ -11,6 +11,8 @@ import { InfoComponent } from './components/info/info.component';
 import { MaskeZaKlimeCenaComponent } from './components/maske-za-klime-cena/maske-za-klime-cena.component';
 import { MaskaZaKlimuSpoljaComponent } from './components/maska-za-klimu-spolja/maska-za-klimu-spolja.component';
 import { UkrasnaKutijaZaKlimuComponent } from './components/ukrasna-kutija-za-klimu/ukrasna-kutija-za-klimu.component';
+import { MaskaZaKlimuBeogradComponent } from './components/maska-za-klimu-beograd/maska-za-klimu-beograd.component';
+import { MaskaZaKlimuNoviSadComponent } from './components/maska-za-klimu-novi-sad/maska-za-klimu-novi-sad.component';
 
 export const routes: Routes = [
   {
@@ -61,6 +63,12 @@ export const routes: Routes = [
     path: 'ukrasna-kutija-za-klimu',
     component: UkrasnaKutijaZaKlimuComponent
   },
-
-
+  {
+    path: 'maska-za-klimu-beograd',
+    component: MaskaZaKlimuBeogradComponent
+  },
+  {
+    path: 'maska-za-klimu-novi-sad',
+    component: MaskaZaKlimuNoviSadComponent
+  },
 ];

@@ -128,6 +128,32 @@
     </image:image>
   </url>
 
+  <!-- CITY STRANICE -->
+
+  <url>
+    <loc>https://maskezaklimu.rs/maska-za-klimu-beograd</loc>
+    <lastmod>2026-04-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://maskezaklimu.rs/assets/maska-za-klimu-sitni-listovi.webp</image:loc>
+      <image:caption>Maska za klimu Beograd – dostava kurirskom službom u sve beogradske opštine</image:caption>
+      <image:title>Maska za klimu Beograd</image:title>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://maskezaklimu.rs/maska-za-klimu-novi-sad</loc>
+    <lastmod>2026-04-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://maskezaklimu.rs/assets/maska-za-klimu-sitni-listovi.webp</image:loc>
+      <image:caption>Maska za klimu Novi Sad – dostava kurirskom službom u Novi Sad i okolinu</image:caption>
+      <image:title>Maska za klimu Novi Sad</image:title>
+    </image:image>
+  </url>
+
   <!-- BITNE SEKCIJE -->
 
   <url>
