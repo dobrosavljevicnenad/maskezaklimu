@@ -87,8 +87,66 @@ export class HomeComponent implements OnInit {
       inLanguage: 'sr-RS',
       primaryImageOfPage: {
         '@type': 'ImageObject',
-        url: 'https://maskezaklimu.rs/assets/maska-za-klimu-sitni-listovi.webp'
+        '@id': 'https://maskezaklimu.rs/assets/maska-za-klimu-sitni-listovi.webp',
+        url: 'https://maskezaklimu.rs/assets/maska-za-klimu-sitni-listovi.webp',
+        name: 'Maske za klimu – dekorativna maska za klimu od plastificiranog lima',
+        description: 'Maske za klimu i maska za klimu od plastificiranog lima za spoljne jedinice klima uređaja. Dekorativne maske za klime po meri.',
+        caption: 'Maske za klimu – dekorativna maska za klimu od plastificiranog lima, model Sitni listovi',
+        width: 1200,
+        height: 800,
+        encodingFormat: 'image/webp'
       }
+    });
+
+    this.seo.setJsonLd('home-images-schema', {
+      '@context': 'https://schema.org',
+      '@type': 'ImageGallery',
+      name: 'Maske za klimu – galerija svih modela',
+      description: 'Maske za klimu od plastificiranog lima – svi modeli dekorativnih maski za klime i maska za klimu za spoljne jedinice klima uređaja',
+      image: [
+        {
+          '@type': 'ImageObject',
+          url: 'https://maskezaklimu.rs/assets/maska-za-klimu-sitni-listovi.webp',
+          name: 'Maske za klimu – model Sitni listovi',
+          caption: 'Dekorativna maska za klimu, model Sitni listovi – maske za klime od plastificiranog lima',
+          encodingFormat: 'image/webp'
+        },
+        {
+          '@type': 'ImageObject',
+          url: 'https://maskezaklimu.rs/assets/dekorativna_maska_za_klimu_pravougaonici.webp',
+          name: 'Maske za klimu – model Pravougaonici',
+          caption: 'Ukrasna maska za klimu sa geometrijskim dizajnom – maske za klime, model Pravougaonici',
+          encodingFormat: 'image/webp'
+        },
+        {
+          '@type': 'ImageObject',
+          url: 'https://maskezaklimu.rs/assets/maska_za_klimu_krupni_listovi.webp',
+          name: 'Maska za klimu – model Krupni listovi',
+          caption: 'Metalna maska za klimu sa krupnim listovima – maske za spoljnu jedinicu klima uređaja',
+          encodingFormat: 'image/webp'
+        },
+        {
+          '@type': 'ImageObject',
+          url: 'https://maskezaklimu.rs/assets/maska_za_klimu_haoticna_sara.webp',
+          name: 'Maske za klimu – model Haotična šara',
+          caption: 'Dekorativna maska za klimu savremenog dizajna – maske za klime, model Haotična šara',
+          encodingFormat: 'image/webp'
+        },
+        {
+          '@type': 'ImageObject',
+          url: 'https://maskezaklimu.rs/assets/maska_za_klimu_kvadratici.webp',
+          name: 'Maska za klimu – model Kvadratići',
+          caption: 'Maska za klimu sa kvadratićima – maske za klime za spoljne jedinice klima uređaja',
+          encodingFormat: 'image/webp'
+        },
+        {
+          '@type': 'ImageObject',
+          url: 'https://maskezaklimu.rs/assets/maska_za_klimu_ostre_sare.webp',
+          name: 'Maska za klimu – model Oštre šare',
+          caption: 'Minimalistička metalna maska za klimu – maske za klime, model Oštre šare',
+          encodingFormat: 'image/webp'
+        }
+      ]
     });
 
     this.seo.setJsonLd('home-itemlist-schema', {
