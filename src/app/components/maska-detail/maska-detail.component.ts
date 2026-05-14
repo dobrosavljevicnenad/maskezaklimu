@@ -5,6 +5,7 @@ import { CommonModule, isPlatformBrowser } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { Meta, Title } from '@angular/platform-browser';
 import { Subscription } from 'rxjs';
+import { SeoService } from '../../services/seo.service';
 
 @Component({
   selector: 'app-maska-detail',
@@ -31,6 +32,7 @@ export class MaskaDetailComponent implements OnInit, OnDestroy {
     private maskaService: MaskaService,
     private meta: Meta,
     private title: Title,
+    private seoService: SeoService,
     @Inject(PLATFORM_ID) private platformId: Object
   ) {}
 
@@ -59,13 +61,15 @@ export class MaskaDetailComponent implements OnInit, OnDestroy {
         this.izabranaSlika = '';
       }
 
-      // ✅ SEO tags
+        // ✅ SEO tags
       this.applySeo();
+      this.applyProductSchema();
     });
   }
 
   ngOnDestroy(): void {
     this.sub?.unsubscribe();
+    this.seoService.removeJsonLd('product-schema');
   }
 
   private applySeo(): void {
@@ -117,6 +121,82 @@ export class MaskaDetailComponent implements OnInit, OnDestroy {
     this.meta.updateTag({ name: 'twitter:title', content: title });
     this.meta.updateTag({ name: 'twitter:description', content: description });
     this.meta.updateTag({ name: 'twitter:image', content: image });
+  }
+
+  private applyProductSchema(): void {
+    if (!this.maska) return;
+
+    const nazivRaw = (this.maska.naziv || 'Maska za klimu').trim();
+    const url = `${this.SITE}/proizvod/${this.maska.slug}`;
+    const imgRel = this.maska.slika?.[0]?.url || '/assets/maska-za-klimu-sitni-listovi.webp';
+    const image = this.toAbsoluteUrl(imgRel);
+
+    const discountedPrice = this.maskaService.getDiscountPrice(this.maska);
+    const price = discountedPrice.toFixed(2);
+
+    const schema: any = {
+      '@context': 'https://schema.org',
+      '@type': 'Product',
+      name: nazivRaw,
+      description: (this.maska.opis || '').trim(),
+      image: [image],
+      url,
+      brand: {
+        '@type': 'Brand',
+        name: 'Maske za klimu'
+      },
+      sku: `MZK-${this.maska.id}`,
+      offers: {
+        '@type': 'Offer',
+        url,
+        priceCurrency: 'RSD',
+        price,
+        priceValidUntil: '2026-12-31',
+        availability: 'https://schema.org/InStock',
+        itemCondition: 'https://schema.org/NewCondition',
+        seller: {
+          '@type': 'Organization',
+          name: 'Maske za klimu'
+        },
+        shippingDetails: {
+          '@type': 'OfferShippingDetails',
+          shippingRate: {
+            '@type': 'MonetaryAmount',
+            value: '0',
+            currency: 'RSD'
+          },
+          shippingDestination: {
+            '@type': 'DefinedRegion',
+            addressCountry: 'RS'
+          },
+          deliveryTime: {
+            '@type': 'ShippingDeliveryTime',
+            handlingTime: {
+              '@type': 'QuantitativeValue',
+              minValue: 1,
+              maxValue: 2,
+              unitCode: 'DAY'
+            },
+            transitTime: {
+              '@type': 'QuantitativeValue',
+              minValue: 3,
+              maxValue: 5,
+              unitCode: 'DAY'
+            }
+          }
+        },
+        hasMerchantReturnPolicy: {
+          '@type': 'MerchantReturnPolicy',
+          applicableCountry: 'RS',
+          returnPolicyCategory: 'https://schema.org/MerchantReturnFiniteReturnWindow',
+          merchantReturnDays: 14,
+          returnMethod: 'https://schema.org/ReturnByMail',
+          returnFees: 'https://schema.org/FreeReturn'
+        }
+      }
+    };
+
+    this.seoService.setJsonLd('product-schema', schema);
   }
 
   private toAbsoluteUrl(url: string): string {
