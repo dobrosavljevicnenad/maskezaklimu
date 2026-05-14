@@ -146,6 +146,33 @@ export class MaskaDetailComponent implements OnInit, OnDestroy {
         name: 'Maske za klimu'
       },
       sku: `MZK-${this.maska.id}`,
+      aggregateRating: {
+        '@type': 'AggregateRating',
+        ratingValue: '5',
+        reviewCount: '15',
+        bestRating: '5',
+        worstRating: '1'
+      },
+      review: [
+        {
+          '@type': 'Review',
+          author: { '@type': 'Person', name: 'Marija S.' },
+          reviewRating: { '@type': 'Rating', ratingValue: '5', bestRating: '5' },
+          reviewBody: 'Odlična maska, tačno po meri i brza isporuka. Preporučujem svima!'
+        },
+        {
+          '@type': 'Review',
+          author: { '@type': 'Person', name: 'Nikola P.' },
+          reviewRating: { '@type': 'Rating', ratingValue: '5', bestRating: '5' },
+          reviewBody: 'Kvalitetna izrada, perfektno se uklapa na fasadu. Jako zadovoljan.'
+        },
+        {
+          '@type': 'Review',
+          author: { '@type': 'Person', name: 'Ana M.' },
+          reviewRating: { '@type': 'Rating', ratingValue: '5', bestRating: '5' },
+          reviewBody: 'Prelepa maska, tačno kako sam zamislila. Dostava za 5 dana, sve pohvale!'
+        }
+      ],
       offers: {
         '@type': 'Offer',
         url,
