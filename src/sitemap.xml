@@ -179,6 +179,78 @@
     </image:image>
   </url>
 
+  <url>
+    <loc>https://maskezaklimu.rs/maska-za-klimu-nis</loc>
+    <lastmod>2026-05-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://maskezaklimu.rs/assets/maska-za-klimu-sitni-listovi.webp</image:loc>
+      <image:caption>Maska za klimu Niš – dostava kurirskom službom u Niš i okolinu</image:caption>
+      <image:title>Maska za klimu Niš</image:title>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://maskezaklimu.rs/maska-za-klimu-kragujevac</loc>
+    <lastmod>2026-05-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://maskezaklimu.rs/assets/maska-za-klimu-sitni-listovi.webp</image:loc>
+      <image:caption>Maska za klimu Kragujevac – dostava kurirskom službom u Kragujevac i Šumadiju</image:caption>
+      <image:title>Maska za klimu Kragujevac</image:title>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://maskezaklimu.rs/maska-za-klimu-subotica</loc>
+    <lastmod>2026-05-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://maskezaklimu.rs/assets/maska-za-klimu-sitni-listovi.webp</image:loc>
+      <image:caption>Maska za klimu Subotica – dostava kurirskom službom u Suboticu i Vojvodinu</image:caption>
+      <image:title>Maska za klimu Subotica</image:title>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://maskezaklimu.rs/maska-za-klimu-cacak</loc>
+    <lastmod>2026-05-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://maskezaklimu.rs/assets/maska-za-klimu-sitni-listovi.webp</image:loc>
+      <image:caption>Maska za klimu Čačak – dostava kurirskom službom u Čačak i zapadnu Srbiju</image:caption>
+      <image:title>Maska za klimu Čačak</image:title>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://maskezaklimu.rs/maska-za-klimu-valjevo</loc>
+    <lastmod>2026-05-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://maskezaklimu.rs/assets/maska-za-klimu-sitni-listovi.webp</image:loc>
+      <image:caption>Maska za klimu Valjevo – dostava kurirskom službom u Valjevo i Kolubarsku oblast</image:caption>
+      <image:title>Maska za klimu Valjevo</image:title>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://maskezaklimu.rs/maska-za-klimu-pancevo</loc>
+    <lastmod>2026-05-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://maskezaklimu.rs/assets/maska-za-klimu-sitni-listovi.webp</image:loc>
+      <image:caption>Maska za klimu Pančevo – dostava kurirskom službom u Pančevo i Južni Banat</image:caption>
+      <image:title>Maska za klimu Pančevo</image:title>
+    </image:image>
+  </url>
+
   <!-- BITNE SEKCIJE -->
 
   <url>
