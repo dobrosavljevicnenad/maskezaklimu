@@ -6,6 +6,12 @@
 /kontakt
 /maska-za-klimu-beograd
 /maska-za-klimu-novi-sad
+/maska-za-klimu-nis
+/maska-za-klimu-kragujevac
+/maska-za-klimu-subotica
+/maska-za-klimu-cacak
+/maska-za-klimu-valjevo
+/maska-za-klimu-pancevo
 /maska-za-klimu-spolja
 /maske-za-klime-cena
 /o-nama

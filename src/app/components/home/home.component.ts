@@ -74,7 +74,113 @@ export class HomeComponent implements OnInit {
         reviewCount: '15',
         bestRating: '5',
         worstRating: '1'
-      }
+      },
+      review: [
+        {
+          '@type': 'Review',
+          author: { '@type': 'Person', name: 'Dragan' },
+          datePublished: '2026-03-23',
+          reviewRating: { '@type': 'Rating', ratingValue: '5', bestRating: '5' },
+          reviewBody: 'Odlična saradnja, izuzetna komunikacija, preciznost svih detalja, kvalitet, velika preporuka!',
+          publisher: { '@type': 'Organization', name: 'KupujemProdajem' }
+        },
+        {
+          '@type': 'Review',
+          author: { '@type': 'Person', name: 'Radivoj Pejin' },
+          datePublished: '2025-08-02',
+          reviewRating: { '@type': 'Rating', ratingValue: '5', bestRating: '5' },
+          reviewBody: 'Proizvod odličan, komunikacija fenomenalna. Za svaku preporuku!',
+          publisher: { '@type': 'Organization', name: 'KupujemProdajem' }
+        },
+        {
+          '@type': 'Review',
+          author: { '@type': 'Person', name: 'Aleksandar Markovic' },
+          datePublished: '2025-07-13',
+          reviewRating: { '@type': 'Rating', ratingValue: '5', bestRating: '5' },
+          reviewBody: 'Vrlo profesionalna i brza saradnja, sve u dogovorenim rokovima i jasan dogovor.',
+          publisher: { '@type': 'Organization', name: 'KupujemProdajem' }
+        },
+        {
+          '@type': 'Review',
+          author: { '@type': 'Person', name: 'Goran T.' },
+          datePublished: '2025-06-14',
+          reviewRating: { '@type': 'Rating', ratingValue: '5', bestRating: '5' },
+          reviewBody: 'Malo je reci da sam bio prijatno iznenadjen kada sam dobio porucene maske za klimu. Maske su uradjene extra kvalitetno i sada predstavljaju malo umetnicko delo na mojoj terasi. Nenad kao prodavac je vrhunski profesionalac koji je prevazisao sva moja ocekivanja. Sve preporuke. Veliko hvala za sve.',
+          publisher: { '@type': 'Organization', name: 'KupujemProdajem' }
+        },
+        {
+          '@type': 'Review',
+          author: { '@type': 'Person', name: 'Slavica Veskovic' },
+          datePublished: '2025-06-12',
+          reviewRating: { '@type': 'Rating', ratingValue: '5', bestRating: '5' },
+          reviewBody: 'Perfektno! Hvala vam najlepše!',
+          publisher: { '@type': 'Organization', name: 'KupujemProdajem' }
+        },
+        {
+          '@type': 'Review',
+          author: { '@type': 'Person', name: 'Sinisa' },
+          datePublished: '2025-06-02',
+          reviewRating: { '@type': 'Rating', ratingValue: '5', bestRating: '5' },
+          reviewBody: 'Sve po dogovoru, izasli su u susret sto se tice preporuke za izradu kao i za dostavu. Sve preporuke. Pozdrav',
+          publisher: { '@type': 'Organization', name: 'KupujemProdajem' }
+        },
+        {
+          '@type': 'Review',
+          author: { '@type': 'Person', name: 'Marko Stokic' },
+          datePublished: '2025-05-08',
+          reviewRating: { '@type': 'Rating', ratingValue: '5', bestRating: '5' },
+          reviewBody: 'Sve je bilo po dogovoru kako smo se dogovorili! Odlican kvalitet. Hvala puno',
+          publisher: { '@type': 'Organization', name: 'KupujemProdajem' }
+        },
+        {
+          '@type': 'Review',
+          author: { '@type': 'Person', name: 'Dejan' },
+          datePublished: '2025-05-05',
+          reviewRating: { '@type': 'Rating', ratingValue: '5', bestRating: '5' },
+          reviewBody: 'Neverovatno! Nenad mi je odradio 30 maski za 5 dana i to vrhunskog kvaliteta. Ovo je pravi covek za svakog kome je potrebno da se maske urade ekstra brzo i kvalitetno. Zamislite, jos mi je mimo dogovora dostavio maske o svom trosku.',
+          publisher: { '@type': 'Organization', name: 'KupujemProdajem' }
+        },
+        {
+          '@type': 'Review',
+          author: { '@type': 'Person', name: 'Danijela Dobrosavljevic' },
+          datePublished: '2025-04-13',
+          reviewRating: { '@type': 'Rating', ratingValue: '5', bestRating: '5' },
+          reviewBody: 'Prezadovoljna sam sa maskama, Nenade! Samo tako nastavite! Veliki pozdrav i sve pohvale!',
+          publisher: { '@type': 'Organization', name: 'KupujemProdajem' }
+        },
+        {
+          '@type': 'Review',
+          author: { '@type': 'Person', name: 'Svetlana' },
+          datePublished: '2025-04-09',
+          reviewRating: { '@type': 'Rating', ratingValue: '5', bestRating: '5' },
+          reviewBody: 'Veoma sam zadovoljna saradnjom, laka komunikacija, maske su uradjene prema zahtevu i u odličnom kvalitetu. Odgovoran, stručan i ljubazan mladić. Čista desetka za svaku preporuku.',
+          publisher: { '@type': 'Organization', name: 'KupujemProdajem' }
+        },
+        {
+          '@type': 'Review',
+          author: { '@type': 'Person', name: 'Petar Butovski' },
+          datePublished: '2025-04-03',
+          reviewRating: { '@type': 'Rating', ratingValue: '5', bestRating: '5' },
+          reviewBody: 'Osoba je veoma korektna, pristojna i lako se dođe do dogovora. Preporuke i nadam se još saradnji u skorijoj budućnosti.',
+          publisher: { '@type': 'Organization', name: 'KupujemProdajem' }
+        },
+        {
+          '@type': 'Review',
+          author: { '@type': 'Person', name: 'Nikola' },
+          datePublished: '2025-04-03',
+          reviewRating: { '@type': 'Rating', ratingValue: '5', bestRating: '5' },
+          reviewBody: 'Brz i lak dogovor, svaka preporuka za Nenada.',
+          publisher: { '@type': 'Organization', name: 'KupujemProdajem' }
+        },
+        {
+          '@type': 'Review',
+          author: { '@type': 'Person', name: 'Nenad' },
+          datePublished: '2025-04-02',
+          reviewRating: { '@type': 'Rating', ratingValue: '5', bestRating: '5' },
+          reviewBody: 'Sve je proteklo odlično! Brza i profesionalna usluga, maska pristigla kao po dogovoru. Svaka preporuka za saradnju.',
+          publisher: { '@type': 'Organization', name: 'KupujemProdajem' }
+        }
+      ]
     });
 
     this.seo.setJsonLd('home-webpage-schema', {

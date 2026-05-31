@@ -1,7 +1,9 @@
 {
   "permissions": {
     "allow": [
-      "WebSearch"
+      "WebSearch",
+      "Bash(Select-String -Pattern \"prerender|routes|server\" -Context 2)",
+      "Bash(python3 -c \"import json,sys; data=json.load\\(sys.stdin\\); [print\\(d['slug']\\) for d in data]\")"
     ]
   }
 }

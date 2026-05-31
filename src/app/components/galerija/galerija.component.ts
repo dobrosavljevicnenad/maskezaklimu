@@ -1,7 +1,8 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
+import { SeoService } from '../../services/seo.service';
 
 @Component({
   selector: 'app-galerija',
@@ -10,7 +11,7 @@ import { ActivatedRoute, Router } from '@angular/router';
   templateUrl: './galerija.component.html',
   styleUrl: './galerija.component.css'
 })
-export class GalerijaComponent {
+export class GalerijaComponent implements OnInit {
     images = [
     'maska_za_klimu_pravougaonici_crna_gora_drvo.webp',
     'maska_za_klimu_pravougaonici_crna_gora_bocna.webp',
@@ -38,9 +39,31 @@ export class GalerijaComponent {
   // image file -> className
   positionsMap: Record<string, string> = {};
 
-  constructor(private route: ActivatedRoute, private router: Router) {}
+  constructor(private route: ActivatedRoute, private router: Router, private seo: SeoService) {}
 
   ngOnInit(): void {
+    this.seo.updateSeo({
+      title: 'Galerija radova – Maske za klimu ugrađene kod kupaca | maskezaklimu.rs',
+      description: 'Pogledajte galeriju ugrađenih maski za klimu kod naših kupaca – realne instalacije u Beogradu, Smederevu, Zemunu i drugim mestima širom Srbije.',
+      url: 'https://maskezaklimu.rs/galerija',
+      image: 'https://maskezaklimu.rs/assets/maska-za-klimu-sitni-listovi.webp'
+    });
+
+    this.seo.setJsonLd('galerija-schema', {
+      '@context': 'https://schema.org',
+      '@type': 'ImageGallery',
+      name: 'Galerija radova – Maske za klimu',
+      url: 'https://maskezaklimu.rs/galerija',
+      description: 'Galerija instalacija dekorativnih maski za klimu kod kupaca širom Srbije.',
+      breadcrumb: {
+        '@type': 'BreadcrumbList',
+        itemListElement: [
+          { '@type': 'ListItem', position: 1, name: 'Maske za klimu', item: 'https://maskezaklimu.rs/' },
+          { '@type': 'ListItem', position: 2, name: 'Galerija', item: 'https://maskezaklimu.rs/galerija' }
+        ]
+      }
+    });
+
     // inicijalno
     this.filteredImages = [...this.images];
 

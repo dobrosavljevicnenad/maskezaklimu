@@ -1,4 +1,4 @@
-import { Component, Inject, OnDestroy, OnInit, PLATFORM_ID } from '@angular/core';
+import { Component, Inject, OnDestroy, OnInit, PLATFORM_ID, effect } from '@angular/core';
 import { ActivatedRoute, RouterModule } from '@angular/router';
 import { MaskaService } from '../../services/maska.service';
 import { CommonModule, isPlatformBrowser } from '@angular/common';
@@ -22,9 +22,8 @@ export class MaskaDetailComponent implements OnInit, OnDestroy {
   izabranaBoja = '';
   drugaBoja = '';
 
+  private currentSlug = '';
   private sub?: Subscription;
-
-  // Promeni ako koristiš www ili drugu bazu
   private readonly SITE = 'https://maskezaklimu.rs';
 
   constructor(
@@ -34,7 +33,24 @@ export class MaskaDetailComponent implements OnInit, OnDestroy {
     private title: Title,
     private seoService: SeoService,
     @Inject(PLATFORM_ID) private platformId: Object
-  ) {}
+  ) {
+    // Handles SSR/prerender: maske signal starts as [] and resolves async via HTTP.
+    // When the signal finally has data, re-apply SEO+schema if slug is already set.
+    effect(() => {
+      const maske = this.maskaService.maske();
+      if (maske.length > 0 && this.currentSlug && !this.maska) {
+        const found = this.maskaService.getMaskaBySlug(this.currentSlug);
+        if (found) {
+          this.maska = found;
+          if (this.maska.slika?.length > 0) {
+            this.izabranaSlika = this.maska.slika[0].url;
+          }
+          this.applySeo();
+          this.applyProductSchema();
+        }
+      }
+    });
+  }
 
   ngOnInit(): void {
     if (isPlatformBrowser(this.platformId)) {
@@ -46,8 +62,7 @@ export class MaskaDetailComponent implements OnInit, OnDestroy {
       const slug = params.get('slug');
       if (!slug) return;
 
-      const found = this.maskaService.getMaskaBySlug(slug);
-      this.maska = found || null;
+      this.currentSlug = slug;
 
       // reset state
       this.kolicina = 1;
@@ -55,15 +70,20 @@ export class MaskaDetailComponent implements OnInit, OnDestroy {
       this.drugaBoja = '';
       this.uvelicano = false;
 
+      const found = this.maskaService.getMaskaBySlug(slug);
+      this.maska = found || null;
+
       if (this.maska?.slika?.length > 0) {
         this.izabranaSlika = this.maska.slika[0].url;
       } else {
         this.izabranaSlika = '';
       }
 
+      if (this.maska) {
         // ✅ SEO tags
-      this.applySeo();
-      this.applyProductSchema();
+        this.applySeo();
+        this.applyProductSchema();
+      }
     });
   }
 
@@ -156,21 +176,27 @@ export class MaskaDetailComponent implements OnInit, OnDestroy {
       review: [
         {
           '@type': 'Review',
-          author: { '@type': 'Person', name: 'Marija S.' },
+          author: { '@type': 'Person', name: 'Goran T.' },
+          datePublished: '2025-06-14',
           reviewRating: { '@type': 'Rating', ratingValue: '5', bestRating: '5' },
-          reviewBody: 'Odlična maska, tačno po meri i brza isporuka. Preporučujem svima!'
+          reviewBody: 'Malo je reci da sam bio prijatno iznenadjen kada sam dobio porucene maske za klimu. Maske su uradjene extra kvalitetno i sada predstavljaju malo umetnicko delo na mojoj terasi. Nenad kao prodavac je vrhunski profesionalac koji je prevazisao sva moja ocekivanja. Sve preporuke.',
+          publisher: { '@type': 'Organization', name: 'KupujemProdajem' }
         },
         {
           '@type': 'Review',
-          author: { '@type': 'Person', name: 'Nikola P.' },
+          author: { '@type': 'Person', name: 'Dejan' },
+          datePublished: '2025-05-05',
           reviewRating: { '@type': 'Rating', ratingValue: '5', bestRating: '5' },
-          reviewBody: 'Kvalitetna izrada, perfektno se uklapa na fasadu. Jako zadovoljan.'
+          reviewBody: 'Neverovatno! Nenad mi je odradio 30 maski za 5 dana i to vrhunskog kvaliteta. Ovo je pravi covek za svakog kome je potrebno da se maske urade ekstra brzo i kvalitetno. Zamislite, jos mi je mimo dogovora dostavio maske o svom trosku.',
+          publisher: { '@type': 'Organization', name: 'KupujemProdajem' }
         },
         {
           '@type': 'Review',
-          author: { '@type': 'Person', name: 'Ana M.' },
+          author: { '@type': 'Person', name: 'Dragan' },
+          datePublished: '2026-03-23',
           reviewRating: { '@type': 'Rating', ratingValue: '5', bestRating: '5' },
-          reviewBody: 'Prelepa maska, tačno kako sam zamislila. Dostava za 5 dana, sve pohvale!'
+          reviewBody: 'Odlična saradnja, izuzetna komunikacija, preciznost svih detalja, kvalitet, velika preporuka!',
+          publisher: { '@type': 'Organization', name: 'KupujemProdajem' }
         }
       ],
       offers: {
@@ -178,7 +204,7 @@ export class MaskaDetailComponent implements OnInit, OnDestroy {
         url,
         priceCurrency: 'RSD',
         price,
-        priceValidUntil: '2026-12-31',
+        priceValidUntil: '2027-12-31',
         availability: 'https://schema.org/InStock',
         itemCondition: 'https://schema.org/NewCondition',
         seller: {
@@ -189,7 +215,7 @@ export class MaskaDetailComponent implements OnInit, OnDestroy {
           '@type': 'OfferShippingDetails',
           shippingRate: {
             '@type': 'MonetaryAmount',
-            value: '0',
+            value: 0,
             currency: 'RSD'
           },
           shippingDestination: {
