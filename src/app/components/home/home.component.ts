@@ -25,8 +25,8 @@ export class HomeComponent implements OnInit {
     this.maske = this.maskaService.getMaske();
 
     this.seo.updateSeo({
-      title: 'Maske za klimu | Maska za klimu po meri | Maske za klime cena',
-      description: 'Maske za klimu od plastificiranog lima za spoljne jedinice klima uređaja. Maska za klimu po meri, ukrasne i zaštitne maske za klime, cena standardnog modela 12.480 RSD, dostava širom Srbije.',
+      title: 'MASKE ZA KLIMU – Najpovoljnije cene | Izrada po meri',
+      description: 'MASKE ZA KLIMU od plastificiranog lima – izrada po meri, 6 modela, izbor boja. Dostava 5–7 radnih dana širom Srbije. ★★★★★ 15 recenzija zadovoljnih kupaca.',
       url: 'https://maskezaklimu.rs/',
       image: 'https://maskezaklimu.rs/assets/maska-za-klimu-sitni-listovi.webp'
     });
