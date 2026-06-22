@@ -37,7 +37,7 @@ export class MaskaZaKlimuSuboticaComponent implements OnInit {
           name: 'Kolika je cena maske za klimu sa dostavom u Suboticu?',
           acceptedAnswer: {
             '@type': 'Answer',
-            text: 'Standardna maska za klimu dimenzija 900 × 650 × 440 mm iznosi 12.480 RSD. Dostava kurirskom službom u Suboticu je uključena u cenu.'
+            text: 'Standardna maska za klimu dimenzija 900 × 650 × 440 mm iznosi 12.480 RSD.'
           }
         },
         {

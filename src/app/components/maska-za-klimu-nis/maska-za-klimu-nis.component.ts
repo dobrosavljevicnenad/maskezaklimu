@@ -37,7 +37,7 @@ export class MaskaZaKlimuNisComponent implements OnInit {
           name: 'Kolika je cena maske za klimu sa dostavom u Niš?',
           acceptedAnswer: {
             '@type': 'Answer',
-            text: 'Standardna maska za klimu dimenzija 900 × 650 × 440 mm iznosi 12.480 RSD. Dostava kurirskom službom u Niš je uključena u cenu.'
+            text: 'Standardna maska za klimu dimenzija 900 × 650 × 440 mm iznosi 12.480 RSD.'
           }
         },
         {
