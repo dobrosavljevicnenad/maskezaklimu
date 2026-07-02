@@ -12,8 +12,14 @@
 /maska-za-klimu-cacak
 /maska-za-klimu-valjevo
 /maska-za-klimu-pancevo
+/maska-za-klimu-zrenjanin
+/maska-za-klimu-sabac
+/maska-za-klimu-leskovac
+/maska-za-klimu-zemun
+/maska-za-klimu-pozarevac
 /maska-za-klimu-spolja
 /maske-za-klime-cena
+/maske-za-klimu-po-meri
 /o-nama
 /order
 /ukrasna-kutija-za-klimu

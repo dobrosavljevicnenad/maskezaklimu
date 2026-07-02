@@ -328,6 +328,46 @@ export class HomeComponent implements OnInit {
             '@type': 'Answer',
             text: 'Maske za klime dostupne su u velikom broju RAL boja. Najtraženije su bela, antracit siva i crna, ali možete izabrati i boju koja odgovara vašoj fasadi. Kontaktirajte nas za detalje o dostupnim nijansama.'
           }
+        },
+        {
+          '@type': 'Question',
+          name: 'Kako se montira maska za klimu?',
+          acceptedAnswer: {
+            '@type': 'Answer',
+            text: 'Ugradnja maske za klimu je jednostavna i ne zahteva poseban alat. Maska se postavlja oko spoljne jedinice i fiksira vijcima ili montažnim konzolama. Uz svaku narudžbinu dostavljamo uputstvo za montažu.'
+          }
+        },
+        {
+          '@type': 'Question',
+          name: 'Koliko dugo traje maska za klimu od plastificiranog lima?',
+          acceptedAnswer: {
+            '@type': 'Answer',
+            text: 'Uz normalno korišćenje i minimalno održavanje, maske za klimu od plastificiranog lima debljine 1,5 mm traju 10 i više godina. Materijal je otporan na UV zrake, koroziju i sve atmosferske uslove, pa nema potrebe za farbanjem ni posebnim premazima.'
+          }
+        },
+        {
+          '@type': 'Question',
+          name: 'Da li su maske za klimu kompatibilne sa svim markama klima uređaja?',
+          acceptedAnswer: {
+            '@type': 'Answer',
+            text: 'Da. Maske za klime nisu vezane za određenu marku – prave se prema dimenzijama spoljne jedinice, a ne prema modelu ili brendu. Kompatibilne su sa Daikin, Mitsubishi, Samsung, LG, Gree, Midea i svim ostalim markama klima uređaja.'
+          }
+        },
+        {
+          '@type': 'Question',
+          name: 'Kako izmeriti spoljnu jedinicu klima uređaja za masku po meri?',
+          acceptedAnswer: {
+            '@type': 'Answer',
+            text: 'Potrebno je izmeriti tri dimenzije spoljne jedinice: širinu, visinu i dubinu (rastojanje od zida). Te mere pošaljite telefonom ili putem kontakt forme, i izradićemo masku za klimu po meri tačno za vaš uređaj.'
+          }
+        },
+        {
+          '@type': 'Question',
+          name: 'Da li maska za klimu zahteva posebno održavanje?',
+          acceptedAnswer: {
+            '@type': 'Answer',
+            text: 'Ne. Dovoljno je povremeno isprati masku vodom ili obrisati vlažnom krpom. Plastificirani lim ne rđa i ne bledi, pa nema potrebe za farbanjem ni zaštitnim premazima.'
+          }
         }
       ]
     });

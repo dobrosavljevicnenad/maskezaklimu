@@ -19,6 +19,12 @@ import { MaskaZaKlimuSuboticaComponent } from './components/maska-za-klimu-subot
 import { MaskaZaKlimuCacakComponent } from './components/maska-za-klimu-cacak/maska-za-klimu-cacak.component';
 import { MaskaZaKlimuValjevaComponent } from './components/maska-za-klimu-valjevo/maska-za-klimu-valjevo.component';
 import { MaskaZaKlimuPancevoComponent } from './components/maska-za-klimu-pancevo/maska-za-klimu-pancevo.component';
+import { MaskeZaKlimuPoMeriComponent } from './components/maske-za-klimu-po-meri/maske-za-klimu-po-meri.component';
+import { MaskaZaKlimuZrenjaninComponent } from './components/maska-za-klimu-zrenjanin/maska-za-klimu-zrenjanin.component';
+import { MaskaZaKlimuSabacComponent } from './components/maska-za-klimu-sabac/maska-za-klimu-sabac.component';
+import { MaskaZaKlimuLeskovacComponent } from './components/maska-za-klimu-leskovac/maska-za-klimu-leskovac.component';
+import { MaskaZaKlimuZemunComponent } from './components/maska-za-klimu-zemun/maska-za-klimu-zemun.component';
+import { MaskaZaKlimuPozarevacComponent } from './components/maska-za-klimu-pozarevac/maska-za-klimu-pozarevac.component';
 
 export const routes: Routes = [
   {
@@ -100,5 +106,29 @@ export const routes: Routes = [
   {
     path: 'maska-za-klimu-pancevo',
     component: MaskaZaKlimuPancevoComponent
+  },
+  {
+    path: 'maske-za-klimu-po-meri',
+    component: MaskeZaKlimuPoMeriComponent
+  },
+  {
+    path: 'maska-za-klimu-zrenjanin',
+    component: MaskaZaKlimuZrenjaninComponent
+  },
+  {
+    path: 'maska-za-klimu-sabac',
+    component: MaskaZaKlimuSabacComponent
+  },
+  {
+    path: 'maska-za-klimu-leskovac',
+    component: MaskaZaKlimuLeskovacComponent
+  },
+  {
+    path: 'maska-za-klimu-zemun',
+    component: MaskaZaKlimuZemunComponent
+  },
+  {
+    path: 'maska-za-klimu-pozarevac',
+    component: MaskaZaKlimuPozarevacComponent
   },
 ];
