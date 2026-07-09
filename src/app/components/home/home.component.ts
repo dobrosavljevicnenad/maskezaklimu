@@ -56,7 +56,7 @@ export class HomeComponent implements OnInit {
       url: 'https://maskezaklimu.rs/',
       image: 'https://maskezaklimu.rs/assets/maska-za-klimu-sitni-listovi.webp',
       telephone: '+381659775995',
-      priceRange: 'RSD 10980-12480',
+      priceRange: 'RSD 10980-13480',
       address: {
         '@type': 'PostalAddress',
         streetAddress: 'Vučačka 16',
@@ -278,7 +278,7 @@ export class HomeComponent implements OnInit {
           name: 'Kolika je cena maske za klimu?',
           acceptedAnswer: {
             '@type': 'Answer',
-            text: 'Standardna cena za masku dimenzija 900 × 650 × 440 mm iznosi 12.480 RSD. Za druge dimenzije radimo ponudu po meri.'
+            text: 'Standardna cena za masku dimenzija 900 × 650 × 440 mm iznosi 13.480 RSD. Za druge dimenzije radimo ponudu po meri.'
           }
         },
         {

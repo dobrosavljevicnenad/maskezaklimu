@@ -45,7 +45,7 @@ export class MaskeZaKlimuPoMeriComponent implements OnInit {
           name: 'Koliko košta maska za klimu po meri?',
           acceptedAnswer: {
             '@type': 'Answer',
-            text: 'Cena maske za klimu po meri zavisi od dimenzija, odabrane šare i boje. Standardna maska dimenzija 900 × 650 × 440 mm iznosi 12.480 RSD. Za nestandardne mere kontaktirajte nas za individualan cenovnik.'
+            text: 'Cena maske za klimu po meri zavisi od dimenzija, odabrane šare i boje. Standardna maska dimenzija 900 × 650 × 440 mm iznosi 13.480 RSD. Za nestandardne mere kontaktirajte nas za individualan cenovnik.'
           }
         },
         {

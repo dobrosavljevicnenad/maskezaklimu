@@ -53,7 +53,7 @@ export class UkrasnaKutijaZaKlimuComponent implements OnInit {
           name: 'Kolika je cena ukrasne kutije za klimu?',
           acceptedAnswer: {
             '@type': 'Answer',
-            text: 'Standardna ukrasna kutija za klimu dimenzija 900 × 650 × 440 mm košta 12.480 RSD. Cena po meri zavisi od dimenzija i odabrane šare – kontaktirajte nas za ponudu.'
+            text: 'Standardna ukrasna kutija za klimu dimenzija 900 × 650 × 440 mm košta 13.480 RSD. Cena po meri zavisi od dimenzija i odabrane šare – kontaktirajte nas za ponudu.'
           }
         },
         {

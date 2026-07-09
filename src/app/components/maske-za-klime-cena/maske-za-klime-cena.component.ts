@@ -38,7 +38,7 @@ export class MaskeZaKlimeCenaComponent implements OnInit {
           name: 'Kolika je cena standardne maske za klimu?',
           acceptedAnswer: {
             '@type': 'Answer',
-            text: 'Cena standardne maske za klimu dimenzija 900 × 650 × 440 mm iznosi 12.480 RSD. Ova dimenzija odgovara velikom broju spoljnih jedinica klima uređaja.'
+            text: 'Cena standardne maske za klimu dimenzija 900 × 650 × 440 mm iznosi 13.480 RSD. Ova dimenzija odgovara velikom broju spoljnih jedinica klima uređaja.'
           }
         },
         {

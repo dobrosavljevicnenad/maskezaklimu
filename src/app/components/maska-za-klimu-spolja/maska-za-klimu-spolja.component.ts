@@ -15,7 +15,7 @@ export class MaskaZaKlimuSpoljaComponent implements OnInit {
   ngOnInit(): void {
     this.seo.updateSeo({
       title: 'Maska za klimu spolja – Zaštita za spoljnu jedinicu klime | maskezaklimu.rs',
-      description: 'Maska za klimu spolja od plastificiranog lima 1,5 mm. Štiti i ulepšava spoljnu jedinicu klima uređaja – izrada po meri, RAL boje, dostava širom Srbije. Cena 12.480 RSD.',
+      description: 'Maska za klimu spolja od plastificiranog lima 1,5 mm. Štiti i ulepšava spoljnu jedinicu klima uređaja – izrada po meri, RAL boje, dostava širom Srbije. Cena 13.480 RSD.',
       url: 'https://maskezaklimu.rs/maska-za-klimu-spolja',
       image: 'https://maskezaklimu.rs/assets/maska-za-klimu-sitni-listovi.webp'
     });
@@ -53,7 +53,7 @@ export class MaskaZaKlimuSpoljaComponent implements OnInit {
           name: 'Kolika je cena maske za klimu spolja?',
           acceptedAnswer: {
             '@type': 'Answer',
-            text: 'Standardna maska za klimu spolja dimenzija 900 × 650 × 440 mm košta 12.480 RSD. Za nestandardne dimenzije ili posebne boje, kontaktirajte nas za individualnu ponudu.'
+            text: 'Standardna maska za klimu spolja dimenzija 900 × 650 × 440 mm košta 13.480 RSD. Za nestandardne dimenzije ili posebne boje, kontaktirajte nas za individualnu ponudu.'
           }
         }
       ]
