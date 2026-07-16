@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, effect } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { MatIconModule } from '@angular/material/icon';
@@ -19,11 +19,21 @@ export class HomeComponent implements OnInit {
   constructor(
     private maskaService: MaskaService,
     private seo: SeoService
-  ) {}
+  ) {
+    // maske se učitavaju asinhrono (HTTP GET ka maske.json). Bez ovog effect()-a,
+    // ngOnInit bi upisao prazan niz pre nego što signal dobije podatke, pa bi
+    // prerenderovani/SSR HTML trajno ostao bez product-card elemenata i sa
+    // numberOfItems:0 u ItemList schema-i (Googlebot vidi prazan HTML).
+    effect(() => {
+      const maske = this.maskaService.maske();
+      if (maske.length > 0) {
+        this.maske = maske;
+        this.updateItemListSchema(maske);
+      }
+    });
+  }
 
   ngOnInit(): void {
-    this.maske = this.maskaService.getMaske();
-
     this.seo.updateSeo({
       title: 'MASKE ZA KLIMU – Najpovoljnije cene | Izrada po meri',
       description: 'MASKE ZA KLIMU od plastificiranog lima – izrada po meri, 6 modela, izbor boja. Dostava 5–7 radnih dana širom Srbije. ★★★★★ 15 recenzija zadovoljnih kupaca.',
@@ -255,20 +265,6 @@ export class HomeComponent implements OnInit {
       ]
     });
 
-    this.seo.setJsonLd('home-itemlist-schema', {
-      '@context': 'https://schema.org',
-      '@type': 'ItemList',
-      name: 'Maske za klimu',
-      itemListOrder: 'https://schema.org/ItemListOrderAscending',
-      numberOfItems: this.maske.length,
-      itemListElement: this.maske.map((maska, index) => ({
-        '@type': 'ListItem',
-        position: index + 1,
-        url: `https://maskezaklimu.rs/proizvod/${maska.slug}`,
-        name: maska.naziv
-      }))
-    });
-
     this.seo.setJsonLd('home-faq-schema', {
       '@context': 'https://schema.org',
       '@type': 'FAQPage',
@@ -383,6 +379,22 @@ export class HomeComponent implements OnInit {
           item: 'https://maskezaklimu.rs/'
         }
       ]
+    });
+  }
+
+  private updateItemListSchema(maske: any[]): void {
+    this.seo.setJsonLd('home-itemlist-schema', {
+      '@context': 'https://schema.org',
+      '@type': 'ItemList',
+      name: 'Maske za klimu',
+      itemListOrder: 'https://schema.org/ItemListOrderAscending',
+      numberOfItems: maske.length,
+      itemListElement: maske.map((maska, index) => ({
+        '@type': 'ListItem',
+        position: index + 1,
+        url: `https://maskezaklimu.rs/proizvod/${maska.slug}`,
+        name: maska.naziv
+      }))
     });
   }
 }

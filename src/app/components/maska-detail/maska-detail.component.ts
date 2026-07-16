@@ -113,8 +113,8 @@ export class MaskaDetailComponent implements OnInit, OnDestroy {
     const imgRel = this.maska.slika?.[0]?.url || '/assets/maska-za-klimu-sitni-listovi.webp';
     const image = this.toAbsoluteUrl(imgRel);
 
-    // ✅ Canonical kao LINK, ne meta
-    this.setCanonical(url);
+    // ✅ Canonical kao LINK, ne meta (SSR-safe preko SeoService/DOCUMENT token)
+    this.seoService.setCanonical(url);
 
     // Title
     this.title.setTitle(title);
@@ -257,21 +257,6 @@ export class MaskaDetailComponent implements OnInit, OnDestroy {
     if (url.startsWith('http://') || url.startsWith('https://')) return url;
     if (url.startsWith('/')) return `${this.SITE}${url}`;
     return `${this.SITE}/${url}`;
-  }
-
-  private setCanonical(url: string): void {
-    if (!isPlatformBrowser(this.platformId)) return;
-
-    const head = document.head;
-
-    // ukloni sve stare canonical linkove (da nema duplikata)
-    const existing = head.querySelectorAll<HTMLLinkElement>('link[rel="canonical"]');
-    existing.forEach(el => el.remove());
-
-    const link = document.createElement('link');
-    link.setAttribute('rel', 'canonical');
-    link.setAttribute('href', url);
-    head.appendChild(link);
   }
 
   promeniSliku(slika: string) {

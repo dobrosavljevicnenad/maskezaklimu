@@ -6,7 +6,7 @@
   <!-- HOME – glavni autoritet -->
   <url>
     <loc>https://maskezaklimu.rs/</loc>
-    <lastmod>2026-07-02</lastmod>
+    <lastmod>2026-07-16</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
     <image:image>
@@ -45,7 +45,7 @@
 
   <url>
     <loc>https://maskezaklimu.rs/proizvod/dekorativna-maska-za-klimu-metalna-zastita-spoljna-jedinica-sitni-listovi</loc>
-    <lastmod>2026-07-02</lastmod>
+    <lastmod>2026-07-16</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
     <image:image>
@@ -57,7 +57,7 @@
 
   <url>
     <loc>https://maskezaklimu.rs/proizvod/ukrasna-maska-za-klimu-kutija-za-klimu-geometrijski-dizajn-pravougaonici</loc>
-    <lastmod>2026-07-02</lastmod>
+    <lastmod>2026-07-16</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
     <image:image>
@@ -69,7 +69,7 @@
 
   <url>
     <loc>https://maskezaklimu.rs/proizvod/metalna-zastita-za-klimu-dekorativna-maska-za-spoljnu-jedinicu-krupni-listovi</loc>
-    <lastmod>2026-07-02</lastmod>
+    <lastmod>2026-07-16</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
     <image:image>
@@ -81,7 +81,7 @@
 
   <url>
     <loc>https://maskezaklimu.rs/proizvod/dekorativna-maska-za-klimu-spoljna-jedinica-savremeni-dizajn-haoticna-sara</loc>
-    <lastmod>2026-07-02</lastmod>
+    <lastmod>2026-07-16</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
     <image:image>
@@ -93,7 +93,7 @@
 
   <url>
     <loc>https://maskezaklimu.rs/proizvod/maska-za-spoljnu-jedinicu-klime-kutija-zastita-dizajn-kvadratici</loc>
-    <lastmod>2026-07-02</lastmod>
+    <lastmod>2026-07-16</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
     <image:image>
@@ -105,7 +105,7 @@
 
   <url>
     <loc>https://maskezaklimu.rs/proizvod/minimalisticka-maska-za-klimu-metalna-zastita-spoljna-jedinica-ostri-rezovi</loc>
-    <lastmod>2026-07-02</lastmod>
+    <lastmod>2026-07-16</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
     <image:image>
@@ -334,6 +334,13 @@
     <lastmod>2026-07-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
+  </url>
+
+  <url>
+    <loc>https://maskezaklimu.rs/info</loc>
+    <lastmod>2026-07-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
   </url>
 
   <url>

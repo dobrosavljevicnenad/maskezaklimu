@@ -1,30 +1,5 @@
 import { Routes } from '@angular/router';
 import { HomeComponent } from './components/home/home.component';
-import { CartComponent } from './components/cart/cart.component';
-import { OrderComponent } from './components/order/order.component';
-import { MaskaDetailComponent } from './components/maska-detail/maska-detail.component';
-import { ContactComponent } from './components/contact/contact.component';
-import { ONamaComponent } from './components/o-nama/o-nama.component';
-import { DostavaIPovracajComponent } from './components/dostava-i-povracaj/dostava-i-povracaj.component';
-import { GalerijaComponent } from './components/galerija/galerija.component';
-import { InfoComponent } from './components/info/info.component';
-import { MaskeZaKlimeCenaComponent } from './components/maske-za-klime-cena/maske-za-klime-cena.component';
-import { MaskaZaKlimuSpoljaComponent } from './components/maska-za-klimu-spolja/maska-za-klimu-spolja.component';
-import { UkrasnaKutijaZaKlimuComponent } from './components/ukrasna-kutija-za-klimu/ukrasna-kutija-za-klimu.component';
-import { MaskaZaKlimuBeogradComponent } from './components/maska-za-klimu-beograd/maska-za-klimu-beograd.component';
-import { MaskaZaKlimuNoviSadComponent } from './components/maska-za-klimu-novi-sad/maska-za-klimu-novi-sad.component';
-import { MaskaZaKlimuNisComponent } from './components/maska-za-klimu-nis/maska-za-klimu-nis.component';
-import { MaskaZaKlimuKragujevacComponent } from './components/maska-za-klimu-kragujevac/maska-za-klimu-kragujevac.component';
-import { MaskaZaKlimuSuboticaComponent } from './components/maska-za-klimu-subotica/maska-za-klimu-subotica.component';
-import { MaskaZaKlimuCacakComponent } from './components/maska-za-klimu-cacak/maska-za-klimu-cacak.component';
-import { MaskaZaKlimuValjevaComponent } from './components/maska-za-klimu-valjevo/maska-za-klimu-valjevo.component';
-import { MaskaZaKlimuPancevoComponent } from './components/maska-za-klimu-pancevo/maska-za-klimu-pancevo.component';
-import { MaskeZaKlimuPoMeriComponent } from './components/maske-za-klimu-po-meri/maske-za-klimu-po-meri.component';
-import { MaskaZaKlimuZrenjaninComponent } from './components/maska-za-klimu-zrenjanin/maska-za-klimu-zrenjanin.component';
-import { MaskaZaKlimuSabacComponent } from './components/maska-za-klimu-sabac/maska-za-klimu-sabac.component';
-import { MaskaZaKlimuLeskovacComponent } from './components/maska-za-klimu-leskovac/maska-za-klimu-leskovac.component';
-import { MaskaZaKlimuZemunComponent } from './components/maska-za-klimu-zemun/maska-za-klimu-zemun.component';
-import { MaskaZaKlimuPozarevacComponent } from './components/maska-za-klimu-pozarevac/maska-za-klimu-pozarevac.component';
 
 export const routes: Routes = [
   {
@@ -33,102 +8,102 @@ export const routes: Routes = [
   },
   {
     path: "cart",
-    component: CartComponent,
+    loadComponent: () => import('./components/cart/cart.component').then(m => m.CartComponent),
   },
   {
     path: "order",
-    component: OrderComponent
+    loadComponent: () => import('./components/order/order.component').then(m => m.OrderComponent),
   },
   {
     path: 'proizvod/:slug',
-    component: MaskaDetailComponent
+    loadComponent: () => import('./components/maska-detail/maska-detail.component').then(m => m.MaskaDetailComponent),
   },
   {
     path: 'kontakt',
-    component: ContactComponent
+    loadComponent: () => import('./components/contact/contact.component').then(m => m.ContactComponent),
   },
   {
     path: 'o-nama',
-    component: ONamaComponent
+    loadComponent: () => import('./components/o-nama/o-nama.component').then(m => m.ONamaComponent),
   },
   {
     path: 'dostava-i-povracaj',
-    component: DostavaIPovracajComponent
+    loadComponent: () => import('./components/dostava-i-povracaj/dostava-i-povracaj.component').then(m => m.DostavaIPovracajComponent),
   },
   {
     path: 'galerija',
-    component: GalerijaComponent
+    loadComponent: () => import('./components/galerija/galerija.component').then(m => m.GalerijaComponent),
   },
   {
     path: 'info',
-    component: InfoComponent
+    loadComponent: () => import('./components/info/info.component').then(m => m.InfoComponent),
   },
   {
     path: 'maske-za-klime-cena',
-    component: MaskeZaKlimeCenaComponent
+    loadComponent: () => import('./components/maske-za-klime-cena/maske-za-klime-cena.component').then(m => m.MaskeZaKlimeCenaComponent),
   },
   {
     path: 'maska-za-klimu-spolja',
-    component: MaskaZaKlimuSpoljaComponent
+    loadComponent: () => import('./components/maska-za-klimu-spolja/maska-za-klimu-spolja.component').then(m => m.MaskaZaKlimuSpoljaComponent),
   },
   {
     path: 'ukrasna-kutija-za-klimu',
-    component: UkrasnaKutijaZaKlimuComponent
+    loadComponent: () => import('./components/ukrasna-kutija-za-klimu/ukrasna-kutija-za-klimu.component').then(m => m.UkrasnaKutijaZaKlimuComponent),
   },
   {
     path: 'maska-za-klimu-beograd',
-    component: MaskaZaKlimuBeogradComponent
+    loadComponent: () => import('./components/maska-za-klimu-beograd/maska-za-klimu-beograd.component').then(m => m.MaskaZaKlimuBeogradComponent),
   },
   {
     path: 'maska-za-klimu-novi-sad',
-    component: MaskaZaKlimuNoviSadComponent
+    loadComponent: () => import('./components/maska-za-klimu-novi-sad/maska-za-klimu-novi-sad.component').then(m => m.MaskaZaKlimuNoviSadComponent),
   },
   {
     path: 'maska-za-klimu-nis',
-    component: MaskaZaKlimuNisComponent
+    loadComponent: () => import('./components/maska-za-klimu-nis/maska-za-klimu-nis.component').then(m => m.MaskaZaKlimuNisComponent),
   },
   {
     path: 'maska-za-klimu-kragujevac',
-    component: MaskaZaKlimuKragujevacComponent
+    loadComponent: () => import('./components/maska-za-klimu-kragujevac/maska-za-klimu-kragujevac.component').then(m => m.MaskaZaKlimuKragujevacComponent),
   },
   {
     path: 'maska-za-klimu-subotica',
-    component: MaskaZaKlimuSuboticaComponent
+    loadComponent: () => import('./components/maska-za-klimu-subotica/maska-za-klimu-subotica.component').then(m => m.MaskaZaKlimuSuboticaComponent),
   },
   {
     path: 'maska-za-klimu-cacak',
-    component: MaskaZaKlimuCacakComponent
+    loadComponent: () => import('./components/maska-za-klimu-cacak/maska-za-klimu-cacak.component').then(m => m.MaskaZaKlimuCacakComponent),
   },
   {
     path: 'maska-za-klimu-valjevo',
-    component: MaskaZaKlimuValjevaComponent
+    loadComponent: () => import('./components/maska-za-klimu-valjevo/maska-za-klimu-valjevo.component').then(m => m.MaskaZaKlimuValjevaComponent),
   },
   {
     path: 'maska-za-klimu-pancevo',
-    component: MaskaZaKlimuPancevoComponent
+    loadComponent: () => import('./components/maska-za-klimu-pancevo/maska-za-klimu-pancevo.component').then(m => m.MaskaZaKlimuPancevoComponent),
   },
   {
     path: 'maske-za-klimu-po-meri',
-    component: MaskeZaKlimuPoMeriComponent
+    loadComponent: () => import('./components/maske-za-klimu-po-meri/maske-za-klimu-po-meri.component').then(m => m.MaskeZaKlimuPoMeriComponent),
   },
   {
     path: 'maska-za-klimu-zrenjanin',
-    component: MaskaZaKlimuZrenjaninComponent
+    loadComponent: () => import('./components/maska-za-klimu-zrenjanin/maska-za-klimu-zrenjanin.component').then(m => m.MaskaZaKlimuZrenjaninComponent),
   },
   {
     path: 'maska-za-klimu-sabac',
-    component: MaskaZaKlimuSabacComponent
+    loadComponent: () => import('./components/maska-za-klimu-sabac/maska-za-klimu-sabac.component').then(m => m.MaskaZaKlimuSabacComponent),
   },
   {
     path: 'maska-za-klimu-leskovac',
-    component: MaskaZaKlimuLeskovacComponent
+    loadComponent: () => import('./components/maska-za-klimu-leskovac/maska-za-klimu-leskovac.component').then(m => m.MaskaZaKlimuLeskovacComponent),
   },
   {
     path: 'maska-za-klimu-zemun',
-    component: MaskaZaKlimuZemunComponent
+    loadComponent: () => import('./components/maska-za-klimu-zemun/maska-za-klimu-zemun.component').then(m => m.MaskaZaKlimuZemunComponent),
   },
   {
     path: 'maska-za-klimu-pozarevac',
-    component: MaskaZaKlimuPozarevacComponent
+    loadComponent: () => import('./components/maska-za-klimu-pozarevac/maska-za-klimu-pozarevac.component').then(m => m.MaskaZaKlimuPozarevacComponent),
   },
 ];
