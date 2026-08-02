@@ -305,13 +305,13 @@
 
   <url>
     <loc>https://maskezaklimu.rs/maska-za-klimu-zemun</loc>
-    <lastmod>2026-07-02</lastmod>
+    <lastmod>2026-08-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <image:image>
-      <image:loc>https://maskezaklimu.rs/assets/maska-za-klimu-sitni-listovi.webp</image:loc>
-      <image:caption>Maska za klimu Zemun – dostava kurirskom službom u Zemun i beogradsku opštinu Zemun</image:caption>
-      <image:title>Maska za klimu Zemun</image:title>
+      <image:loc>https://maskezaklimu.rs/assets/maska_za_klimu_instalacija_zemun.webp</image:loc>
+      <image:caption>Maska za klimu ugrađena kod kupca u Zemunu – stvarna instalacija na spoljnoj jedinici</image:caption>
+      <image:title>Maska za klimu Zemun – instalacija kod kupca</image:title>
     </image:image>
   </url>
 
@@ -325,6 +325,25 @@
       <image:caption>Maska za klimu Požarevac – dostava kurirskom službom u Požarevac i Braničevski okrug</image:caption>
       <image:title>Maska za klimu Požarevac</image:title>
     </image:image>
+  </url>
+
+  <url>
+    <loc>https://maskezaklimu.rs/maska-za-klimu-smederevo</loc>
+    <lastmod>2026-08-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+    <image:image>
+      <image:loc>https://maskezaklimu.rs/assets/maska_za_klimu_smederevo_instalacija.webp</image:loc>
+      <image:caption>Maska za klimu ugrađena kod kupca u Smederevu – stvarna instalacija na spoljnoj jedinici</image:caption>
+      <image:title>Maska za klimu Smederevo – proizvodnja i lično preuzimanje</image:title>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://maskezaklimu.rs/zakon-o-klimama-na-fasadi</loc>
+    <lastmod>2026-08-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
   </url>
 
   <!-- BITNE SEKCIJE -->

@@ -32,6 +32,17 @@ export class GalerijaComponent implements OnInit {
     'object-[center_45%]',   // 7
   ];
 
+  // tagovi po slici – koriste se za pretragu i brze filtere (nezavisno od naziva fajla)
+  private readonly tagsMap: Record<string, string[]> = {
+    'maska_za_klimu_pravougaonici_crna_gora_drvo.webp': ['ukrasna', 'spoljna', 'kutija', 'pravougaonici', 'metalna', 'drvena fasada'],
+    'maska_za_klimu_pravougaonici_crna_gora_bocna.webp': ['ukrasna', 'spoljna', 'kutija', 'pravougaonici', 'metalna'],
+    'maska_za_klimu_pravougaonici_crna_gora_nocna.webp': ['ukrasna', 'spoljna', 'kutija', 'pravougaonici', 'metalna'],
+    'maska_za_klimu_smederevo_instalacija.webp': ['spoljna', 'zastita', 'instalacija', 'smederevo', 'metalna'],
+    'maska_za_klimu_instalacija_zemun.webp': ['spoljna', 'zastita', 'instalacija', 'zemun', 'metalna'],
+    'maska_za_klimu_lestane_instalacija.webp': ['spoljna', 'zastita', 'instalacija', 'lestane', 'metalna'],
+    'maska-za-klimu-lekino-brdo-instalacija.webp': ['spoljna', 'zastita', 'instalacija', 'lekino brdo', 'metalna']
+  };
+
   filteredImages: string[] = [];
   searchTerm = '';
 
@@ -98,19 +109,18 @@ export class GalerijaComponent implements OnInit {
   }
 
   private applyFilter(term: string): void {
-    // const t = this.normalize(term);
-    // if (!t) {
-    //   this.filteredImages = [...this.images];
-    //   return;
-    // }
-
-    // // filtriraj po nazivu fajla (možeš i po "tagovima" kasnije)
-    // this.filteredImages = this.images.filter(img => {
-    //   const name = this.normalize(img);
-    //   return name.includes(t);
-    // });
+    const t = this.normalize(term);
+    if (!t) {
       this.filteredImages = [...this.images];
       return;
+    }
+
+    // filtriraj po nazivu fajla i po dodeljenim tagovima
+    this.filteredImages = this.images.filter(img => {
+      const name = this.normalize(img);
+      const tags = (this.tagsMap[img] || []).map(tag => this.normalize(tag));
+      return name.includes(t) || tags.some(tag => tag.includes(t));
+    });
   }
 
   captionFor(image: string): string {

@@ -17,6 +17,8 @@
 /maska-za-klimu-leskovac
 /maska-za-klimu-zemun
 /maska-za-klimu-pozarevac
+/maska-za-klimu-smederevo
+/zakon-o-klimama-na-fasadi
 /maska-za-klimu-spolja
 /maske-za-klime-cena
 /maske-za-klimu-po-meri

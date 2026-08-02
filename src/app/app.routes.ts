@@ -106,4 +106,12 @@ export const routes: Routes = [
     path: 'maska-za-klimu-pozarevac',
     loadComponent: () => import('./components/maska-za-klimu-pozarevac/maska-za-klimu-pozarevac.component').then(m => m.MaskaZaKlimuPozarevacComponent),
   },
+  {
+    path: 'maska-za-klimu-smederevo',
+    loadComponent: () => import('./components/maska-za-klimu-smederevo/maska-za-klimu-smederevo.component').then(m => m.MaskaZaKlimuSmederevoComponent),
+  },
+  {
+    path: 'zakon-o-klimama-na-fasadi',
+    loadComponent: () => import('./components/zakon-o-klimama-na-fasadi/zakon-o-klimama-na-fasadi.component').then(m => m.ZakonOKlimamaNaFasadiComponent),
+  },
 ];

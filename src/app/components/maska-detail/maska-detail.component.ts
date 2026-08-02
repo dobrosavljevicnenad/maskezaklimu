@@ -166,39 +166,6 @@ export class MaskaDetailComponent implements OnInit, OnDestroy {
         name: 'Maske za klimu'
       },
       sku: `MZK-${this.maska.id}`,
-      aggregateRating: {
-        '@type': 'AggregateRating',
-        ratingValue: '5',
-        reviewCount: '15',
-        bestRating: '5',
-        worstRating: '1'
-      },
-      review: [
-        {
-          '@type': 'Review',
-          author: { '@type': 'Person', name: 'Goran T.' },
-          datePublished: '2025-06-14',
-          reviewRating: { '@type': 'Rating', ratingValue: '5', bestRating: '5' },
-          reviewBody: 'Malo je reci da sam bio prijatno iznenadjen kada sam dobio porucene maske za klimu. Maske su uradjene extra kvalitetno i sada predstavljaju malo umetnicko delo na mojoj terasi. Nenad kao prodavac je vrhunski profesionalac koji je prevazisao sva moja ocekivanja. Sve preporuke.',
-          publisher: { '@type': 'Organization', name: 'KupujemProdajem' }
-        },
-        {
-          '@type': 'Review',
-          author: { '@type': 'Person', name: 'Dejan' },
-          datePublished: '2025-05-05',
-          reviewRating: { '@type': 'Rating', ratingValue: '5', bestRating: '5' },
-          reviewBody: 'Neverovatno! Nenad mi je odradio 30 maski za 5 dana i to vrhunskog kvaliteta. Ovo je pravi covek za svakog kome je potrebno da se maske urade ekstra brzo i kvalitetno. Zamislite, jos mi je mimo dogovora dostavio maske o svom trosku.',
-          publisher: { '@type': 'Organization', name: 'KupujemProdajem' }
-        },
-        {
-          '@type': 'Review',
-          author: { '@type': 'Person', name: 'Dragan' },
-          datePublished: '2026-03-23',
-          reviewRating: { '@type': 'Rating', ratingValue: '5', bestRating: '5' },
-          reviewBody: 'Odlična saradnja, izuzetna komunikacija, preciznost svih detalja, kvalitet, velika preporuka!',
-          publisher: { '@type': 'Organization', name: 'KupujemProdajem' }
-        }
-      ],
       offers: {
         '@type': 'Offer',
         url,

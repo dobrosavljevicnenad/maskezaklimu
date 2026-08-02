@@ -88,7 +88,7 @@ export class MaskaZaKlimuBeogradComponent implements OnInit {
         { '@type': 'City', name: 'Beograd' },
         { '@type': 'Country', name: 'Serbia' }
       ],
-      priceRange: 'RSD 10980-13480',
+      priceRange: 'RSD 13480',
       image: 'https://maskezaklimu.rs/assets/maska-za-klimu-sitni-listovi.webp'
     });
   }
