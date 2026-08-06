@@ -17,7 +17,10 @@ export class MaskaZaKlimuPozarevacComponent implements OnInit {
       title: 'Maska za klimu Požarevac – Dostava i izrada po meri | maskezaklimu.rs',
       description: 'Maska za klimu Požarevac – dekorativne i zaštitne maske za spoljne jedinice klima uređaja. Plastificirani lim 1,5 mm, CNC izrada po meri, dostava kurirskom službom u Požarevac i Braničevski okrug.',
       url: 'https://maskezaklimu.rs/maska-za-klimu-pozarevac',
-      image: 'https://maskezaklimu.rs/assets/maska-za-klimu-sitni-listovi.webp'
+      image: 'https://maskezaklimu.rs/assets/maska_za_klimu_krupni_listovi.webp',
+      imageAlt: 'Maska za klimu Požarevac – dekorativna zaštita za spoljnu jedinicu klima uređaja, model Krupni listovi',
+      imageWidth: 650,
+      imageHeight: 433
     });
 
     this.seo.setJsonLd('pozarevac-faq-schema', {
@@ -89,7 +92,7 @@ export class MaskaZaKlimuPozarevacComponent implements OnInit {
         { '@type': 'Country', name: 'Serbia' }
       ],
       priceRange: 'RSD 13480',
-      image: 'https://maskezaklimu.rs/assets/maska-za-klimu-sitni-listovi.webp'
+      image: 'https://maskezaklimu.rs/assets/maska_za_klimu_krupni_listovi.webp'
     });
   }
 }

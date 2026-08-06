@@ -17,7 +17,10 @@ export class MaskaZaKlimuNoviSadComponent implements OnInit {
       title: 'Maska za klimu Novi Sad – Dostava i izrada po meri | maskezaklimu.rs',
       description: 'Maska za klimu Novi Sad – dekorativne i zaštitne maske za spoljne jedinice klima uređaja. Plastificirani lim 1,5 mm, CNC izrada po meri, dostava kurirskom službom u Novi Sad.',
       url: 'https://maskezaklimu.rs/maska-za-klimu-novi-sad',
-      image: 'https://maskezaklimu.rs/assets/maska-za-klimu-sitni-listovi.webp'
+      image: 'https://maskezaklimu.rs/assets/maska_za_klimu_krupni_listovi.webp',
+      imageAlt: 'Maska za klimu Novi Sad – dekorativna zaštita za spoljnu jedinicu klima uređaja, model Krupni listovi',
+      imageWidth: 650,
+      imageHeight: 433
     });
 
     this.seo.setJsonLd('novi-sad-faq-schema', {
@@ -81,7 +84,7 @@ export class MaskaZaKlimuNoviSadComponent implements OnInit {
         { '@type': 'Country', name: 'Serbia' }
       ],
       priceRange: 'RSD 13480',
-      image: 'https://maskezaklimu.rs/assets/maska-za-klimu-sitni-listovi.webp'
+      image: 'https://maskezaklimu.rs/assets/maska_za_klimu_krupni_listovi.webp'
     });
   }
 }

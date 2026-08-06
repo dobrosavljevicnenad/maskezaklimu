@@ -17,7 +17,10 @@ export class MaskaZaKlimuSabacComponent implements OnInit {
       title: 'Maska za klimu Šabac – Dostava i izrada po meri | maskezaklimu.rs',
       description: 'Maska za klimu Šabac – dekorativne i zaštitne maske za spoljne jedinice klima uređaja. Plastificirani lim 1,5 mm, CNC izrada po meri, dostava kurirskom službom u Šabac i Mačvansku oblast.',
       url: 'https://maskezaklimu.rs/maska-za-klimu-sabac',
-      image: 'https://maskezaklimu.rs/assets/maska-za-klimu-sitni-listovi.webp'
+      image: 'https://maskezaklimu.rs/assets/maska_za_klimu_kvadratici.webp',
+      imageAlt: 'Maska za klimu Šabac – dekorativna zaštita za spoljnu jedinicu klima uređaja, model Kvadratići',
+      imageWidth: 1024,
+      imageHeight: 1024
     });
 
     this.seo.setJsonLd('sabac-faq-schema', {
@@ -89,7 +92,7 @@ export class MaskaZaKlimuSabacComponent implements OnInit {
         { '@type': 'Country', name: 'Serbia' }
       ],
       priceRange: 'RSD 13480',
-      image: 'https://maskezaklimu.rs/assets/maska-za-klimu-sitni-listovi.webp'
+      image: 'https://maskezaklimu.rs/assets/maska_za_klimu_kvadratici.webp'
     });
   }
 }

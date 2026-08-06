@@ -26,6 +26,23 @@ export class MaskaDetailComponent implements OnInit, OnDestroy {
   private sub?: Subscription;
   private readonly SITE = 'https://maskezaklimu.rs';
 
+  // Stvarne piksel-dimenzije fajlova u assets/ (provereno preko `magick identify`).
+  // Google poredi deklarisane og:image:width/height sa stvarnim fajlom — netačna
+  // vrednost (ranije hardkodovano 1200x630 za sve) obara pouzdanost markupa.
+  private readonly IMAGE_DIMENSIONS: Record<string, { width: number; height: number }> = {
+    'maska-za-klimu-sitni-listovi.webp': { width: 1024, height: 1024 },
+    'dekorativna_maska_za_klimu_pravougaonici.webp': { width: 559, height: 417 },
+    'maska_za_klimu_krupni_listovi.webp': { width: 650, height: 433 },
+    'maska_za_klimu_haoticna_sara.webp': { width: 1024, height: 1024 },
+    'maska_za_klimu_kvadratici.webp': { width: 1024, height: 1024 },
+    'maska_za_klimu_ostre_sare.webp': { width: 869, height: 829 }
+  };
+
+  private getImageDimensions(imgRel: string): { width: number; height: number } {
+    const filename = imgRel.split('/').pop() || '';
+    return this.IMAGE_DIMENSIONS[filename] || { width: 1024, height: 1024 };
+  }
+
   constructor(
     private route: ActivatedRoute,
     private maskaService: MaskaService,
@@ -112,6 +129,7 @@ export class MaskaDetailComponent implements OnInit, OnDestroy {
     // ✅ OG slika mora biti apsolutna
     const imgRel = this.maska.slika?.[0]?.url || '/assets/maska-za-klimu-sitni-listovi.webp';
     const image = this.toAbsoluteUrl(imgRel);
+    const { width: imgWidth, height: imgHeight } = this.getImageDimensions(imgRel);
 
     // ✅ Canonical kao LINK, ne meta (SSR-safe preko SeoService/DOCUMENT token)
     this.seoService.setCanonical(url);
@@ -132,9 +150,9 @@ export class MaskaDetailComponent implements OnInit, OnDestroy {
     this.meta.updateTag({ property: 'og:url', content: url });
     this.meta.updateTag({ property: 'og:image', content: image });
     this.meta.updateTag({ property: 'og:image:secure_url', content: image });
-    this.meta.updateTag({ property: 'og:image:alt', content: `${nazivRaw} – dekorativna maska za klimu` });
-    this.meta.updateTag({ property: 'og:image:width', content: '1200' });
-    this.meta.updateTag({ property: 'og:image:height', content: '630' });
+    this.meta.updateTag({ property: 'og:image:alt', content: `${nazivRaw} – maska za klimu (jedna od naših maski za klime)` });
+    this.meta.updateTag({ property: 'og:image:width', content: String(imgWidth) });
+    this.meta.updateTag({ property: 'og:image:height', content: String(imgHeight) });
 
     // Twitter
     this.meta.updateTag({ name: 'twitter:card', content: 'summary_large_image' });

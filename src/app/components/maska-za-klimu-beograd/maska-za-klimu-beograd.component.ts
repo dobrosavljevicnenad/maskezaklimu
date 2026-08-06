@@ -17,7 +17,10 @@ export class MaskaZaKlimuBeogradComponent implements OnInit {
       title: 'Maska za klimu Beograd – Dostava i izrada po meri | maskezaklimu.rs',
       description: 'Maska za klimu Beograd – dekorativne i zaštitne maske za spoljne jedinice klima uređaja. Plastificirani lim 1,5 mm, CNC izrada po meri, dostava kurirskom službom u Beograd.',
       url: 'https://maskezaklimu.rs/maska-za-klimu-beograd',
-      image: 'https://maskezaklimu.rs/assets/maska-za-klimu-sitni-listovi.webp'
+      image: 'https://maskezaklimu.rs/assets/maska-za-klimu-lekino-brdo-instalacija.webp',
+      imageAlt: 'Maska za klimu ugrađena kod kupca na Lekinom Brdu u Beogradu – stvarna instalacija na spoljnoj jedinici klima uređaja',
+      imageWidth: 1200,
+      imageHeight: 1600
     });
 
     this.seo.setJsonLd('beograd-faq-schema', {
@@ -89,7 +92,7 @@ export class MaskaZaKlimuBeogradComponent implements OnInit {
         { '@type': 'Country', name: 'Serbia' }
       ],
       priceRange: 'RSD 13480',
-      image: 'https://maskezaklimu.rs/assets/maska-za-klimu-sitni-listovi.webp'
+      image: 'https://maskezaklimu.rs/assets/maska-za-klimu-lekino-brdo-instalacija.webp'
     });
   }
 }

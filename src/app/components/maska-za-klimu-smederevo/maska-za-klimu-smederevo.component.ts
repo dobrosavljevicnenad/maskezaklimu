@@ -17,7 +17,10 @@ export class MaskaZaKlimuSmederevoComponent implements OnInit {
       title: 'Maska za klimu Smederevo – proizvodnja i lično preuzimanje | maskezaklimu.rs',
       description: 'Maska za klimu Smederevo – ovde i proizvodimo naše dekorativne i zaštitne maske za spoljne jedinice klima uređaja. Lično preuzimanje u radionici, izrada po meri, plastificirani lim 1,5 mm.',
       url: 'https://maskezaklimu.rs/maska-za-klimu-smederevo',
-      image: 'https://maskezaklimu.rs/assets/maska_za_klimu_smederevo_instalacija.webp'
+      image: 'https://maskezaklimu.rs/assets/maska_za_klimu_smederevo_instalacija.webp',
+      imageAlt: 'Maska za klimu ugrađena kod kupca u Smederevu – stvarna instalacija na spoljnoj jedinici klima uređaja',
+      imageWidth: 1242,
+      imageHeight: 2208
     });
 
     this.seo.setJsonLd('smederevo-faq-schema', {

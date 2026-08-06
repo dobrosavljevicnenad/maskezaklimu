@@ -17,10 +17,18 @@ export class SeoService {
     description: string;
     url: string;
     image?: string;
+    imageAlt?: string;
+    imageWidth?: number;
+    imageHeight?: number;
     robots?: string;
     ogType?: string;
   }) {
     const image = config.image || 'https://maskezaklimu.rs/assets/maska-za-klimu-sitni-listovi.webp';
+    // Mora da odgovara STVARNIM dimenzijama fajla (Google poredi deklarisano vs. stvarno,
+    // pa netačna vrednost obara pouzdanost structured data / og:image za Google Images).
+    const imageWidth = config.imageWidth ?? 1024;
+    const imageHeight = config.imageHeight ?? 1024;
+    const imageAlt = config.imageAlt || 'Maska za klimu od plastificiranog lima za spoljnu jedinicu klima uređaja';
     const robots = config.robots || 'index, follow, max-image-preview:large';
     const ogType = config.ogType || 'website';
 
@@ -37,13 +45,15 @@ export class SeoService {
     this.meta.updateTag({ property: 'og:description', content: config.description });
     this.meta.updateTag({ property: 'og:image', content: image });
     this.meta.updateTag({ property: 'og:image:secure_url', content: image });
-    this.meta.updateTag({ property: 'og:image:alt', content: 'Maska za klimu od plastificiranog lima za spoljnu jedinicu klima uređaja' });
+    this.meta.updateTag({ property: 'og:image:alt', content: imageAlt });
+    this.meta.updateTag({ property: 'og:image:width', content: String(imageWidth) });
+    this.meta.updateTag({ property: 'og:image:height', content: String(imageHeight) });
 
     this.meta.updateTag({ name: 'twitter:card', content: 'summary_large_image' });
     this.meta.updateTag({ name: 'twitter:title', content: config.title });
     this.meta.updateTag({ name: 'twitter:description', content: config.description });
     this.meta.updateTag({ name: 'twitter:image', content: image });
-    this.meta.updateTag({ name: 'twitter:image:alt', content: 'Maska za klimu od plastificiranog lima za spoljnu jedinicu klima uređaja' });
+    this.meta.updateTag({ name: 'twitter:image:alt', content: imageAlt });
 
     this.setCanonical(config.url);
   }

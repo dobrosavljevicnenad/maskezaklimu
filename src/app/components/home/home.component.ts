@@ -38,7 +38,10 @@ export class HomeComponent implements OnInit {
       title: 'MASKE ZA KLIMU – Najpovoljnije cene | Izrada po meri',
       description: 'MASKE ZA KLIMU od plastificiranog lima – izrada po meri, 6 modela, izbor boja. Dostava 5–7 radnih dana širom Srbije. ★★★★★ 15 recenzija zadovoljnih kupaca.',
       url: 'https://maskezaklimu.rs/',
-      image: 'https://maskezaklimu.rs/assets/maska-za-klimu-sitni-listovi.webp'
+      image: 'https://maskezaklimu.rs/assets/maska-za-klimu-sitni-listovi.webp',
+      imageAlt: 'Maske za klimu, poznate i kao maska za klimu ili maske za klime – dekorativna zaštita od plastificiranog lima za spoljnu jedinicu klima uređaja',
+      imageWidth: 1024,
+      imageHeight: 1024
     });
 
     this.seo.setJsonLd('home-organization-schema', {
@@ -92,11 +95,12 @@ export class HomeComponent implements OnInit {
         '@type': 'ImageObject',
         '@id': 'https://maskezaklimu.rs/assets/maska-za-klimu-sitni-listovi.webp',
         url: 'https://maskezaklimu.rs/assets/maska-za-klimu-sitni-listovi.webp',
+        contentUrl: 'https://maskezaklimu.rs/assets/maska-za-klimu-sitni-listovi.webp',
         name: 'Maske za klimu – dekorativna maska za klimu od plastificiranog lima',
-        description: 'Maske za klimu i maska za klimu od plastificiranog lima za spoljne jedinice klima uređaja. Dekorativne maske za klime po meri.',
-        caption: 'Maske za klimu – dekorativna maska za klimu od plastificiranog lima, model Sitni listovi',
-        width: 1200,
-        height: 800,
+        description: 'Maske za klimu, poznate i kao maska za klimu ili maske za klime, od plastificiranog lima za spoljne jedinice klima uređaja. Izrada po meri.',
+        caption: 'Maske za klimu (maska za klimu, maske za klime) – dekorativna zaštita od plastificiranog lima, model Sitni listovi',
+        width: 1024,
+        height: 1024,
         encodingFormat: 'image/webp'
       }
     });
@@ -111,7 +115,9 @@ export class HomeComponent implements OnInit {
           '@type': 'ImageObject',
           url: 'https://maskezaklimu.rs/assets/maska-za-klimu-sitni-listovi.webp',
           name: 'Maske za klimu – model Sitni listovi',
-          caption: 'Dekorativna maska za klimu, model Sitni listovi – maske za klime od plastificiranog lima',
+          caption: 'Maska za klimu, model Sitni listovi – jedna od naših maski za klime od plastificiranog lima',
+          width: 1024,
+          height: 1024,
           encodingFormat: 'image/webp'
         },
         {
@@ -119,6 +125,8 @@ export class HomeComponent implements OnInit {
           url: 'https://maskezaklimu.rs/assets/dekorativna_maska_za_klimu_pravougaonici.webp',
           name: 'Maske za klimu – model Pravougaonici',
           caption: 'Ukrasna maska za klimu sa geometrijskim dizajnom – maske za klime, model Pravougaonici',
+          width: 559,
+          height: 417,
           encodingFormat: 'image/webp'
         },
         {
@@ -126,6 +134,8 @@ export class HomeComponent implements OnInit {
           url: 'https://maskezaklimu.rs/assets/maska_za_klimu_krupni_listovi.webp',
           name: 'Maska za klimu – model Krupni listovi',
           caption: 'Metalna maska za klimu sa krupnim listovima – maske za spoljnu jedinicu klima uređaja',
+          width: 650,
+          height: 433,
           encodingFormat: 'image/webp'
         },
         {
@@ -133,6 +143,8 @@ export class HomeComponent implements OnInit {
           url: 'https://maskezaklimu.rs/assets/maska_za_klimu_haoticna_sara.webp',
           name: 'Maske za klimu – model Haotična šara',
           caption: 'Dekorativna maska za klimu savremenog dizajna – maske za klime, model Haotična šara',
+          width: 1024,
+          height: 1024,
           encodingFormat: 'image/webp'
         },
         {
@@ -140,6 +152,8 @@ export class HomeComponent implements OnInit {
           url: 'https://maskezaklimu.rs/assets/maska_za_klimu_kvadratici.webp',
           name: 'Maska za klimu – model Kvadratići',
           caption: 'Maska za klimu sa kvadratićima – maske za klime za spoljne jedinice klima uređaja',
+          width: 1024,
+          height: 1024,
           encodingFormat: 'image/webp'
         },
         {
@@ -147,6 +161,8 @@ export class HomeComponent implements OnInit {
           url: 'https://maskezaklimu.rs/assets/maska_za_klimu_ostre_sare.webp',
           name: 'Maska za klimu – model Oštre šare',
           caption: 'Minimalistička metalna maska za klimu – maske za klime, model Oštre šare',
+          width: 869,
+          height: 829,
           encodingFormat: 'image/webp'
         }
       ]

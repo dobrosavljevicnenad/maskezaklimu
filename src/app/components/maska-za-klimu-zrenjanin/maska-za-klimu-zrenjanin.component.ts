@@ -17,7 +17,10 @@ export class MaskaZaKlimuZrenjaninComponent implements OnInit {
       title: 'Maska za klimu Zrenjanin – Dostava i izrada po meri | maskezaklimu.rs',
       description: 'Maska za klimu Zrenjanin – dekorativne i zaštitne maske za spoljne jedinice klima uređaja. Plastificirani lim 1,5 mm, CNC izrada po meri, dostava kurirskom službom u Zrenjanin i Banat.',
       url: 'https://maskezaklimu.rs/maska-za-klimu-zrenjanin',
-      image: 'https://maskezaklimu.rs/assets/maska-za-klimu-sitni-listovi.webp'
+      image: 'https://maskezaklimu.rs/assets/maska_za_klimu_haoticna_sara.webp',
+      imageAlt: 'Maska za klimu Zrenjanin – dekorativna zaštita za spoljnu jedinicu klima uređaja, model Haotična šara',
+      imageWidth: 1024,
+      imageHeight: 1024
     });
 
     this.seo.setJsonLd('zrenjanin-faq-schema', {
@@ -89,7 +92,7 @@ export class MaskaZaKlimuZrenjaninComponent implements OnInit {
         { '@type': 'Country', name: 'Serbia' }
       ],
       priceRange: 'RSD 13480',
-      image: 'https://maskezaklimu.rs/assets/maska-za-klimu-sitni-listovi.webp'
+      image: 'https://maskezaklimu.rs/assets/maska_za_klimu_haoticna_sara.webp'
     });
   }
 }

@@ -17,7 +17,10 @@ export class UkrasnaKutijaZaKlimuComponent implements OnInit {
       title: 'Ukrasna kutija za klimu – Ukrasna maska za klimu | maskezaklimu.rs',
       description: 'Ukrasna kutija za klimu od plastificiranog lima 1,5 mm – dekorativna maska za spoljnu jedinicu klima uređaja. Više šara i RAL boja, izrada po meri, dostava širom Srbije.',
       url: 'https://maskezaklimu.rs/ukrasna-kutija-za-klimu',
-      image: 'https://maskezaklimu.rs/assets/dekorativna-maska-za-klimu-pravougaonici.webp'
+      image: 'https://maskezaklimu.rs/assets/dekorativna_maska_za_klimu_pravougaonici.webp',
+      imageAlt: 'Ukrasna kutija za klimu – ukrasna maska za klimu sa geometrijskim dizajnom pravougaonika',
+      imageWidth: 559,
+      imageHeight: 417
     });
 
     this.seo.setJsonLd('ukrasna-faq-schema', {

@@ -17,7 +17,10 @@ export class MaskaZaKlimuLeskovacComponent implements OnInit {
       title: 'Maska za klimu Leskovac – Dostava i izrada po meri | maskezaklimu.rs',
       description: 'Maska za klimu Leskovac – dekorativne i zaštitne maske za spoljne jedinice klima uređaja. Plastificirani lim 1,5 mm, CNC izrada po meri, dostava kurirskom službom u Leskovac i Jablanički okrug.',
       url: 'https://maskezaklimu.rs/maska-za-klimu-leskovac',
-      image: 'https://maskezaklimu.rs/assets/maska-za-klimu-sitni-listovi.webp'
+      image: 'https://maskezaklimu.rs/assets/maska_za_klimu_ostre_sare.webp',
+      imageAlt: 'Maska za klimu Leskovac – dekorativna zaštita za spoljnu jedinicu klima uređaja, model Oštre šare',
+      imageWidth: 869,
+      imageHeight: 829
     });
 
     this.seo.setJsonLd('leskovac-faq-schema', {
@@ -89,7 +92,7 @@ export class MaskaZaKlimuLeskovacComponent implements OnInit {
         { '@type': 'Country', name: 'Serbia' }
       ],
       priceRange: 'RSD 13480',
-      image: 'https://maskezaklimu.rs/assets/maska-za-klimu-sitni-listovi.webp'
+      image: 'https://maskezaklimu.rs/assets/maska_za_klimu_ostre_sare.webp'
     });
   }
 }

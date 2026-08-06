@@ -17,7 +17,10 @@ export class MaskaZaKlimuNisComponent implements OnInit {
       title: 'Maska za klimu Niš – Dostava i izrada po meri | maskezaklimu.rs',
       description: 'Maska za klimu Niš – dekorativne i zaštitne maske za spoljne jedinice klima uređaja. Plastificirani lim 1,5 mm, CNC izrada po meri, dostava kurirskom službom u Niš.',
       url: 'https://maskezaklimu.rs/maska-za-klimu-nis',
-      image: 'https://maskezaklimu.rs/assets/maska-za-klimu-sitni-listovi.webp'
+      image: 'https://maskezaklimu.rs/assets/dekorativna_maska_za_klimu_pravougaonici.webp',
+      imageAlt: 'Maska za klimu Niš – dekorativna zaštita za spoljnu jedinicu klima uređaja, model Pravougaonici',
+      imageWidth: 559,
+      imageHeight: 417
     });
 
     this.seo.setJsonLd('nis-faq-schema', {
@@ -79,7 +82,7 @@ export class MaskaZaKlimuNisComponent implements OnInit {
         { '@type': 'Country', name: 'Serbia' }
       ],
       priceRange: 'RSD 13480',
-      image: 'https://maskezaklimu.rs/assets/maska-za-klimu-sitni-listovi.webp'
+      image: 'https://maskezaklimu.rs/assets/dekorativna_maska_za_klimu_pravougaonici.webp'
     });
   }
 }

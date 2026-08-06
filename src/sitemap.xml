@@ -6,12 +6,12 @@
   <!-- HOME – glavni autoritet -->
   <url>
     <loc>https://maskezaklimu.rs/</loc>
-    <lastmod>2026-07-16</lastmod>
+    <lastmod>2026-08-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
     <image:image>
       <image:loc>https://maskezaklimu.rs/assets/maska-za-klimu-sitni-listovi.webp</image:loc>
-      <image:caption>Maske za klimu – maska za klimu od plastificiranog lima za spoljnu jedinicu, model Sitni listovi</image:caption>
+      <image:caption>Maske za klimu, poznate i kao maska za klimu ili maske za klime, od plastificiranog lima za spoljnu jedinicu, model Sitni listovi</image:caption>
       <image:title>Maske za klimu – dekorativna maska za klimu, model Sitni listovi</image:title>
     </image:image>
     <image:image>
@@ -143,7 +143,7 @@
 
   <url>
     <loc>https://maskezaklimu.rs/ukrasna-kutija-za-klimu</loc>
-    <lastmod>2026-07-02</lastmod>
+    <lastmod>2026-08-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
     <image:image>
@@ -157,96 +157,96 @@
 
   <url>
     <loc>https://maskezaklimu.rs/maska-za-klimu-beograd</loc>
-    <lastmod>2026-07-02</lastmod>
+    <lastmod>2026-08-06</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <image:image>
-      <image:loc>https://maskezaklimu.rs/assets/maska-za-klimu-sitni-listovi.webp</image:loc>
-      <image:caption>Maska za klimu Beograd – dostava kurirskom službom u sve beogradske opštine</image:caption>
-      <image:title>Maska za klimu Beograd</image:title>
+      <image:loc>https://maskezaklimu.rs/assets/maska-za-klimu-lekino-brdo-instalacija.webp</image:loc>
+      <image:caption>Maska za klimu ugrađena kod kupca na Lekinom Brdu u Beogradu – stvarna instalacija, dostava kurirskom službom u sve beogradske opštine</image:caption>
+      <image:title>Maska za klimu Beograd – instalacija kod kupca</image:title>
     </image:image>
   </url>
 
   <url>
     <loc>https://maskezaklimu.rs/maska-za-klimu-novi-sad</loc>
-    <lastmod>2026-07-02</lastmod>
+    <lastmod>2026-08-06</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <image:image>
-      <image:loc>https://maskezaklimu.rs/assets/maska-za-klimu-sitni-listovi.webp</image:loc>
-      <image:caption>Maska za klimu Novi Sad – dostava kurirskom službom u Novi Sad i okolinu</image:caption>
+      <image:loc>https://maskezaklimu.rs/assets/maska_za_klimu_krupni_listovi.webp</image:loc>
+      <image:caption>Maska za klimu Novi Sad, model Krupni listovi – dostava kurirskom službom u Novi Sad i okolinu</image:caption>
       <image:title>Maska za klimu Novi Sad</image:title>
     </image:image>
   </url>
 
   <url>
     <loc>https://maskezaklimu.rs/maska-za-klimu-nis</loc>
-    <lastmod>2026-07-02</lastmod>
+    <lastmod>2026-08-06</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <image:image>
-      <image:loc>https://maskezaklimu.rs/assets/maska-za-klimu-sitni-listovi.webp</image:loc>
-      <image:caption>Maska za klimu Niš – dostava kurirskom službom u Niš i okolinu</image:caption>
+      <image:loc>https://maskezaklimu.rs/assets/dekorativna_maska_za_klimu_pravougaonici.webp</image:loc>
+      <image:caption>Maska za klimu Niš, model Pravougaonici – dostava kurirskom službom u Niš i okolinu</image:caption>
       <image:title>Maska za klimu Niš</image:title>
     </image:image>
   </url>
 
   <url>
     <loc>https://maskezaklimu.rs/maska-za-klimu-kragujevac</loc>
-    <lastmod>2026-07-02</lastmod>
+    <lastmod>2026-08-06</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <image:image>
-      <image:loc>https://maskezaklimu.rs/assets/maska-za-klimu-sitni-listovi.webp</image:loc>
-      <image:caption>Maska za klimu Kragujevac – dostava kurirskom službom u Kragujevac i Šumadiju</image:caption>
+      <image:loc>https://maskezaklimu.rs/assets/maska_za_klimu_haoticna_sara.webp</image:loc>
+      <image:caption>Maska za klimu Kragujevac, model Haotična šara – dostava kurirskom službom u Kragujevac i Šumadiju</image:caption>
       <image:title>Maska za klimu Kragujevac</image:title>
     </image:image>
   </url>
 
   <url>
     <loc>https://maskezaklimu.rs/maska-za-klimu-subotica</loc>
-    <lastmod>2026-07-02</lastmod>
+    <lastmod>2026-08-06</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <image:image>
-      <image:loc>https://maskezaklimu.rs/assets/maska-za-klimu-sitni-listovi.webp</image:loc>
-      <image:caption>Maska za klimu Subotica – dostava kurirskom službom u Suboticu i Vojvodinu</image:caption>
+      <image:loc>https://maskezaklimu.rs/assets/maska_za_klimu_kvadratici.webp</image:loc>
+      <image:caption>Maska za klimu Subotica, model Kvadratići – dostava kurirskom službom u Suboticu i Vojvodinu</image:caption>
       <image:title>Maska za klimu Subotica</image:title>
     </image:image>
   </url>
 
   <url>
     <loc>https://maskezaklimu.rs/maska-za-klimu-cacak</loc>
-    <lastmod>2026-07-02</lastmod>
+    <lastmod>2026-08-06</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <image:image>
-      <image:loc>https://maskezaklimu.rs/assets/maska-za-klimu-sitni-listovi.webp</image:loc>
-      <image:caption>Maska za klimu Čačak – dostava kurirskom službom u Čačak i zapadnu Srbiju</image:caption>
+      <image:loc>https://maskezaklimu.rs/assets/maska_za_klimu_ostre_sare.webp</image:loc>
+      <image:caption>Maska za klimu Čačak, model Oštre šare – dostava kurirskom službom u Čačak i zapadnu Srbiju</image:caption>
       <image:title>Maska za klimu Čačak</image:title>
     </image:image>
   </url>
 
   <url>
     <loc>https://maskezaklimu.rs/maska-za-klimu-valjevo</loc>
-    <lastmod>2026-07-02</lastmod>
+    <lastmod>2026-08-06</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <image:image>
-      <image:loc>https://maskezaklimu.rs/assets/maska-za-klimu-sitni-listovi.webp</image:loc>
-      <image:caption>Maska za klimu Valjevo – dostava kurirskom službom u Valjevo i Kolubarsku oblast</image:caption>
+      <image:loc>https://maskezaklimu.rs/assets/maska_za_klimu_krupni_listovi.webp</image:loc>
+      <image:caption>Maska za klimu Valjevo, model Krupni listovi – dostava kurirskom službom u Valjevo i Kolubarsku oblast</image:caption>
       <image:title>Maska za klimu Valjevo</image:title>
     </image:image>
   </url>
 
   <url>
     <loc>https://maskezaklimu.rs/maska-za-klimu-pancevo</loc>
-    <lastmod>2026-07-02</lastmod>
+    <lastmod>2026-08-06</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <image:image>
-      <image:loc>https://maskezaklimu.rs/assets/maska-za-klimu-sitni-listovi.webp</image:loc>
-      <image:caption>Maska za klimu Pančevo – dostava kurirskom službom u Pančevo i Južni Banat</image:caption>
+      <image:loc>https://maskezaklimu.rs/assets/dekorativna_maska_za_klimu_pravougaonici.webp</image:loc>
+      <image:caption>Maska za klimu Pančevo, model Pravougaonici – dostava kurirskom službom u Pančevo i Južni Banat</image:caption>
       <image:title>Maska za klimu Pančevo</image:title>
     </image:image>
   </url>
@@ -269,43 +269,43 @@
 
   <url>
     <loc>https://maskezaklimu.rs/maska-za-klimu-zrenjanin</loc>
-    <lastmod>2026-07-02</lastmod>
+    <lastmod>2026-08-06</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <image:image>
-      <image:loc>https://maskezaklimu.rs/assets/maska-za-klimu-sitni-listovi.webp</image:loc>
-      <image:caption>Maska za klimu Zrenjanin – dostava kurirskom službom u Zrenjanin i Srednji Banat</image:caption>
+      <image:loc>https://maskezaklimu.rs/assets/maska_za_klimu_haoticna_sara.webp</image:loc>
+      <image:caption>Maska za klimu Zrenjanin, model Haotična šara – dostava kurirskom službom u Zrenjanin i Srednji Banat</image:caption>
       <image:title>Maska za klimu Zrenjanin</image:title>
     </image:image>
   </url>
 
   <url>
     <loc>https://maskezaklimu.rs/maska-za-klimu-sabac</loc>
-    <lastmod>2026-07-02</lastmod>
+    <lastmod>2026-08-06</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <image:image>
-      <image:loc>https://maskezaklimu.rs/assets/maska-za-klimu-sitni-listovi.webp</image:loc>
-      <image:caption>Maska za klimu Šabac – dostava kurirskom službom u Šabac i Mačvansku oblast</image:caption>
+      <image:loc>https://maskezaklimu.rs/assets/maska_za_klimu_kvadratici.webp</image:loc>
+      <image:caption>Maska za klimu Šabac, model Kvadratići – dostava kurirskom službom u Šabac i Mačvansku oblast</image:caption>
       <image:title>Maska za klimu Šabac</image:title>
     </image:image>
   </url>
 
   <url>
     <loc>https://maskezaklimu.rs/maska-za-klimu-leskovac</loc>
-    <lastmod>2026-07-02</lastmod>
+    <lastmod>2026-08-06</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <image:image>
-      <image:loc>https://maskezaklimu.rs/assets/maska-za-klimu-sitni-listovi.webp</image:loc>
-      <image:caption>Maska za klimu Leskovac – dostava kurirskom službom u Leskovac i Jablaničku oblast</image:caption>
+      <image:loc>https://maskezaklimu.rs/assets/maska_za_klimu_ostre_sare.webp</image:loc>
+      <image:caption>Maska za klimu Leskovac, model Oštre šare – dostava kurirskom službom u Leskovac i Jablaničku oblast</image:caption>
       <image:title>Maska za klimu Leskovac</image:title>
     </image:image>
   </url>
 
   <url>
     <loc>https://maskezaklimu.rs/maska-za-klimu-zemun</loc>
-    <lastmod>2026-08-02</lastmod>
+    <lastmod>2026-08-06</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <image:image>
@@ -317,12 +317,12 @@
 
   <url>
     <loc>https://maskezaklimu.rs/maska-za-klimu-pozarevac</loc>
-    <lastmod>2026-07-02</lastmod>
+    <lastmod>2026-08-06</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <image:image>
-      <image:loc>https://maskezaklimu.rs/assets/maska-za-klimu-sitni-listovi.webp</image:loc>
-      <image:caption>Maska za klimu Požarevac – dostava kurirskom službom u Požarevac i Braničevski okrug</image:caption>
+      <image:loc>https://maskezaklimu.rs/assets/maska_za_klimu_krupni_listovi.webp</image:loc>
+      <image:caption>Maska za klimu Požarevac, model Krupni listovi – dostava kurirskom službom u Požarevac i Braničevski okrug</image:caption>
       <image:title>Maska za klimu Požarevac</image:title>
     </image:image>
   </url>

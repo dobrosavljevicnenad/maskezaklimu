@@ -17,7 +17,10 @@ export class MaskaZaKlimuValjevaComponent implements OnInit {
       title: 'Maska za klimu Valjevo – Dostava i izrada po meri | maskezaklimu.rs',
       description: 'Maska za klimu Valjevo – dekorativne i zaštitne maske za spoljne jedinice klima uređaja. Plastificirani lim 1,5 mm, CNC izrada po meri, dostava kurirskom službom u Valjevo.',
       url: 'https://maskezaklimu.rs/maska-za-klimu-valjevo',
-      image: 'https://maskezaklimu.rs/assets/maska-za-klimu-sitni-listovi.webp'
+      image: 'https://maskezaklimu.rs/assets/maska_za_klimu_krupni_listovi.webp',
+      imageAlt: 'Maska za klimu Valjevo – dekorativna zaštita za spoljnu jedinicu klima uređaja, model Krupni listovi',
+      imageWidth: 650,
+      imageHeight: 433
     });
 
     this.seo.setJsonLd('valjevo-faq-schema', {
@@ -79,7 +82,7 @@ export class MaskaZaKlimuValjevaComponent implements OnInit {
         { '@type': 'Country', name: 'Serbia' }
       ],
       priceRange: 'RSD 13480',
-      image: 'https://maskezaklimu.rs/assets/maska-za-klimu-sitni-listovi.webp'
+      image: 'https://maskezaklimu.rs/assets/maska_za_klimu_krupni_listovi.webp'
     });
   }
 }

@@ -17,7 +17,10 @@ export class MaskaZaKlimuZemunComponent implements OnInit {
       title: 'Maska za klimu Zemun – Dostava i izrada po meri | maskezaklimu.rs',
       description: 'Maska za klimu Zemun – dekorativne i zaštitne maske za spoljne jedinice klima uređaja. Plastificirani lim 1,5 mm, CNC izrada po meri, dostava kurirskom službom u Zemun.',
       url: 'https://maskezaklimu.rs/maska-za-klimu-zemun',
-      image: 'https://maskezaklimu.rs/assets/maska_za_klimu_instalacija_zemun.webp'
+      image: 'https://maskezaklimu.rs/assets/maska_za_klimu_instalacija_zemun.webp',
+      imageAlt: 'Maska za klimu ugrađena kod kupca u Zemunu – stvarna instalacija na spoljnoj jedinici klima uređaja',
+      imageWidth: 960,
+      imageHeight: 1280
     });
 
     this.seo.setJsonLd('zemun-faq-schema', {
@@ -90,7 +93,7 @@ export class MaskaZaKlimuZemunComponent implements OnInit {
         { '@type': 'Country', name: 'Serbia' }
       ],
       priceRange: 'RSD 13480',
-      image: 'https://maskezaklimu.rs/assets/maska-za-klimu-sitni-listovi.webp'
+      image: 'https://maskezaklimu.rs/assets/maska_za_klimu_instalacija_zemun.webp'
     });
   }
 }
