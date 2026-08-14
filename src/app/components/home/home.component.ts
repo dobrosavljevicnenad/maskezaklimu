@@ -267,6 +267,30 @@ export class HomeComponent implements OnInit {
             '@type': 'Answer',
             text: 'Ne. Dovoljno je povremeno isprati masku vodom ili obrisati vlažnom krpom. Plastificirani lim ne rđa i ne bledi, pa nema potrebe za farbanjem ni zaštitnim premazima.'
           }
+        },
+        {
+          '@type': 'Question',
+          name: 'Da li se maska za klimu naziva i kavez ili obloga za klimu?',
+          acceptedAnswer: {
+            '@type': 'Answer',
+            text: 'Da. Kavez za klimu i obloga za klimu su nazivi koje ljudi često koriste za isti proizvod – dekorativnu i zaštitnu masku za spoljnu jedinicu klima uređaja. Bez obzira kako je zovete, radi se o istoj izradi od plastificiranog lima, po meri vaše jedinice.'
+          }
+        },
+        {
+          '@type': 'Question',
+          name: 'Šta je kutija za klimu i da li je to isto što i maska za klimu?',
+          acceptedAnswer: {
+            '@type': 'Answer',
+            text: 'Kutija za klimu je još jedan uobičajen naziv za masku koja pokriva spoljnu jedinicu klima uređaja. Izrađujemo je od plastificiranog lima, u standardnoj dimenziji ili po meri, sa dovoljno provetravanja da ne ometa rad uređaja.'
+          }
+        },
+        {
+          '@type': 'Question',
+          name: 'Da li pravite masku za klimu montiranu unutar zatvorenog balkona, ili samo za jedinice napolju?',
+          acceptedAnswer: {
+            '@type': 'Answer',
+            text: 'Oba slučaja su podjednako česta i radimo oboje – bilo da je spoljna jedinica montirana potpuno napolju na fasadi ili zidu, bilo da je smeštena unutar zatvorenog balkona ili lođe. Dimenzije i izradu prilagođavamo mestu montaže.'
+          }
         }
       ]
     });
