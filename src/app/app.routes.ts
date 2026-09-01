@@ -114,4 +114,8 @@ export const routes: Routes = [
     path: 'zakon-o-klimama-na-fasadi',
     loadComponent: () => import('./components/zakon-o-klimama-na-fasadi/zakon-o-klimama-na-fasadi.component').then(m => m.ZakonOKlimamaNaFasadiComponent),
   },
+  {
+    path: 'maska-za-klimu-12-18-24',
+    loadComponent: () => import('./components/maska-za-klimu-12-18-24/maska-za-klimu-12-18-24.component').then(m => m.MaskaZaKlimu121824Component),
+  },
 ];
