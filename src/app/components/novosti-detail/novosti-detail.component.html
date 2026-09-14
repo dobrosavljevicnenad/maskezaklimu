@@ -1,0 +1,86 @@
+<main class="bg-[#f5f6f7] text-gray-900" *ngIf="post as p; else loading">
+
+  <!-- HERO -->
+  <section class="bg-white border-b border-gray-200 py-14">
+    <header class="max-w-3xl mx-auto px-6">
+      <nav class="text-sm text-gray-500 mb-4" aria-label="Breadcrumb">
+        <a routerLink="/" class="hover:underline">Maske za klimu</a>
+        <span class="mx-2">/</span>
+        <a routerLink="/novosti" class="hover:underline">Novosti</a>
+      </nav>
+      <time class="text-xs uppercase tracking-widest text-gray-400 mb-3 block">{{ p.datum }}</time>
+      <h1 class="text-3xl md:text-4xl font-extrabold text-gray-900 mb-4 tracking-tight leading-tight">
+        {{ p.naslov }}
+      </h1>
+      <p class="text-lg text-gray-700 leading-relaxed">{{ p.opis }}</p>
+    </header>
+  </section>
+
+  <div class="max-w-3xl mx-auto px-6 py-12 space-y-10">
+
+    <figure class="rounded-3xl overflow-hidden border border-gray-200 shadow-sm">
+      <img
+        [src]="p.slika"
+        [alt]="p.slikaAlt"
+        [width]="p.slikaWidth"
+        [height]="p.slikaHeight"
+        class="w-full h-auto object-cover"
+        loading="eager"
+      />
+    </figure>
+
+    <article class="bg-white rounded-3xl border border-gray-200 shadow-sm p-8 lg:p-10 space-y-5 text-gray-700 text-lg leading-relaxed">
+      <p *ngFor="let paragraf of p.sadrzaj" [innerHTML]="paragraf"></p>
+    </article>
+
+    <!-- FAQ -->
+    <div *ngIf="p.faq && p.faq.length > 0">
+      <div class="text-center mb-8">
+        <h2 class="text-3xl font-black tracking-tight text-gray-950">Česta pitanja</h2>
+      </div>
+      <div class="space-y-4">
+        <div *ngFor="let f of p.faq" class="bg-white border border-gray-200 rounded-[1.75rem] p-6 shadow-sm">
+          <h3 class="text-xl font-semibold text-gray-950 mb-2">{{ f.pitanje }}</h3>
+          <p class="text-gray-700 leading-relaxed">{{ f.odgovor }}</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- CTA -->
+    <div class="rounded-[2rem] bg-[#111827] text-white shadow-lg p-8 sm:p-10 text-center">
+      <h2 class="text-2xl sm:text-3xl font-black tracking-tight mb-4">Naručite masku za klimu</h2>
+      <p class="text-lg text-gray-300 max-w-2xl mx-auto mb-8">
+        Pozovite nas ili pošaljite upit – dogovorićemo dimenzije, boju i rok isporuke.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a href="tel:+381659775995"
+          class="inline-flex justify-center items-center bg-white text-gray-950 font-bold py-4 px-8 rounded-full hover:bg-gray-100 transition">
+          Pozovi odmah: 065 977 5995
+        </a>
+        <a routerLink="/kontakt"
+          class="inline-flex justify-center items-center border border-white/30 text-white font-bold py-4 px-8 rounded-full hover:bg-white/10 transition">
+          Pošalji upit
+        </a>
+      </div>
+    </div>
+
+    <!-- Interni linkovi -->
+    <nav class="bg-white rounded-3xl border border-gray-200 shadow-sm p-6" aria-label="Srodne stranice">
+      <p class="text-sm font-semibold uppercase tracking-widest text-gray-500 mb-4">Pogledajte i:</p>
+      <div class="flex flex-wrap gap-3">
+        <a routerLink="/novosti" class="text-gray-800 font-medium hover:underline">Sve novosti</a>
+        <span class="text-gray-300">|</span>
+        <a routerLink="/zakon-o-klimama-na-fasadi" class="text-gray-800 font-medium hover:underline">Zakon o klimama na fasadi</a>
+        <span class="text-gray-300">|</span>
+        <a routerLink="/maska-za-klimu-12-18-24" class="text-gray-800 font-medium hover:underline">Maska za klimu 12, 18 i 24</a>
+        <span class="text-gray-300">|</span>
+        <a routerLink="/maske-za-klimu-po-meri" class="text-gray-800 font-medium hover:underline">Maske za klimu po meri</a>
+      </div>
+    </nav>
+
+  </div>
+</main>
+
+<ng-template #loading>
+  <div class="max-w-3xl mx-auto px-6 py-24 text-center text-gray-500">Učitavanje...</div>
+</ng-template>

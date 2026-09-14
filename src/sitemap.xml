@@ -358,6 +358,39 @@
     </image:image>
   </url>
 
+  <url>
+    <loc>https://maskezaklimu.rs/maska-za-klimu-krusevac</loc>
+    <lastmod>2026-09-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://maskezaklimu.rs/assets/maska-za-klimu-sitni-listovi.webp</image:loc>
+      <image:caption>Maska za klimu Kruševac, model Sitni listovi – dostava kurirskom službom u Kruševac i Rasinski okrug</image:caption>
+      <image:title>Maska za klimu Kruševac</image:title>
+    </image:image>
+  </url>
+
+  <!-- NOVOSTI / BLOG -->
+
+  <url>
+    <loc>https://maskezaklimu.rs/novosti</loc>
+    <lastmod>2026-09-14</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <url>
+    <loc>https://maskezaklimu.rs/novosti/kada-postaviti-masku-za-klimu-pre-zime</loc>
+    <lastmod>2026-09-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.65</priority>
+    <image:image>
+      <image:loc>https://maskezaklimu.rs/assets/maska_za_klimu_krupni_listovi.webp</image:loc>
+      <image:caption>Maska za klimu postavljena na spoljnu jedinicu klima uređaja u jesen, pre zime</image:caption>
+      <image:title>Kada postaviti masku za klimu pre zime</image:title>
+    </image:image>
+  </url>
+
   <!-- BITNE SEKCIJE -->
 
   <url>

@@ -118,4 +118,16 @@ export const routes: Routes = [
     path: 'maska-za-klimu-12-18-24',
     loadComponent: () => import('./components/maska-za-klimu-12-18-24/maska-za-klimu-12-18-24.component').then(m => m.MaskaZaKlimu121824Component),
   },
+  {
+    path: 'maska-za-klimu-krusevac',
+    loadComponent: () => import('./components/maska-za-klimu-krusevac/maska-za-klimu-krusevac.component').then(m => m.MaskaZaKlimuKrusevacComponent),
+  },
+  {
+    path: 'novosti',
+    loadComponent: () => import('./components/novosti/novosti.component').then(m => m.NovostiComponent),
+  },
+  {
+    path: 'novosti/:slug',
+    loadComponent: () => import('./components/novosti-detail/novosti-detail.component').then(m => m.NovostiDetailComponent),
+  },
 ];
