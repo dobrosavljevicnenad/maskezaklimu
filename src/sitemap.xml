@@ -374,7 +374,7 @@
 
   <url>
     <loc>https://maskezaklimu.rs/novosti</loc>
-    <lastmod>2026-09-14</lastmod>
+    <lastmod>2026-09-20</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
@@ -388,6 +388,18 @@
       <image:loc>https://maskezaklimu.rs/assets/maska_za_klimu_krupni_listovi.webp</image:loc>
       <image:caption>Maska za klimu postavljena na spoljnu jedinicu klima uređaja u jesen, pre zime</image:caption>
       <image:title>Kada postaviti masku za klimu pre zime</image:title>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://maskezaklimu.rs/novosti/da-li-maska-za-klimu-smanjuje-efikasnost-klime</loc>
+    <lastmod>2026-09-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.65</priority>
+    <image:image>
+      <image:loc>https://maskezaklimu.rs/assets/maska_za_klimu_ostre_sare.webp</image:loc>
+      <image:caption>Maska za klimu sa perforacijama koje omogućavaju protok vazduha oko spoljne jedinice klima uređaja</image:caption>
+      <image:title>Da li maska za klimu smanjuje efikasnost rada klime</image:title>
     </image:image>
   </url>
 

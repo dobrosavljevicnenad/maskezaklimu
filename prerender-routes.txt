@@ -23,6 +23,7 @@
 /maska-za-klimu-krusevac
 /novosti
 /novosti/kada-postaviti-masku-za-klimu-pre-zime
+/novosti/da-li-maska-za-klimu-smanjuje-efikasnost-klime
 /maska-za-klimu-spolja
 /maske-za-klime-cena
 /maske-za-klimu-po-meri
