@@ -39,6 +39,7 @@
             <div class="ml-4 flex-1">
               <h3 class="text-lg font-semibold">{{ product.naziv }}</h3>
               <p class="text-gray-500 mt-1">Boja: {{ product.boja }}</p>
+              <p class="text-gray-500">Veličina: {{ opisVelicine(product.velicina) }}</p>
               <p class="text-gray-600">{{ getDiscountPrice(product) * product.kolicina | number }} RSD</p>
             </div>
           </div>

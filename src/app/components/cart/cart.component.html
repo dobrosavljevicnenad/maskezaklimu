@@ -14,6 +14,9 @@
         <p class="!text-gray-500">
           Boja: <span class="!font-semibold">{{ product.boja }}</span>
         </p>
+        <p class="!text-gray-500">
+          Veličina: <span class="!font-semibold">{{ opisVelicine(product.velicina) }}</span>
+        </p>
 
         <button (click)="editingColorIndex === i ? editingColorIndex = null : startEditingColor(i, product.boja)"
           class="!mt-1 !text-sm !text-blue-600 !hover:underline">
@@ -33,14 +36,14 @@
         </div>
 
         <div class="flex items-center mt-2">
-          <button (click)="removeFromCart(product.id, product.boja)" class="bg-gray-300 px-2 py-1 rounded-md">-</button>
+          <button (click)="removeFromCart(product.id, product.boja, product.velicina)" class="bg-gray-300 px-2 py-1 rounded-md">-</button>
           <input type="number" [(ngModel)]="product.kolicina"
-            (change)="updateCart(product.id, product.kolicina, product.boja)"
+            (change)="updateCart(product.id, product.kolicina, product.boja, product.velicina)"
             class="w-12 text-center mx-2 border rounded-md" />
-          <button (click)="addToCart(product.id, product.boja)" class="bg-gray-300 px-2 py-1 rounded-md">+</button>
+          <button (click)="addToCart(product.id, product.boja, product.velicina)" class="bg-gray-300 px-2 py-1 rounded-md">+</button>
         </div>
       </div>
-      <button (click)="deleteFromCart(product.id, product.boja)" class="text-red-500 hover:text-red-700 ml-4">
+      <button (click)="deleteFromCart(product.id, product.boja, product.velicina)" class="text-red-500 hover:text-red-700 ml-4">
         <mat-icon>delete</mat-icon>
       </button>
     </div>

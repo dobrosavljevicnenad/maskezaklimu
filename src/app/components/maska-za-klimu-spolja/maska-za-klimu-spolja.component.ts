@@ -37,7 +37,7 @@ export class MaskaZaKlimuSpoljaComponent implements OnInit {
           name: 'Koje su standardne dimenzije maske za spoljnu jedinicu klime?',
           acceptedAnswer: {
             '@type': 'Answer',
-            text: 'Standardni model iznosi 900 × 650 × 440 mm. Ukoliko vaša spoljna jedinica ima drugačije dimenzije, izrađujemo masku za klimu spolja po meri – samo nam pošaljite mere vaše spoljne jedinice.'
+            text: 'Standardni modeli su veličine S (900 × 650 × 440 mm) i M (900 × 650 × 550 mm). Ukoliko vaša spoljna jedinica ima drugačije dimenzije, izrađujemo masku za klimu spolja po meri – samo nam pošaljite mere vaše spoljne jedinice.'
           }
         },
         {
@@ -53,7 +53,7 @@ export class MaskaZaKlimuSpoljaComponent implements OnInit {
           name: 'Kolika je cena maske za klimu spolja?',
           acceptedAnswer: {
             '@type': 'Answer',
-            text: 'Standardna maska za klimu spolja dimenzija 900 × 650 × 440 mm košta 13.480 RSD. Za nestandardne dimenzije ili posebne boje, kontaktirajte nas za individualnu ponudu.'
+            text: 'Standardna maska za klimu spolja dimenzija 900 × 650 × 440 mm (S) ili 900 × 650 × 550 mm (M) košta 13.480 RSD. Za nestandardne dimenzije ili posebne boje, kontaktirajte nas za individualnu ponudu.'
           }
         }
       ]

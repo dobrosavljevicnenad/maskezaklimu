@@ -4,10 +4,24 @@ import { HttpClient } from '@angular/common/http';
 import { toSignal } from '@angular/core/rxjs-interop';
 import { defer, of, catchError, Observable } from 'rxjs';
 
+export type Velicina = 'S' | 'M';
+
+// Obe veličine imaju istu cenu (cena iz maske.json).
+export const VELICINE: { kod: Velicina; dimenzije: string }[] = [
+  { kod: 'S', dimenzije: '900 × 650 × 440 mm' },
+  { kod: 'M', dimenzije: '900 × 650 × 550 mm' }
+];
+
+export function opisVelicine(velicina: Velicina): string {
+  const v = VELICINE.find(x => x.kod === velicina) ?? VELICINE[0];
+  return `${v.kod} (${v.dimenzije})`;
+}
+
 export interface CartItem {
   productId: number;
   quantity: number;
   boja: string;
+  velicina: Velicina;
 }
 
 @Injectable({
@@ -33,7 +47,14 @@ export class MaskaService {
   private getCart(): Map<string, CartItem> {
     if (isPlatformBrowser(this.platformId)) {
       const cartData = localStorage.getItem('cart');
-      return cartData ? new Map(JSON.parse(cartData)) : new Map();
+      if (!cartData) return new Map();
+      // Stare stavke (pre uvođenja veličina) nemaju velicinu – tretiraju se kao S.
+      const cart = new Map<string, CartItem>();
+      (JSON.parse(cartData) as [string, CartItem][]).forEach(([, item]) => {
+        const velicina: Velicina = item.velicina === 'M' ? 'M' : 'S';
+        cart.set(this.cartKey(item.productId, item.boja, velicina), { ...item, velicina });
+      });
+      return cart;
     }
     return new Map();
   }
@@ -45,19 +66,23 @@ export class MaskaService {
     this.cart.set(new Map(cart));
   }
 
-  addToCart(productId: number, boja: string, kolicina: number = 1) {
+  private cartKey(productId: number, boja: string, velicina: Velicina): string {
+    return `${productId}-${boja}-${velicina}`;
+  }
+
+  addToCart(productId: number, boja: string, kolicina: number = 1, velicina: Velicina = 'S') {
     const current = this.getCart();
-    const key = `${productId}-${boja}`;
+    const key = this.cartKey(productId, boja, velicina);
     const item = current.get(key);
     const quantity = item ? item.quantity : 0;
 
-    current.set(key, { productId, quantity: quantity + kolicina, boja });
+    current.set(key, { productId, quantity: quantity + kolicina, boja, velicina });
     this.saveCart(current);
   }
 
-  removeFromCart(productId: number, boja: string) {
+  removeFromCart(productId: number, boja: string, velicina: Velicina = 'S') {
     const current = this.getCart();
-    const key = `${productId}-${boja}`;
+    const key = this.cartKey(productId, boja, velicina);
     const item = current.get(key);
     if (item) {
       item.quantity > 1
@@ -67,9 +92,9 @@ export class MaskaService {
     }
   }
 
-  updateQuantity(productId: number, boja: string, quantity: number) {
+  updateQuantity(productId: number, boja: string, quantity: number, velicina: Velicina = 'S') {
     const current = this.getCart();
-    const key = `${productId}-${boja}`;
+    const key = this.cartKey(productId, boja, velicina);
     const item = current.get(key);
     if (item) {
       current.set(key, { ...item, quantity });
@@ -77,9 +102,9 @@ export class MaskaService {
     }
   }
 
-  deleteFromCart(productId: number, boja: string) {
+  deleteFromCart(productId: number, boja: string, velicina: Velicina = 'S') {
     const current = this.getCart();
-    current.delete(`${productId}-${boja}`);
+    current.delete(this.cartKey(productId, boja, velicina));
     this.saveCart(current);
   }
 
@@ -94,6 +119,7 @@ export class MaskaService {
       products.push({
         ...baseProduct,
         boja: item.boja,
+        velicina: item.velicina,
         kolicina: item.quantity,
         cartKey: key
       });
@@ -131,9 +157,8 @@ export class MaskaService {
   return defer(() => of(this.maske().find(m => m.slug === slug)));
   }
 
-  isInCart(productId: number, boja: string): boolean {
-  const key = `${productId}-${boja}`;
-  return this.getCart().has(key);
+  isInCart(productId: number, boja: string, velicina: Velicina = 'S'): boolean {
+  return this.getCart().has(this.cartKey(productId, boja, velicina));
 }
 
   getFilteredProducts(searchQuery: string): any[] {

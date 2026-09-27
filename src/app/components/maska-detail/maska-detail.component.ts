@@ -1,6 +1,6 @@
 import { Component, Inject, OnDestroy, OnInit, PLATFORM_ID, effect } from '@angular/core';
 import { ActivatedRoute, RouterModule } from '@angular/router';
-import { MaskaService } from '../../services/maska.service';
+import { MaskaService, VELICINE, Velicina } from '../../services/maska.service';
 import { CommonModule, isPlatformBrowser } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { Meta, Title } from '@angular/platform-browser';
@@ -21,6 +21,8 @@ export class MaskaDetailComponent implements OnInit, OnDestroy {
   kolicina = 1;
   izabranaBoja = '';
   drugaBoja = '';
+  readonly velicine = VELICINE;
+  izabranaVelicina: Velicina = 'S';
 
   private currentSlug = '';
   private sub?: Subscription;
@@ -85,6 +87,7 @@ export class MaskaDetailComponent implements OnInit, OnDestroy {
       this.kolicina = 1;
       this.izabranaBoja = '';
       this.drugaBoja = '';
+      this.izabranaVelicina = 'S';
       this.uvelicano = false;
 
       const found = this.maskaService.getMaskaBySlug(slug);
@@ -122,7 +125,7 @@ export class MaskaDetailComponent implements OnInit, OnDestroy {
     const description =
     opisRaw.length >= 120
       ? opisRaw.slice(0, 160)
-      : `${nazivRaw} – dekorativna maska za klimu za spoljnu jedinicu. Plastificirani lim 1.5 mm, izrada po meri, brza isporuka 5–7 dana širom Srbije.`;
+      : `${nazivRaw} – dekorativna maska za klimu za spoljnu jedinicu. Veličine S i M, plastificirani lim 1.5 mm, izrada po meri, isporuka 5–7 dana širom Srbije.`;
 
     const url = `${this.SITE}/proizvod/${this.maska.slug}`;
 
@@ -184,6 +187,8 @@ export class MaskaDetailComponent implements OnInit, OnDestroy {
         name: 'Maske za klimu'
       },
       sku: `MZK-${this.maska.id}`,
+      material: 'Plastificirani lim 1.5 mm',
+      size: VELICINE.map(v => `${v.kod}: ${v.dimenzije}`).join(', '),
       offers: {
         '@type': 'Offer',
         url,
@@ -305,7 +310,7 @@ export class MaskaDetailComponent implements OnInit, OnDestroy {
       return;
     }
 
-    this.maskaService.addToCart(this.maska.id, boja, this.kolicina);
+    this.maskaService.addToCart(this.maska.id, boja, this.kolicina, this.izabranaVelicina);
     alert('Dodali ste proizvod u korpu.');
   }
 }

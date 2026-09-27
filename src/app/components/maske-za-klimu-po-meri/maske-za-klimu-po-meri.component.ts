@@ -37,7 +37,7 @@ export class MaskeZaKlimuPoMeriComponent implements OnInit {
           name: 'Koje dimenzije mogu naručiti za masku za klimu po meri?',
           acceptedAnswer: {
             '@type': 'Answer',
-            text: 'Izrađujemo maske za klimu po meri za sve dimenzije spoljnih jedinica klima uređaja. Standardna dimenzija je 900 × 650 × 440 mm, ali možemo uraditi i veće, manje ili nestandardne mere prema vašim zahtevima.'
+            text: 'Izrađujemo maske za klimu po meri za sve dimenzije spoljnih jedinica klima uređaja. Standardne veličine su S (900 × 650 × 440 mm) i M (900 × 650 × 550 mm), ali možemo uraditi i veće, manje ili nestandardne mere prema vašim zahtevima.'
           }
         },
         {
@@ -45,7 +45,7 @@ export class MaskeZaKlimuPoMeriComponent implements OnInit {
           name: 'Koliko košta maska za klimu po meri?',
           acceptedAnswer: {
             '@type': 'Answer',
-            text: 'Cena maske za klimu po meri zavisi od dimenzija, odabrane šare i boje. Standardna maska dimenzija 900 × 650 × 440 mm iznosi 13.480 RSD. Za nestandardne mere kontaktirajte nas za individualan cenovnik.'
+            text: 'Cena maske za klimu po meri zavisi od dimenzija, odabrane šare i boje. Standardna maska dimenzija 900 × 650 × 440 mm (S) ili 900 × 650 × 550 mm (M) iznosi 13.480 RSD. Za nestandardne mere kontaktirajte nas za individualan cenovnik.'
           }
         },
         {

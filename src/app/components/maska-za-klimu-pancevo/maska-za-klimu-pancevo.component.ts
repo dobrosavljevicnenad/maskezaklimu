@@ -40,7 +40,7 @@ export class MaskaZaKlimuPancevoComponent implements OnInit {
           name: 'Kolika je cena maske za klimu sa dostavom u Pančevo?',
           acceptedAnswer: {
             '@type': 'Answer',
-            text: 'Standardna maska za klimu dimenzija 900 × 650 × 440 mm iznosi 13.480 RSD.'
+            text: 'Standardna maska za klimu dimenzija 900 × 650 × 440 mm (S) ili 900 × 650 × 550 mm (M) iznosi 13.480 RSD.'
           }
         },
         {

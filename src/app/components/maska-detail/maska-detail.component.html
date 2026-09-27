@@ -119,7 +119,7 @@
           <meta itemprop="itemCondition" content="https://schema.org/NewCondition" />
           <div class="!flex !items-end !justify-between !gap-4 !flex-wrap">
             <div>
-              <p class="!text-xs !uppercase !tracking-[0.18em] !text-gray-500 !mb-1">Cena (standardna)</p>
+              <p class="!text-xs !uppercase !tracking-[0.18em] !text-gray-500 !mb-1">Cena (S i M veličina)</p>
               <p class="!text-4xl !font-black !tracking-[-0.03em] !text-gray-950">
                 <span itemprop="price">{{ (maska?.cena ?? 0) }}</span>
                 <span class="!text-xl !font-semibold !text-gray-500 !ml-1">RSD</span>
@@ -143,6 +143,20 @@
 
         <!-- Color + Qty -->
         <div class="!bg-white !rounded-[1.75rem] !border !border-gray-200 !shadow-sm !p-6 !space-y-6">
+
+          <fieldset aria-label="Izbor veličine maske">
+            <legend class="!text-xs !uppercase !tracking-[0.18em] !text-gray-500 !mb-3">Veličina</legend>
+            <div class="!grid !grid-cols-2 !gap-2">
+              <label *ngFor="let v of velicine"
+                     class="!flex !flex-col !px-4 !py-3 !rounded-2xl !border !cursor-pointer !transition"
+                     [ngClass]="izabranaVelicina === v.kod ? '!border-gray-900 !bg-gray-900 !text-white' : '!border-gray-200 !bg-gray-50 !text-gray-900 hover:!bg-gray-100'">
+                <input type="radio" name="velicina" class="!sr-only" [value]="v.kod" [(ngModel)]="izabranaVelicina" />
+                <span class="!text-sm !font-bold">Veličina {{ v.kod }}</span>
+                <span class="!text-xs" [ngClass]="izabranaVelicina === v.kod ? '!text-gray-300' : '!text-gray-500'">{{ v.dimenzije }}</span>
+              </label>
+            </div>
+            <p class="!text-xs !text-gray-500 !mt-2">Ista cena za obe veličine. Dimenzije: širina × visina × dubina.</p>
+          </fieldset>
 
           <fieldset aria-label="Izbor boje maske">
             <legend class="!text-xs !uppercase !tracking-[0.18em] !text-gray-500 !mb-3">Boja</legend>
@@ -264,7 +278,7 @@
           </li>
           <li class="!flex !items-start !gap-3">
             <span class="!w-1.5 !h-1.5 !rounded-full !bg-gray-900 !mt-2 !shrink-0"></span>
-            <span class="!text-gray-700 !text-sm"><strong class="!text-gray-900">Standardne dimenzije:</strong> 900 × 650 × 440 mm</span>
+            <span class="!text-gray-700 !text-sm"><strong class="!text-gray-900">Standardne dimenzije:</strong> S – 900 × 650 × 440 mm, M – 900 × 650 × 550 mm (ista cena)</span>
           </li>
           <li class="!flex !items-start !gap-3">
             <span class="!w-1.5 !h-1.5 !rounded-full !bg-gray-900 !mt-2 !shrink-0"></span>
@@ -401,6 +415,17 @@
 
           <div class="!bg-[#f8f9fa] !border !border-gray-100 !rounded-[1.75rem] !p-6"
                itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+            <h3 class="!font-semibold !text-gray-950 !mb-2" itemprop="name">Koju veličinu da izaberem, S ili M?</h3>
+            <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+              <p itemprop="text" class="!text-gray-600 !text-sm !leading-relaxed">
+                Obe veličine su široke 900 mm i visoke 650 mm, a razlikuju se po dubini: S je 440 mm, M je 550 mm.
+                M izaberite za dublje spoljne jedinice ili kada želite više prostora za protok vazduha iza jedinice.
+              </p>
+            </div>
+          </div>
+
+          <div class="!bg-[#f8f9fa] !border !border-gray-100 !rounded-[1.75rem] !p-6"
+               itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
             <h3 class="!font-semibold !text-gray-950 !mb-2" itemprop="name">Da li radite masku za klimu po meri?</h3>
             <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
               <p itemprop="text" class="!text-gray-600 !text-sm !leading-relaxed">
@@ -414,7 +439,8 @@
             <h3 class="!font-semibold !text-gray-950 !mb-2" itemprop="name">Koja je cena maske za klimu?</h3>
             <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
               <p itemprop="text" class="!text-gray-600 !text-sm !leading-relaxed">
-                Cena zavisi od dimenzija, boje i završne obrade. Za tačnu cenu
+                Maska u veličini S (900 × 650 × 440 mm) ili M (900 × 650 × 550 mm) košta 13.480 RSD.
+                Za dimenzije po meri
                 <a [routerLink]="['/kontakt']" class="!underline !font-semibold !text-gray-900">pošaljite upit</a>.
               </p>
             </div>

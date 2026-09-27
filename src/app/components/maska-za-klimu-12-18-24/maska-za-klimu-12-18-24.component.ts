@@ -29,7 +29,7 @@ export class MaskaZaKlimu121824Component implements OnInit {
           name: 'Koja maska za klimu odgovara klimi od 12 (12.000 BTU)?',
           acceptedAnswer: {
             '@type': 'Answer',
-            text: 'Spoljne jedinice klima uređaja od 9.000–12.000 BTU obično su okvirno 700–800 × 540–600 × 270–300 mm. Naša standardna maska za klimu, dimenzija 900 × 650 × 440 mm, u većini slučajeva odgovara ovoj veličini. Tačna dimenzija zavisi od proizvođača i modela, pa preporučujemo da izmerite svoju jedinicu pre porudžbine.'
+            text: 'Spoljne jedinice klima uređaja od 9.000–12.000 BTU obično su okvirno 700–800 × 540–600 × 270–300 mm. Naša standardna maska za klimu u veličini S (900 × 650 × 440 mm) u većini slučajeva odgovara ovoj veličini. Tačna dimenzija zavisi od proizvođača i modela, pa preporučujemo da izmerite svoju jedinicu pre porudžbine.'
           }
         },
         {
@@ -37,7 +37,7 @@ export class MaskaZaKlimu121824Component implements OnInit {
           name: 'Koja maska za klimu odgovara klimi od 18 (18.000 BTU)?',
           acceptedAnswer: {
             '@type': 'Answer',
-            text: 'Spoljne jedinice od 18.000 BTU najčešće su okvirno 800–900 × 600–700 × 300–350 mm. Naša standardna maska za klimu (900 × 650 × 440 mm) u većini slučajeva odgovara i ovoj klasi, ali kod graničnih dimenzija preporučujemo izradu po meri radi sigurnog uklapanja.'
+            text: 'Spoljne jedinice od 18.000 BTU najčešće su okvirno 800–900 × 600–700 × 300–350 mm. Maska u veličini S (900 × 650 × 440 mm) u većini slučajeva odgovara i ovoj klasi, a veličina M (900 × 650 × 550 mm) daje više prostora iza dublje jedinice, po istoj ceni. Kod graničnih dimenzija preporučujemo izradu po meri radi sigurnog uklapanja.'
           }
         },
         {

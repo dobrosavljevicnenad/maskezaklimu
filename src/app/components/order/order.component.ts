@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { MaskaService } from '../../services/maska.service';
+import { MaskaService, opisVelicine } from '../../services/maska.service';
 import { Router } from '@angular/router';
 import emailjs from '@emailjs/browser';
 import { CommonModule } from '@angular/common';
@@ -24,6 +24,7 @@ export class OrderComponent implements OnInit {
   };
 
   baseUrl: string = 'https://maskezaklimu.rs/';
+  opisVelicine = opisVelicine;
 
   constructor(private maskaService: MaskaService, private router: Router,   private meta: Meta, private title: Title) {}
 
@@ -52,7 +53,9 @@ export class OrderComponent implements OnInit {
       phone: this.order.phone,
       address: this.order.address,
       cartProducts: this.cartProducts.map(product => ({
-        naziv: product.naziv,
+        // Veličina je u nazivu da bi se videla u postojećem EmailJS šablonu.
+        naziv: `${product.naziv} – veličina ${opisVelicine(product.velicina)}`,
+        velicina: opisVelicine(product.velicina),
         kolicina: product.kolicina,
         boja: product.boja,
         cena: this.getDiscountPrice(product) * product.kolicina,

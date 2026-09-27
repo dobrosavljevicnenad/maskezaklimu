@@ -177,7 +177,7 @@ export class HomeComponent implements OnInit {
           name: 'Kolika je cena maske za klimu?',
           acceptedAnswer: {
             '@type': 'Answer',
-            text: 'Standardna cena za masku dimenzija 900 × 650 × 440 mm iznosi 13.480 RSD. Za druge dimenzije radimo ponudu po meri.'
+            text: 'Standardna cena za masku dimenzija 900 × 650 × 440 mm (S) ili 900 × 650 × 550 mm (M) iznosi 13.480 RSD. Za druge dimenzije radimo ponudu po meri.'
           }
         },
         {
@@ -209,7 +209,7 @@ export class HomeComponent implements OnInit {
           name: 'Koje dimenzije maska za klimu su dostupne?',
           acceptedAnswer: {
             '@type': 'Answer',
-            text: 'Standardna maska za klimu iznosi 900 × 650 × 440 mm. Pored toga, radimo i maske za klimu po meri – samo nam pošaljite dimenzije vaše spoljne jedinice i prilagodićemo ih vašim potrebama.'
+            text: 'Svaku masku radimo u dve standardne veličine: S (900 × 650 × 440 mm) i M (900 × 650 × 550 mm), po istoj ceni od 13.480 RSD. Pored toga, radimo i maske za klimu po meri – samo nam pošaljite dimenzije vaše spoljne jedinice i prilagodićemo ih vašim potrebama.'
           }
         },
         {

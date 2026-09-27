@@ -40,7 +40,7 @@ export class MaskaZaKlimuKrusevacComponent implements OnInit {
           name: 'Kolika je cena maske za klimu sa dostavom u Kruševac?',
           acceptedAnswer: {
             '@type': 'Answer',
-            text: 'Standardna maska za klimu dimenzija 900 × 650 × 440 mm iznosi 13.480 RSD, bez obzira na grad isporuke.'
+            text: 'Standardna maska za klimu dimenzija 900 × 650 × 440 mm (S) ili 900 × 650 × 550 mm (M) iznosi 13.480 RSD, bez obzira na grad isporuke.'
           }
         },
         {

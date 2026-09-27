@@ -40,7 +40,7 @@ export class MaskaZaKlimuZrenjaninComponent implements OnInit {
           name: 'Kolika je cena maske za klimu sa dostavom u Zrenjanin?',
           acceptedAnswer: {
             '@type': 'Answer',
-            text: 'Standardna maska za klimu dimenzija 900 × 650 × 440 mm iznosi 13.480 RSD. Dostava kurirskom službom u Zrenjanin.'
+            text: 'Standardna maska za klimu dimenzija 900 × 650 × 440 mm (S) ili 900 × 650 × 550 mm (M) iznosi 13.480 RSD. Dostava kurirskom službom u Zrenjanin.'
           }
         },
         {

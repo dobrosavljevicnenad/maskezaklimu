@@ -1,5 +1,5 @@
 import { Component, computed, effect, Signal } from '@angular/core';
-import { MaskaService } from '../../services/maska.service';
+import { MaskaService, Velicina, opisVelicine } from '../../services/maska.service';
 import { Router, RouterModule } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { MatIconModule } from '@angular/material/icon';
@@ -44,23 +44,25 @@ export class CartComponent implements OnInit {
     this.meta.updateTag({ name: 'robots', content: 'noindex, follow' });
 }
 
-  addToCart(productId: number, boja: string) {
-    this.maskaService.addToCart(productId, boja, 1);
+  opisVelicine = opisVelicine;
+
+  addToCart(productId: number, boja: string, velicina: Velicina) {
+    this.maskaService.addToCart(productId, boja, 1, velicina);
   }
 
-  removeFromCart(productId: number, boja: string) {
-    this.maskaService.removeFromCart(productId, boja);
+  removeFromCart(productId: number, boja: string, velicina: Velicina) {
+    this.maskaService.removeFromCart(productId, boja, velicina);
   }
 
-  deleteFromCart(productId: number, boja: string) {
-    this.maskaService.deleteFromCart(productId, boja);
+  deleteFromCart(productId: number, boja: string, velicina: Velicina) {
+    this.maskaService.deleteFromCart(productId, boja, velicina);
   }
 
-  updateCart(productId: number, kolicina: number, boja: string) {
+  updateCart(productId: number, kolicina: number, boja: string, velicina: Velicina) {
     if (kolicina < 1) {
-      this.deleteFromCart(productId, boja);
+      this.deleteFromCart(productId, boja, velicina);
     } else {
-      this.maskaService.updateQuantity(productId, boja, kolicina);
+      this.maskaService.updateQuantity(productId, boja, kolicina, velicina);
     }
   }
 
@@ -77,8 +79,8 @@ export class CartComponent implements OnInit {
     const product = this.cartProducts()[index];
     if (!novaBoja.trim()) return;
 
-    this.maskaService.deleteFromCart(product.id, product.boja);
-    this.maskaService.addToCart(product.id, novaBoja.trim(), product.kolicina);
+    this.maskaService.deleteFromCart(product.id, product.boja, product.velicina);
+    this.maskaService.addToCart(product.id, novaBoja.trim(), product.kolicina, product.velicina);
 
     this.editingColorIndex = null;
     this.newColorValue = '';

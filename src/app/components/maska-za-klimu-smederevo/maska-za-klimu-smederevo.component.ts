@@ -40,7 +40,7 @@ export class MaskaZaKlimuSmederevoComponent implements OnInit {
           name: 'Kolika je cena maske za klimu u Smederevu?',
           acceptedAnswer: {
             '@type': 'Answer',
-            text: 'Standardna maska za klimu dimenzija 900 × 650 × 440 mm iznosi 13.480 RSD, bez obzira na to da li se dostavlja kurirskom službom ili se lično preuzima u radionici.'
+            text: 'Standardna maska za klimu dimenzija 900 × 650 × 440 mm (S) ili 900 × 650 × 550 mm (M) iznosi 13.480 RSD, bez obzira na to da li se dostavlja kurirskom službom ili se lično preuzima u radionici.'
           }
         },
         {
