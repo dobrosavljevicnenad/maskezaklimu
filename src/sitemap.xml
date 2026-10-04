@@ -374,7 +374,7 @@
 
   <url>
     <loc>https://maskezaklimu.rs/novosti</loc>
-    <lastmod>2026-09-20</lastmod>
+    <lastmod>2026-10-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
@@ -400,6 +400,18 @@
       <image:loc>https://maskezaklimu.rs/assets/maska_za_klimu_ostre_sare.webp</image:loc>
       <image:caption>Maska za klimu sa perforacijama koje omogućavaju protok vazduha oko spoljne jedinice klima uređaja</image:caption>
       <image:title>Da li maska za klimu smanjuje efikasnost rada klime</image:title>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://maskezaklimu.rs/novosti/kako-sakriti-klimu-na-terasi-i-fasadi</loc>
+    <lastmod>2026-10-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.65</priority>
+    <image:image>
+      <image:loc>https://maskezaklimu.rs/assets/maska-za-klimu-lekino-brdo-instalacija.webp</image:loc>
+      <image:caption>Spoljna jedinica klime sakrivena dekorativnom metalnom maskom na kući – primer instalacije</image:caption>
+      <image:title>Kako sakriti klimu na terasi, balkonu i fasadi</image:title>
     </image:image>
   </url>
 

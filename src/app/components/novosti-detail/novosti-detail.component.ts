@@ -14,6 +14,7 @@ import { SeoService } from '../../services/seo.service';
 })
 export class NovostiDetailComponent implements OnInit, OnDestroy {
   post: Novost | null = null;
+  ostaleNovosti: Novost[] = [];
 
   private currentSlug = '';
   private sub?: Subscription;
@@ -57,6 +58,11 @@ export class NovostiDetailComponent implements OnInit, OnDestroy {
   }
 
   private applySeoAndSchema(post: Novost): void {
+    this.ostaleNovosti = this.novostiService.novosti()
+      .filter(n => n.slug !== post.slug)
+      .sort((a, b) => b.datum.localeCompare(a.datum))
+      .slice(0, 3);
+
     const url = `${this.SITE}/novosti/${post.slug}`;
     const image = `${this.SITE}/${post.slika}`;
 
