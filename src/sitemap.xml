@@ -131,7 +131,7 @@
 
   <url>
     <loc>https://maskezaklimu.rs/maska-za-klimu-spolja</loc>
-    <lastmod>2026-07-02</lastmod>
+    <lastmod>2026-10-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
     <image:image>
@@ -374,7 +374,7 @@
 
   <url>
     <loc>https://maskezaklimu.rs/novosti</loc>
-    <lastmod>2026-10-04</lastmod>
+    <lastmod>2026-10-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
@@ -412,6 +412,18 @@
       <image:loc>https://maskezaklimu.rs/assets/maska-za-klimu-lekino-brdo-instalacija.webp</image:loc>
       <image:caption>Spoljna jedinica klime sakrivena dekorativnom metalnom maskom na kući – primer instalacije</image:caption>
       <image:title>Kako sakriti klimu na terasi, balkonu i fasadi</image:title>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://maskezaklimu.rs/novosti/maska-resetka-poklopac-ili-nadstresnica-za-klimu</loc>
+    <lastmod>2026-10-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.65</priority>
+    <image:image>
+      <image:loc>https://maskezaklimu.rs/assets/maska_za_klimu_pravougaonici_crna_gora_bocna.webp</image:loc>
+      <image:caption>Dekorativna metalna maska za klimu sa gornjim poklopcem i bočnim stranicama postavljena preko spoljne jedinice</image:caption>
+      <image:title>Maska, rešetka, poklopac ili nadstrešnica za klimu</image:title>
     </image:image>
   </url>
 
