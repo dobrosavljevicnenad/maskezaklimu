@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import emailjs from '@emailjs/browser';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { RouterLink } from '@angular/router';
+import { ActivatedRoute, RouterLink } from '@angular/router';
 import { SeoService } from '../../services/seo.service';
 
 @Component({
@@ -12,7 +12,9 @@ import { SeoService } from '../../services/seo.service';
   templateUrl: './contact.component.html',
 })
 export class ContactComponent implements OnInit {
-  constructor(private seo: SeoService) {}
+  constructor(private seo: SeoService, private route: ActivatedRoute) {}
+
+  isCustomQuote = false;
 
   contact: any = {
     name: '',
@@ -22,6 +24,17 @@ export class ContactComponent implements OnInit {
   };
 
   ngOnInit(): void {
+    this.route.queryParamMap.subscribe(params => {
+      const sirina = params.get('sirina');
+      const visina = params.get('visina');
+      const dubina = params.get('dubina');
+
+      if (sirina && visina && dubina) {
+        this.isCustomQuote = true;
+        this.contact.message = `Upit za masku po meri\nModel: ${params.get('model') || 'Maska za klimu'}\nDimenzije maske: ${sirina} × ${visina} × ${dubina} mm\nBoja: ${params.get('boja') || 'po dogovoru'}\nKoličina: ${params.get('kolicina') || '1'}\n\nMolim vas da mi javite cenu i rok izrade.`;
+      }
+    });
+
     this.seo.updateSeo({
       title: 'Kontakt – Maske za klimu po meri | maskezaklimu.rs',
       description: 'Kontaktirajte nas za ponudu maske za klimu po meri. Pošaljite dimenzije spoljne jedinice, izaberite šaru i boju – odgovaramo brzo telefonom ili putem forme.',
@@ -47,6 +60,10 @@ export class ContactComponent implements OnInit {
   }
 
   sendMessage() {
+    if (!this.isContactFormComplete()) {
+      return;
+    }
+
     const templateParams = {
       name: this.contact.name,
       email: this.contact.email,
@@ -67,5 +84,14 @@ export class ContactComponent implements OnInit {
         console.error('Greška pri slanju:', error);
         alert('Došlo je do greške. Pokušajte ponovo.');
       });
+  }
+
+  isContactFormComplete(): boolean {
+    return Boolean(
+      this.contact.name?.trim() &&
+      this.contact.email?.trim() &&
+      this.contact.phone?.trim() &&
+      this.contact.message?.trim()
+    );
   }
 }

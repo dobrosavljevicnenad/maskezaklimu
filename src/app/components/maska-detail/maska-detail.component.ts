@@ -1,6 +1,8 @@
 import { Component, Inject, OnDestroy, OnInit, PLATFORM_ID, effect } from '@angular/core';
-import { ActivatedRoute, RouterModule } from '@angular/router';
+import { ActivatedRoute, Router, RouterModule } from '@angular/router';
 import { MaskaService, VELICINE, Velicina } from '../../services/maska.service';
+
+type IzabranaVelicina = Velicina | 'PO_MERI';
 import { CommonModule, isPlatformBrowser } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { Meta, Title } from '@angular/platform-browser';
@@ -12,7 +14,7 @@ import { SeoService } from '../../services/seo.service';
   standalone: true,
   imports: [CommonModule, FormsModule, RouterModule],
   templateUrl: './maska-detail.component.html',
-  styleUrls: ['./maska-detail.component.scss']
+  styleUrls: ['./maska-detail.component.css']
 })
 export class MaskaDetailComponent implements OnInit, OnDestroy {
   maska: any;
@@ -22,7 +24,8 @@ export class MaskaDetailComponent implements OnInit, OnDestroy {
   izabranaBoja = '';
   drugaBoja = '';
   readonly velicine = VELICINE;
-  izabranaVelicina: Velicina = 'S';
+  izabranaVelicina: IzabranaVelicina = 'S';
+  customDimenzije = { sirina: '', visina: '', dubina: '' };
 
   private currentSlug = '';
   private sub?: Subscription;
@@ -47,6 +50,7 @@ export class MaskaDetailComponent implements OnInit, OnDestroy {
 
   constructor(
     private route: ActivatedRoute,
+    private router: Router,
     private maskaService: MaskaService,
     private meta: Meta,
     private title: Title,
@@ -88,6 +92,7 @@ export class MaskaDetailComponent implements OnInit, OnDestroy {
       this.izabranaBoja = '';
       this.drugaBoja = '';
       this.izabranaVelicina = 'S';
+      this.customDimenzije = { sirina: '', visina: '', dubina: '' };
       this.uvelicano = false;
 
       const found = this.maskaService.getMaskaBySlug(slug);
@@ -110,6 +115,7 @@ export class MaskaDetailComponent implements OnInit, OnDestroy {
   ngOnDestroy(): void {
     this.sub?.unsubscribe();
     this.seoService.removeJsonLd('product-schema');
+    this.seoService.removeJsonLd('product-breadcrumb-schema');
   }
 
   private applySeo(): void {
@@ -240,6 +246,25 @@ export class MaskaDetailComponent implements OnInit, OnDestroy {
     };
 
     this.seoService.setJsonLd('product-schema', schema);
+
+    this.seoService.setJsonLd('product-breadcrumb-schema', {
+      '@context': 'https://schema.org',
+      '@type': 'BreadcrumbList',
+      itemListElement: [
+        {
+          '@type': 'ListItem',
+          position: 1,
+          name: 'Maske za klimu',
+          item: `${this.SITE}/`
+        },
+        {
+          '@type': 'ListItem',
+          position: 2,
+          name: nazivRaw,
+          item: url
+        }
+      ]
+    });
   }
 
   private toAbsoluteUrl(url: string): string {
@@ -304,6 +329,11 @@ export class MaskaDetailComponent implements OnInit, OnDestroy {
   }
 
   dodajUKorpu() {
+    if (this.izabranaVelicina === 'PO_MERI') {
+      this.zatraziCenuPoMeri();
+      return;
+    }
+
     const boja = this.drugaBoja.trim() || this.izabranaBoja;
     if (!boja) {
       alert('Molimo izaberite ili unesite boju.');
@@ -312,5 +342,24 @@ export class MaskaDetailComponent implements OnInit, OnDestroy {
 
     this.maskaService.addToCart(this.maska.id, boja, this.kolicina, this.izabranaVelicina);
     alert('Dodali ste proizvod u korpu.');
+  }
+
+  zatraziCenuPoMeri() {
+    const { sirina, visina, dubina } = this.customDimenzije;
+    if (!sirina || !visina || !dubina) {
+      alert('Unesite širinu, visinu i dubinu maske u milimetrima.');
+      return;
+    }
+
+    this.router.navigate(['/kontakt'], {
+      queryParams: {
+        model: this.maska?.naziv || 'Maska za klimu po meri',
+        sirina,
+        visina,
+        dubina,
+        boja: this.drugaBoja.trim() || this.izabranaBoja || 'po dogovoru',
+        kolicina: this.kolicina
+      }
+    });
   }
 }
