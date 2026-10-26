@@ -47,6 +47,10 @@ export const routes: Routes = [
     loadComponent: () => import('./components/maska-za-klimu-spolja/maska-za-klimu-spolja.component').then(m => m.MaskaZaKlimuSpoljaComponent),
   },
   {
+    path: 'maska-za-klimu-unutra',
+    loadComponent: () => import('./components/maska-za-klimu-unutra/maska-za-klimu-unutra.component').then(m => m.MaskaZaKlimuUnutraComponent),
+  },
+  {
     path: 'ukrasna-kutija-za-klimu',
     loadComponent: () => import('./components/ukrasna-kutija-za-klimu/ukrasna-kutija-za-klimu.component').then(m => m.UkrasnaKutijaZaKlimuComponent),
   },
